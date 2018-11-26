@@ -34,7 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.products = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.customers = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnCustomers = new Bunifu.Framework.UI.BunifuFlatButton();
             this.users = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnOrders = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnExit = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -62,7 +62,7 @@
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.products);
-            this.bunifuGradientPanel1.Controls.Add(this.customers);
+            this.bunifuGradientPanel1.Controls.Add(this.btnCustomers);
             this.bunifuGradientPanel1.Controls.Add(this.users);
             this.bunifuGradientPanel1.Controls.Add(this.btnOrders);
             this.bunifuGradientPanel1.Controls.Add(this.btnExit);
@@ -115,42 +115,43 @@
             this.products.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.products.Visible = false;
             // 
-            // customers
+            // btnCustomers
             // 
-            this.customers.Activecolor = System.Drawing.Color.Transparent;
-            this.customers.BackColor = System.Drawing.Color.Transparent;
-            this.customers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.customers.BorderRadius = 0;
-            this.customers.ButtonText = "       Customers";
-            this.customers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.customers.DisabledColor = System.Drawing.Color.Gray;
-            this.customers.Enabled = false;
-            this.customers.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.customers.Iconcolor = System.Drawing.Color.Transparent;
-            this.customers.Iconimage = ((System.Drawing.Image)(resources.GetObject("customers.Iconimage")));
-            this.customers.Iconimage_right = null;
-            this.customers.Iconimage_right_Selected = null;
-            this.customers.Iconimage_Selected = null;
-            this.customers.IconMarginLeft = 0;
-            this.customers.IconMarginRight = 0;
-            this.customers.IconRightVisible = true;
-            this.customers.IconRightZoom = 0D;
-            this.customers.IconVisible = false;
-            this.customers.IconZoom = 90D;
-            this.customers.IsTab = false;
-            this.customers.Location = new System.Drawing.Point(0, 95);
-            this.customers.Name = "customers";
-            this.customers.Normalcolor = System.Drawing.Color.Transparent;
-            this.customers.OnHovercolor = System.Drawing.Color.DodgerBlue;
-            this.customers.OnHoverTextColor = System.Drawing.Color.White;
-            this.customers.selected = false;
-            this.customers.Size = new System.Drawing.Size(177, 19);
-            this.customers.TabIndex = 4;
-            this.customers.Text = "       Customers";
-            this.customers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.customers.Textcolor = System.Drawing.Color.White;
-            this.customers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customers.Visible = false;
+            this.btnCustomers.Activecolor = System.Drawing.Color.Transparent;
+            this.btnCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.btnCustomers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCustomers.BorderRadius = 0;
+            this.btnCustomers.ButtonText = "       Customers";
+            this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomers.DisabledColor = System.Drawing.Color.Gray;
+            this.btnCustomers.Enabled = false;
+            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCustomers.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnCustomers.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Iconimage")));
+            this.btnCustomers.Iconimage_right = null;
+            this.btnCustomers.Iconimage_right_Selected = null;
+            this.btnCustomers.Iconimage_Selected = null;
+            this.btnCustomers.IconMarginLeft = 0;
+            this.btnCustomers.IconMarginRight = 0;
+            this.btnCustomers.IconRightVisible = true;
+            this.btnCustomers.IconRightZoom = 0D;
+            this.btnCustomers.IconVisible = false;
+            this.btnCustomers.IconZoom = 90D;
+            this.btnCustomers.IsTab = false;
+            this.btnCustomers.Location = new System.Drawing.Point(0, 95);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Normalcolor = System.Drawing.Color.Transparent;
+            this.btnCustomers.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.btnCustomers.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnCustomers.selected = false;
+            this.btnCustomers.Size = new System.Drawing.Size(177, 19);
+            this.btnCustomers.TabIndex = 4;
+            this.btnCustomers.Text = "       Customers";
+            this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCustomers.Textcolor = System.Drawing.Color.White;
+            this.btnCustomers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCustomers.Visible = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // users
             // 
@@ -303,6 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 372);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Menu";
             this.Text = "Menu";
@@ -323,6 +325,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton users;
         private Bunifu.Framework.UI.BunifuFlatButton btnOrders;
         private Bunifu.Framework.UI.BunifuFlatButton products;
-        private Bunifu.Framework.UI.BunifuFlatButton customers;
+        private Bunifu.Framework.UI.BunifuFlatButton btnCustomers;
     }
 }
