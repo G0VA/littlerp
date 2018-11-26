@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,12 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dominio\Customer.cs" />
+    <Compile Include="Dominio\Gestores\GestorCustomers.cs" />
     <Compile Include="Persistencia\ConnectOracle.cs" />
-    <Compile Include="Presentacion\Customers\Customer.cs">
+    <Compile Include="Presentacion\Customers\ViewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Customers\Customer.Designer.cs">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <Compile Include="Presentacion\Customers\ViewCustomer.Designer.cs">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Login.cs">
       <SubType>Form</SubType>
@@ -95,8 +98,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Presentacion\Customers\Customer.resx">
-      <DependentUpon>Customer.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Customers\ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -115,9 +118,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dominio\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

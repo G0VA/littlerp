@@ -21,5 +21,6 @@ C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Av
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache
-C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Customer.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.NewCustomer.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewCustomer.resources

@@ -16,7 +16,7 @@ namespace Avengers.Persistencia
         const String driver = "Data Source=(DESCRIPTION ="
         + "(ADDRESS_LIST = (ADDRESS = (PROTOCOL = TCP)(HOST = LOCALHOST)(PORT = 1521)))"
         + "(CONNECT_DATA = (SERVICE_NAME = xe))); "
-        + "User Id=General; Password=General;";
+        + "User Id=littlerp; Password=littlerp;";
 
         ////////////////////////////////////////////////////////////
 

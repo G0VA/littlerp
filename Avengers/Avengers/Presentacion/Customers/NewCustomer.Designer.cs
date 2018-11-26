@@ -145,6 +145,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(165, 54);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(205, 20);
             this.txtName.TabIndex = 9;
@@ -152,6 +153,7 @@
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(165, 92);
+            this.txtSurname.MaxLength = 20;
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(214, 20);
             this.txtSurname.TabIndex = 10;
@@ -159,6 +161,7 @@
             // txtDNI
             // 
             this.txtDNI.Location = new System.Drawing.Point(165, 128);
+            this.txtDNI.MaxLength = 9;
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(143, 20);
             this.txtDNI.TabIndex = 11;
@@ -166,6 +169,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(165, 166);
+            this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(214, 20);
             this.txtEmail.TabIndex = 12;
@@ -204,6 +208,7 @@
             // txtZIP
             // 
             this.txtZIP.Location = new System.Drawing.Point(165, 351);
+            this.txtZIP.MaxLength = 50;
             this.txtZIP.Name = "txtZIP";
             this.txtZIP.Size = new System.Drawing.Size(134, 20);
             this.txtZIP.TabIndex = 17;
@@ -246,6 +251,7 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // NewCustomer
             // 

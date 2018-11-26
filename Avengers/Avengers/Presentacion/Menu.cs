@@ -68,7 +68,7 @@ namespace Avengers.Presentacion
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            Customer c1 = new Customer();
+            ViewCustomer c1 = new ViewCustomer();
             c1.MdiParent = this;
             c1.WindowState = FormWindowState.Maximized;
             c1.Show();

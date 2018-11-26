@@ -1,6 +1,6 @@
 ﻿namespace Avengers.Presentacion
 {
-    partial class Customer
+    partial class ViewCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -44,12 +44,12 @@
             this.txtZip = new System.Windows.Forms.TextBox();
             this.ckDel = new System.Windows.Forms.CheckBox();
             this.btnClean = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // txtName
@@ -195,13 +195,13 @@
             this.btnClean.Text = "Clean";
             this.btnClean.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvCustomer
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 153);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(982, 332);
-            this.dataGridView1.TabIndex = 16;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Location = new System.Drawing.Point(12, 153);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.Size = new System.Drawing.Size(982, 332);
+            this.dgvCustomer.TabIndex = 16;
             // 
             // btnNew
             // 
@@ -244,7 +244,7 @@
             this.btnLog.Text = "Log";
             this.btnLog.UseVisualStyleBackColor = true;
             // 
-            // Customer
+            // ViewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,7 +253,7 @@
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnNew);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvCustomer);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.ckDel);
             this.Controls.Add(this.txtZip);
@@ -270,9 +270,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtName);
-            this.Name = "Customer";
-            this.Text = "Customer";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "ViewCustomer";
+            this.Text = "ViewCustomer";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +296,7 @@
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.CheckBox ckDel;
         private System.Windows.Forms.Button btnClean;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnMod;
