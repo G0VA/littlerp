@@ -1,0 +1,12 @@
+c:\users\b14-16m\documents\visual studio 2015\Projects\Avengers\Avengers\bin\Debug\Avengers.exe.config
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\bin\Debug\Avengers.exe
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\bin\Debug\Avengers.pdb
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.csprojResolveAssemblyReference.cache
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Login.resources
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Menu.resources
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.exe
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.pdb
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.resources
