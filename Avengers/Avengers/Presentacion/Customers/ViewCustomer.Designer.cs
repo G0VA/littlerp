@@ -86,6 +86,7 @@
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(188, 20);
             this.txtSurname.TabIndex = 3;
+            this.txtSurname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSurname_KeyUp);
             // 
             // label2
             // 
@@ -103,6 +104,7 @@
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(188, 20);
             this.txtDNI.TabIndex = 5;
+            this.txtDNI.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDNI_KeyUp);
             // 
             // label3
             // 

@@ -58,11 +58,18 @@ namespace Avengers.Presentacion
             {
                 sql += " And Upper(Name) like '%" + txtName.Text.ToUpper() + "%' ";
             }
+            if (!String.IsNullOrEmpty(txtSurname.Text))
+            {
+                sql += " And upper(Surname) like '%" + txtSurname.Text.ToUpper() + "%'";
+            }
+            if (!String.IsNullOrEmpty(txtDNI.Text))
+            {
+                sql += " And Upper(DNI) like '%" + txtDNI.Text.ToUpper() + "%'";
+            }
             initTable(sql);
         }
         private void txtName_KeyUp(object sender, KeyEventArgs e)
         {
-            Console.WriteLine("ping");
             filtrar();
         }
 
@@ -70,6 +77,16 @@ namespace Avengers.Presentacion
         {
             NewCustomer nc = new NewCustomer();
             nc.ShowDialog();
+        }
+
+        private void txtSurname_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
+        }
+
+        private void txtDNI_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
         }
     }
 }
