@@ -281,6 +281,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "NewCustomer";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "NewCustomer";
             this.ResumeLayout(false);
             this.PerformLayout();

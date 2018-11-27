@@ -30,5 +30,14 @@ namespace Avengers.Dominio.Gestores
             data = search.getData("Select * from customers order by idcustomer","littlerp");
             tabla = data.Tables["littlerp"];
         }
+
+        public void readCustomers(String cond)
+        {
+            DataSet data = new DataSet();
+            ConnectOracle search = new ConnectOracle();
+
+            data = search.getData("Select * from customers "+cond+" order by idcustomer", "littlerp");
+            tabla = data.Tables["littlerp"];
+        }
     }
 }

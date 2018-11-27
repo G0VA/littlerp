@@ -24,3 +24,17 @@ C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Av
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.NewCustomer.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\bin\Debug\Oracle.DataAccess.dll
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewCustomer.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe.config
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.exe
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.pdb
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Avengers.pdb
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Oracle.DataAccess.dll
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.csprojResolveAssemblyReference.cache
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewCustomer.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Login.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Menu.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.NewCustomer.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache

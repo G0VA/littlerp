@@ -13,18 +13,24 @@ namespace Avengers.Presentacion
 {
     public partial class ViewCustomer : Form
     {
+
         public ViewCustomer()
         {
             InitializeComponent();
-            initTable();
+            initTable(" Where Deleted =0");
         }
 
-        private void initTable()
+        private void initTable(String cond)
         {
+            dgvCustomer.Columns.Clear();
+         
             Customer c = new Customer();
-            c.gestor().readCustomers();
+            c.gestor().readCustomers(cond);
 
+            
             DataTable tcustomers = c.gestor().getCustomers();
+            dgvCustomer.Columns.Clear();
+
             //dgvCustomers.DataSource = tcustomers;
 
             dgvCustomer.Columns.Add("IDCUSTOMER", "ID");
@@ -41,10 +47,23 @@ namespace Avengers.Presentacion
             {
                 dgvCustomer.Rows.Add(row["IDCUSTOMER"], row["NAME"], row["SURNAME"], row["DNI"], row["ADDRESS"], row["PHONE"], row["EMAIL"], row["REFZIPCODESCITIES"]);
             }
+            
+        }
+
+        public void filtrar()
+        {
+            String sql = " Where 1=1";
+
+            if (!String.IsNullOrEmpty(txtName.Text))
+            {
+                sql += " And Upper(Name) like '%" + txtName.Text.ToUpper() + "%' ";
+            }
+            initTable(sql);
         }
         private void txtName_KeyUp(object sender, KeyEventArgs e)
         {
-           //evento al soltar tecla
+            Console.WriteLine("ping");
+            filtrar();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
