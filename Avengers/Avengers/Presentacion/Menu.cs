@@ -7,15 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Avengers.Presentacion.Products;
 
 namespace Avengers.Presentacion
 {
     public partial class Menu : Form
     {
-        private Users u1 = new Users();
+        private ViewUsers u1 = new ViewUsers();
         private Orders o1 = new Orders();
         private ViewCustomer c1 = new ViewCustomer();
-        private Products.ViewProduct p1 = new Products.ViewProduct();
+        private ViewProduct p1 = new ViewProduct();
 
         private bool openU = false;
         private bool openO = false;
@@ -54,8 +55,7 @@ namespace Avengers.Presentacion
 
         private void users_Click(object sender, EventArgs e)
         {
-            //int n = tabControl.TabPages.IndexOfKey("u1");
-            //int n1 = 0;
+
             if (!openU)
             {
                 tabControl.Visible = true;
@@ -66,7 +66,7 @@ namespace Avengers.Presentacion
                 u1.Dock = DockStyle.Fill;
                 u1.Show();
 
-                TabPage tpu = new TabPage(u1.Text);
+                TabPage tpu = new TabPage("Users");
                 tpu.Tag = u1;
                 tpu.Name = "u1";
                 tpu.Parent = tabControl;
@@ -113,7 +113,7 @@ namespace Avengers.Presentacion
                 o1.Dock = DockStyle.Fill;
                 o1.Show();
 
-                TabPage tp = new TabPage(o1.Text);
+                TabPage tp = new TabPage("Ordes");
                 tp.Tag = o1;
                 tp.Name = "o1";
                 tp.Parent = tabControl;
@@ -169,7 +169,7 @@ namespace Avengers.Presentacion
             if (tabControl.TabPages.ContainsKey("u1"))
             {
                 this.openU = false;
-                u1.limpiar();
+                //u1.limpiar();
                 u1.Visible = false;
             }
             if (tabControl.TabPages.ContainsKey("o1"))
@@ -187,11 +187,18 @@ namespace Avengers.Presentacion
                 this.openP = false;
                 p1.Visible = false;
             }
-            tabControl.TabPages.Remove(tabControl.SelectedTab);
-            if (tabControl.RowCount == 0)
+
+            if (tabControl.RowCount > 0)
+            {
+                tabControl.TabPages.Remove(tabControl.SelectedTab);
+                if(tabControl.RowCount == 0)
+                    tabControl.Visible = false;
+            }
+            else
             {
                 tabControl.Visible = false;
             }
+
         }
 
         private void products_Click(object sender, EventArgs e)

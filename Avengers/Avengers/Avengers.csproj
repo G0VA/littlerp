@@ -55,7 +55,9 @@
     <Compile Include="Dominio\Customer.cs" />
     <Compile Include="Dominio\Gestores\GestorCustomers.cs" />
     <Compile Include="Dominio\Gestores\GestorProducts.cs" />
+    <Compile Include="Dominio\Gestores\GestorUsers.cs" />
     <Compile Include="Dominio\Product.cs" />
+    <Compile Include="Dominio\User.cs" />
     <Compile Include="Persistencia\ConnectOracle.cs" />
     <Compile Include="Presentacion\Customers\NewCustomer.cs">
       <SubType>Form</SubType>
@@ -93,11 +95,29 @@
     <Compile Include="Presentacion\Products\ViewProduct.Designer.cs">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Users.cs">
+    <Compile Include="Presentacion\Users\ModUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Users.Designer.cs">
-      <DependentUpon>Users.cs</DependentUpon>
+    <Compile Include="Presentacion\Users\ModUser.Designer.cs">
+      <DependentUpon>ModUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Users\NewRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Users\NewRole.Designer.cs">
+      <DependentUpon>NewRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Users\NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Users\NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Users\ViewUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Users\ViewUsers.Designer.cs">
+      <DependentUpon>ViewUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,8 +150,17 @@
     <EmbeddedResource Include="Presentacion\Products\ViewProduct.resx">
       <DependentUpon>ViewProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Users.resx">
-      <DependentUpon>Users.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Users\ModUser.resx">
+      <DependentUpon>ModUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Users\NewRole.resx">
+      <DependentUpon>NewRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Users\NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Users\ViewUsers.resx">
+      <DependentUpon>ViewUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

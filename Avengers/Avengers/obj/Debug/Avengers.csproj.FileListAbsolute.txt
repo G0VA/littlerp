@@ -9,7 +9,6 @@ C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Deb
 C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.exe
 C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.pdb
 C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
-C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.resources
 C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.resources
 C:\Users\santi\Documents\Visual Studio 2015\Projects\Avengers\Avengers\bin\Debug\Avengers.exe.config
 C:\Users\santi\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.exe
@@ -27,6 +26,10 @@ C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Deb
 C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewCustomer.resources
 C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\bin\Debug\Oracle.DataAccess.dll
 C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.ViewProduct.resources
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.ModUser.resources
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewRole.resources
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewUser.resources
+C:\Users\b14-16m\Documents\Visual Studio 2015\Projects\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewUsers.resources
 C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe.config
 C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.exe
 C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.pdb
