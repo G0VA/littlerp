@@ -182,6 +182,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(143, 20);
             this.txtPhone.TabIndex = 13;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // cmbReg
             // 
@@ -241,6 +242,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAddNew
             // 
@@ -251,6 +253,7 @@
             this.btnAddNew.TabIndex = 20;
             this.btnAddNew.Text = "Add and New";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnAdd
             // 

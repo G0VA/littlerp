@@ -75,19 +75,19 @@ namespace Avengers.Presentacion
 
             foreach (DataRow row in tzip.Rows)
             {
-                if (tzip.Rows.Count > 1)
-                {
-                    cmbZIP.Visible = true;
-                    txtZIP.Visible = false;
-                    txtZIP.Clear();
+               // if (tzip.Rows.Count > 1)
+               // {
+               //     cmbZIP.Visible = true;
+               //     txtZIP.Visible = false;
+               //     txtZIP.Clear();
                     cmbZIP.Items.Add(row["ZIPCODE"]);
-                }else
-                {
-                    cmbZIP.Visible = false;
-                    txtZIP.Visible = true;
-                    txtZIP.Clear();
-                    txtZIP.Text = row["ZIPCODE"].ToString();
-                }
+                //}else
+                //{
+                //    cmbZIP.Visible = false;
+                //    txtZIP.Visible = true;
+                //    txtZIP.Clear();
+                //    txtZIP.Text = row["ZIPCODE"].ToString();
+                //}
                
             }
         }
@@ -141,11 +141,53 @@ namespace Avengers.Presentacion
         }
         public void insertCustomer()
         {
+            //Construimos El insert
             String sql = "Insert into customers values (null,'" + txtName.Text.ToUpper() + "','" + txtSurname.Text.ToUpper() + "',";
-            if (String.IsNullOrEmpty(txt)
-            {
 
+            //en caso de que los campos esten vacios ponemos a null
+            if (String.IsNullOrEmpty(txtAddress.Text))
+            {
+                sql += "null,";
+            }else
+            {
+                sql += "'" + txtAddress.Text.ToUpper() + "',";
             }
+            if (String.IsNullOrEmpty(txtPhone.Text))
+            {
+                sql += "null,";
+            }
+            else
+            {
+                sql += "'" + txtPhone.Text.ToUpper() + "',";
+            }
+            if (String.IsNullOrEmpty(txtEmail.Text))
+            {
+                sql += "null,";
+            }
+            else
+            {
+                sql += "'" + txtEmail.Text.ToUpper() + "',";
+            }
+            //insertamos valor para deleted y el codigo de referencia
+            if (this.refzipcodescities == 0)
+            {
+                sql += "0,null,";
+            }else
+            {
+                sql += "0," + this.refzipcodescities + ",";
+            }
+            //terminamos insertando el dni
+            sql += "'" + txtDNI.Text.ToUpper() + "')";
+
+            ConnectOracle insert = new ConnectOracle();
+            insert.setData(sql);
+
+            //insertamos en el log de customers
+            //ConnectOracle insertlog = new ConnectOracle();
+
+            //String log = "Insert into log_customers values (null,'USUARIO','INSERT',SYSDATE," + sql + ")";
+            //insertlog.setData(log);
+            
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -157,11 +199,12 @@ namespace Avengers.Presentacion
             }
             if (checkAdd() && email)
             {
-        
-               MessageBox.Show("Dentro");
-              
-                
-            }else
+
+                insertCustomer();
+                Dispose();
+
+            }
+            else
             {
                 if (!email)
                 {
@@ -205,11 +248,63 @@ namespace Avengers.Presentacion
             String tables = " zipcodescities z inner join zipcodes zip on refzipcode=idzipcode " +
                            " inner join cities c on refcity=idcity " +
                            " inner join states s on refstate=idstate ";
-            String cond = " zipcode='" + cmbZIP.SelectedItem.ToString() + txtZIP.Text + "' And city='" + cmbCity.SelectedItem.ToString() + "' And State= '" + cmbProv.SelectedItem.ToString() + "'";
+            String cond = " zipcode='" + cmbZIP.SelectedItem.ToString() + "' And city='" + cmbCity.SelectedItem.ToString() + "' And State= '" + cmbProv.SelectedItem.ToString() + "'";
 
             ConnectOracle search = new ConnectOracle();
-            int resp = Convert.ToInt16(search.DLookUp("IDZIPCODESCITIES", tables, cond));
+            int resp = Convert.ToInt16(search.DLookUp("IDZIPCODESCITIES", tables, cond)); 
             this.refzipcodescities = resp;
+        }
+        private void clean()
+        {
+            txtName.Clear();
+            txtSurname.Clear();
+            txtDNI.Clear();
+            txtAddress.Clear();
+            txtEmail.Clear();
+            txtPhone.Clear();
+            txtZIP.Clear();
+            initReg("");
+        }
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+
+            bool email = true;
+            if (!String.IsNullOrEmpty(txtEmail.Text) && !Utils.check.checkEmail(txtEmail.Text))
+            {
+                email = false;
+            }
+            if (checkAdd() && email)
+            {
+
+                insertCustomer();
+                clean();
+
+            }
+            else
+            {
+                if (!email)
+                {
+                    MessageBox.Show(errorDialog() + "\t - The field \"Email\"doesn't the correct format \n");
+                }
+                else
+                {
+                    MessageBox.Show(errorDialog());
+                }
+
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Dispose();
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

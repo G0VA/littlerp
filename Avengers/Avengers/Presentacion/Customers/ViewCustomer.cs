@@ -166,6 +166,10 @@ namespace Avengers.Presentacion
         {
             NewCustomer nc = new NewCustomer();
             nc.ShowDialog();
+            if (nc.IsDisposed)
+            {
+                initTable(" Where Deleted =0");
+            }
         }
 
         private void txtSurname_KeyUp(object sender, KeyEventArgs e)
@@ -223,6 +227,11 @@ namespace Avengers.Presentacion
             ckDel.Checked = false;
             initTable(" Where Deleted=0");
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
