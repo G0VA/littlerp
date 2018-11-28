@@ -26,6 +26,7 @@ namespace Avengers.Presentacion
         public Menu()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.Sizable;
                
         }
 

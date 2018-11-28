@@ -52,3 +52,6 @@ C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Av
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewUsers.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\littlerp\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe.config
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.exe
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.pdb
