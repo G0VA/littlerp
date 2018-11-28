@@ -50,6 +50,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -106,7 +108,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(73, 243);
+            this.label6.Location = new System.Drawing.Point(73, 293);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 16);
             this.label6.TabIndex = 5;
@@ -116,7 +118,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(73, 279);
+            this.label7.Location = new System.Drawing.Point(73, 329);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 16);
             this.label7.TabIndex = 6;
@@ -126,7 +128,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(73, 312);
+            this.label8.Location = new System.Drawing.Point(73, 362);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 16);
             this.label8.TabIndex = 7;
@@ -136,7 +138,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(73, 356);
+            this.label9.Location = new System.Drawing.Point(73, 406);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 16);
             this.label9.TabIndex = 8;
@@ -183,31 +185,37 @@
             // 
             // cmbReg
             // 
+            this.cmbReg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbReg.FormattingEnabled = true;
-            this.cmbReg.Location = new System.Drawing.Point(165, 237);
+            this.cmbReg.Location = new System.Drawing.Point(165, 287);
             this.cmbReg.Name = "cmbReg";
             this.cmbReg.Size = new System.Drawing.Size(214, 21);
             this.cmbReg.TabIndex = 14;
+            this.cmbReg.SelectedIndexChanged += new System.EventHandler(this.cmbReg_SelectedIndexChanged);
             // 
             // cmbProv
             // 
+            this.cmbProv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProv.FormattingEnabled = true;
-            this.cmbProv.Location = new System.Drawing.Point(165, 274);
+            this.cmbProv.Location = new System.Drawing.Point(165, 324);
             this.cmbProv.Name = "cmbProv";
             this.cmbProv.Size = new System.Drawing.Size(214, 21);
             this.cmbProv.TabIndex = 15;
+            this.cmbProv.SelectedIndexChanged += new System.EventHandler(this.cmbProv_SelectedIndexChanged);
             // 
             // cmbCity
             // 
+            this.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCity.FormattingEnabled = true;
-            this.cmbCity.Location = new System.Drawing.Point(165, 311);
+            this.cmbCity.Location = new System.Drawing.Point(165, 361);
             this.cmbCity.Name = "cmbCity";
             this.cmbCity.Size = new System.Drawing.Size(214, 21);
             this.cmbCity.TabIndex = 16;
+            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
             // txtZIP
             // 
-            this.txtZIP.Location = new System.Drawing.Point(165, 351);
+            this.txtZIP.Location = new System.Drawing.Point(165, 401);
             this.txtZIP.MaxLength = 50;
             this.txtZIP.Name = "txtZIP";
             this.txtZIP.Size = new System.Drawing.Size(134, 20);
@@ -216,16 +224,18 @@
             // 
             // cmbZIP
             // 
+            this.cmbZIP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbZIP.FormattingEnabled = true;
-            this.cmbZIP.Location = new System.Drawing.Point(165, 351);
+            this.cmbZIP.Location = new System.Drawing.Point(165, 401);
             this.cmbZIP.Name = "cmbZIP";
             this.cmbZIP.Size = new System.Drawing.Size(143, 21);
             this.cmbZIP.TabIndex = 18;
+            this.cmbZIP.SelectedIndexChanged += new System.EventHandler(this.cmbZIP_SelectedIndexChanged);
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(31, 411);
+            this.btnCancel.Location = new System.Drawing.Point(31, 461);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 32);
             this.btnCancel.TabIndex = 19;
@@ -235,7 +245,7 @@
             // btnAddNew
             // 
             this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.Location = new System.Drawing.Point(165, 411);
+            this.btnAddNew.Location = new System.Drawing.Point(165, 461);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(121, 32);
             this.btnAddNew.TabIndex = 20;
@@ -245,7 +255,7 @@
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(344, 411);
+            this.btnAdd.Location = new System.Drawing.Point(344, 461);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 32);
             this.btnAdd.TabIndex = 21;
@@ -253,11 +263,31 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(76, 248);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 16);
+            this.label10.TabIndex = 22;
+            this.label10.Text = "Address:";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(165, 243);
+            this.txtAddress.MaxLength = 30;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(214, 20);
+            this.txtAddress.TabIndex = 23;
+            // 
             // NewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 474);
+            this.ClientSize = new System.Drawing.Size(461, 532);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnCancel);
@@ -312,5 +342,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtAddress;
     }
 }

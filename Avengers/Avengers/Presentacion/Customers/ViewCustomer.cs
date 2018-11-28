@@ -90,10 +90,10 @@ namespace Avengers.Presentacion
         {
             Customer c = new Customer();
             c.getGestor().readInDB("CITY", "CITIES", cond);
-            DataTable tstate = c.getGestor().getCustomers();
+            DataTable tcity = c.getGestor().getCustomers();
             cmbCity.Items.Clear();
 
-            foreach (DataRow row in tstate.Rows)
+            foreach (DataRow row in tcity.Rows)
             {
                 cmbCity.Items.Add(row["CITY"]);
             }
