@@ -182,7 +182,7 @@
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(188, 20);
             this.txtZip.TabIndex = 13;
-            this.txtZip.Text = "<Select ZIP code>";
+            this.txtZip.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtZip_KeyUp);
             // 
             // ckDel
             // 
@@ -193,6 +193,7 @@
             this.ckDel.TabIndex = 14;
             this.ckDel.Text = "Deleted";
             this.ckDel.UseVisualStyleBackColor = true;
+            this.ckDel.CheckedChanged += new System.EventHandler(this.ckDel_CheckedChanged);
             // 
             // btnClean
             // 
@@ -203,6 +204,7 @@
             this.btnClean.TabIndex = 15;
             this.btnClean.Text = "Clean";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // dgvCustomer
             // 

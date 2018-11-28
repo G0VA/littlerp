@@ -105,7 +105,8 @@ namespace Avengers.Presentacion
             String sql = " Where 1=1";
             String subCons = " AND REFZIPCODESCITIES IN (SELECT IDZIPCODESCITIES FROM ZIPCODESCITIES Z INNER JOIN STATES S " +
                                 "ON Z.REFSTATE = S.IDSTATE INNER JOIN REGIONS R ON S.REFREGION = R.IDREGION "+
-                                " INNER JOIN CITIES CI ON Z.REFCITY = CI.IDCITY WHERE 1=1 ";
+                                " INNER JOIN CITIES CI ON Z.REFCITY = CI.IDCITY "+
+                                " INNER JOIN ZIPCODES ZIP ON ZIP.IDZIPCODE=Z.REFZIPCODE WHERE 1=1 ";
 
             if (!String.IsNullOrEmpty(txtName.Text))
             {
@@ -135,6 +136,14 @@ namespace Avengers.Presentacion
             {
                 subCons += " AND CI.CITY = '" + cmbCity.SelectedItem.ToString() + "' ";
                 comb++;
+            }
+            if (!String.IsNullOrEmpty(txtZip.Text))
+            {
+                subCons += " AND ZIP.ZIPCODE= '%" + txtZip.Text + "%' ";
+            }
+            if (ckDel.Checked)
+            {
+                sql += " And DELETED=1";
             }
 
 
@@ -189,6 +198,31 @@ namespace Avengers.Presentacion
         private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
+        }
+
+        private void txtZip_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
+        }
+
+        private void ckDel_CheckedChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            txtName.Clear();
+            txtSurname.Clear();
+            txtDNI.Clear();
+            //cmbReg.SelectedIndex = -1;
+            cmbCity.SelectedIndex = -1;
+            //cmbProv.SelectedIndex = -1;
+            initCombos();
+            txtZip.Clear();
+            ckDel.Checked = false;
+            initTable(" Where Deleted=0");
+
         }
     }
 }

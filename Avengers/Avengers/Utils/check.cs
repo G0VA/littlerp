@@ -26,5 +26,11 @@ namespace Avengers.Utils
             Regex regex = new Regex("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
             return regex.IsMatch(email);
         }
+
+        public static bool checkPrice(String price)
+        {
+            Regex regex = new Regex("^[0-9]+([.][0-9]+)?$");
+            return regex.IsMatch(price);
+        }
     }
 }

@@ -9,6 +9,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avengers.Utils;
+using Avengers.Dominio;
+using Avengers.Persistencia;
 
 namespace Avengers.Presentacion
 {
@@ -27,8 +29,29 @@ namespace Avengers.Presentacion
             return !(string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtSurname.Text) && string.IsNullOrEmpty(txtDNI.Text)) && Utils.check.checkDNI(txtDNI.Text);
         }
 
-        
-        
+        private String errorDialog()
+        {
+            String error = " Se han encontrado los Siguientes Errores: \n";
+
+            if (string.IsNullOrEmpty(txtName.Text))
+            {
+                error += " -";
+            }
+
+            return error;
+        }
+
+        public bool existCustomer()
+        {
+            bool exist = false;
+            ConnectOracle search = new ConnectOracle();
+            int resp = Convert.ToInt16(search.DLookUp("count(*)", "customers", "UPPER(DNI)= '" + txtDNI.Text.ToUpper() + "' AND DELETED=0"));
+            if (resp > 0)
+            {
+                exist = true;
+            }
+            return exist;
+        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -40,7 +63,14 @@ namespace Avengers.Presentacion
             }
             if (checkAdd() && email)
             {
-                MessageBox.Show("Dentro");
+                if (!existCustomer())
+                {
+                    MessageBox.Show("Dentro");
+                }else
+                {
+                    MessageBox.Show("Existe DNI");
+                }
+                
             }else if (!email)
             {
                 MessageBox.Show("Error Email");

@@ -56,5 +56,6 @@ namespace Avengers.Dominio.Gestores
             data = search.getData("Select " + column + " from "+table+" " + cond , "littlerp");
             tabla = data.Tables["littlerp"];
         }
+      
     }
 }
