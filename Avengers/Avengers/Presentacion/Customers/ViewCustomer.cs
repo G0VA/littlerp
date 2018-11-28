@@ -18,6 +18,7 @@ namespace Avengers.Presentacion
         {
             InitializeComponent();
             initTable(" Where Deleted =0");
+            initCombos();
         }
 
         private void initTable(String cond)
@@ -25,10 +26,10 @@ namespace Avengers.Presentacion
             dgvCustomer.Columns.Clear();
          
             Customer c = new Customer();
-            c.gestor().readCustomers(cond);
+            c.getGestor().readCustomers(cond);
 
             
-            DataTable tcustomers = c.gestor().getCustomers();
+            DataTable tcustomers = c.getGestor().getCustomers();
             dgvCustomer.Columns.Clear();
 
             //dgvCustomers.DataSource = tcustomers;
@@ -50,9 +51,61 @@ namespace Avengers.Presentacion
             
         }
 
+        private void initCombos()
+        {
+            initRegion("");
+            initProv("");
+            cmbCity.Enabled = false;
+            //initZip();
+        }
+
+        private void initRegion(String cond)
+        {
+            Customer c = new Customer();
+            c.getGestor().readInDB("REGION","REGIONS", cond);
+            DataTable tregion = c.getGestor().getCustomers();
+            cmbReg.Items.Clear();
+
+            foreach(DataRow row in tregion.Rows)
+            {
+                cmbReg.Items.Add(row["REGION"]);
+            }
+        }
+        private void initProv(String cond)
+        {
+
+            Customer c = new Customer();
+            c.getGestor().readInDB("STATE", "STATES", cond);
+            DataTable tstate = c.getGestor().getCustomers();
+            cmbProv.Items.Clear();
+
+            foreach (DataRow row in tstate.Rows)
+            {
+                cmbProv.Items.Add(row["STATE"]);
+            }
+
+        }
+
+        private void initCities(String cond)
+        {
+            Customer c = new Customer();
+            c.getGestor().readInDB("CITY", "CITIES", cond);
+            DataTable tstate = c.getGestor().getCustomers();
+            cmbCity.Items.Clear();
+
+            foreach (DataRow row in tstate.Rows)
+            {
+                cmbCity.Items.Add(row["CITY"]);
+            }
+        }
+
         public void filtrar()
         {
+            int comb = 0;
             String sql = " Where 1=1";
+            String subCons = " AND REFZIPCODESCITIES IN (SELECT IDZIPCODESCITIES FROM ZIPCODESCITIES Z INNER JOIN STATES S " +
+                                "ON Z.REFSTATE = S.IDSTATE INNER JOIN REGIONS R ON S.REFREGION = R.IDREGION "+
+                                " INNER JOIN CITIES CI ON Z.REFCITY = CI.IDCITY WHERE 1=1 ";
 
             if (!String.IsNullOrEmpty(txtName.Text))
             {
@@ -66,7 +119,34 @@ namespace Avengers.Presentacion
             {
                 sql += " And Upper(DNI) like '%" + txtDNI.Text.ToUpper() + "%'";
             }
-            initTable(sql);
+
+
+            if(cmbReg.SelectedIndex != -1)
+            {
+                subCons += " AND R.REGION = '" + cmbReg.SelectedItem.ToString()+"' ";
+                comb++;
+            }
+            if (cmbProv.SelectedIndex != -1)
+            {
+                subCons += " AND  S.STATE = '" + cmbProv.SelectedItem.ToString() + "' ";
+                comb++;
+            }
+            if(cmbCity.SelectedIndex != -1)
+            {
+                subCons += " AND CI.CITY = '" + cmbCity.SelectedItem.ToString() + "' ";
+                comb++;
+            }
+
+
+            Console.WriteLine(sql);
+            if (comb > 0)
+            {
+                initTable(sql+subCons+")");
+            }else
+            {
+                initTable(sql);
+            }
+            
         }
         private void txtName_KeyUp(object sender, KeyEventArgs e)
         {
@@ -85,6 +165,28 @@ namespace Avengers.Presentacion
         }
 
         private void txtDNI_KeyUp(object sender, KeyEventArgs e)
+        {
+            filtrar();
+        }
+
+        private void cmbReg_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtrar();
+            cmbProv.Items.Clear();
+            String cond = " Where Refregion = (Select idRegion from regions where Region = '"+ cmbReg.SelectedItem.ToString()+ "')";
+            initProv(cond);
+        }
+
+        private void cmbProv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtrar();
+            String cond= " Where idcity in(select refcity from zipcodescities z inner join states s on z.refstate= s.idstate where state= '"+cmbProv.SelectedItem.ToString()+"')";
+            cmbCity.Enabled = true;
+            cmbCity.Items.Clear();
+            initCities(cond);
+        }
+
+        private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
         }

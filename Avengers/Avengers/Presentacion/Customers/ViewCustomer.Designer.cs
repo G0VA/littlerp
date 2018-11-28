@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbReg = new System.Windows.Forms.ComboBox();
-            this.v = new System.Windows.Forms.ComboBox();
+            this.cmbProv = new System.Windows.Forms.ComboBox();
             this.cmbCity = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtZip = new System.Windows.Forms.TextBox();
@@ -138,27 +138,33 @@
             // 
             // cmbReg
             // 
+            this.cmbReg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbReg.FormattingEnabled = true;
             this.cmbReg.Location = new System.Drawing.Point(476, 39);
             this.cmbReg.Name = "cmbReg";
             this.cmbReg.Size = new System.Drawing.Size(191, 21);
             this.cmbReg.TabIndex = 9;
+            this.cmbReg.SelectedIndexChanged += new System.EventHandler(this.cmbReg_SelectedIndexChanged);
             // 
-            // v
+            // cmbProv
             // 
-            this.v.FormattingEnabled = true;
-            this.v.Location = new System.Drawing.Point(476, 69);
-            this.v.Name = "v";
-            this.v.Size = new System.Drawing.Size(191, 21);
-            this.v.TabIndex = 10;
+            this.cmbProv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProv.FormattingEnabled = true;
+            this.cmbProv.Location = new System.Drawing.Point(476, 69);
+            this.cmbProv.Name = "cmbProv";
+            this.cmbProv.Size = new System.Drawing.Size(191, 21);
+            this.cmbProv.TabIndex = 10;
+            this.cmbProv.SelectedIndexChanged += new System.EventHandler(this.cmbProv_SelectedIndexChanged);
             // 
             // cmbCity
             // 
+            this.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCity.FormattingEnabled = true;
             this.cmbCity.Location = new System.Drawing.Point(476, 98);
             this.cmbCity.Name = "cmbCity";
             this.cmbCity.Size = new System.Drawing.Size(191, 21);
             this.cmbCity.TabIndex = 11;
+            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -176,6 +182,7 @@
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(188, 20);
             this.txtZip.TabIndex = 13;
+            this.txtZip.Text = "<Select ZIP code>";
             // 
             // ckDel
             // 
@@ -268,7 +275,7 @@
             this.Controls.Add(this.txtZip);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbCity);
-            this.Controls.Add(this.v);
+            this.Controls.Add(this.cmbProv);
             this.Controls.Add(this.cmbReg);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -299,7 +306,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbReg;
-        private System.Windows.Forms.ComboBox v;
+        private System.Windows.Forms.ComboBox cmbProv;
         private System.Windows.Forms.ComboBox cmbCity;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtZip;

@@ -16,7 +16,7 @@ namespace Avengers.Dominio
         {
             g = new GestorCustomers();
         }
-        public GestorCustomers gestor()
+        public GestorCustomers getGestor()
         {
             return g;
         }
