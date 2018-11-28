@@ -126,22 +126,6 @@ namespace Avengers.Presentacion
         
         }
 
-       /**private void click_tag(object sender, EventArgs e)
-        {
-            if (tabControl.SelectedTab.Name == "Customers")
-            {
-
-            }
-            if (tabControl.SelectedTab.Name == "Products")
-            {
-
-            }
-            if (tabControl.SelectedTab.Name == "Orders")
-            {             
-
-            }
-        }*/
-
         private void customers_Click(object sender, EventArgs e)
         {
             if (!openC)
@@ -167,33 +151,47 @@ namespace Avengers.Presentacion
 
         private void btnCloseTab_Click(object sender, EventArgs e)
         {
-            if (tabControl.TabPages.ContainsKey("u1"))
+            if (tabControl.TabCount > 0)
             {
-                this.openU = false;
-                //u1.limpiar();
-                u1.Visible = false;
-            }
-            if (tabControl.TabPages.ContainsKey("o1"))
-            {
-                this.openO = false;
-                o1.Visible = false;
-            }
-            if (tabControl.TabPages.ContainsKey("c1"))
-            {
-                this.openC = false;
-                c1.Visible = false;
-            }
-            if (tabControl.TabPages.ContainsKey("p1"))
-            {
-                this.openP = false;
-                p1.Visible = false;
-            }
+                if (tabControl.SelectedTab.Name.Equals("u1"))
+                {
+                    Console.WriteLine("Traza-- ¿entra en U?");
+                    this.openU = false;
+                    //u1.limpiar();
+                    u1.Visible = false;
+                }
+                if (tabControl.SelectedTab.Name.Equals("o1"))
+                {
+                    Console.WriteLine("Traza-- ¿entra en O?");
+                    this.openO = false;
+                    o1.Visible = false;
+                }
+                if (tabControl.SelectedTab.Name.Equals("c1"))
+                {
+                    Console.WriteLine("Traza-- ¿entra en C?");
+                    this.openC = false;
+                    c1.Visible = false;
+                }
+                if (tabControl.SelectedTab.Name.Equals("p1"))
+                {
+                    Console.WriteLine("Traza-- ¿entra en P?");
+                    this.openP = false;
+                    p1.Visible = false;
+                }
 
-            if (tabControl.RowCount > 0)
-            {
                 tabControl.TabPages.Remove(tabControl.SelectedTab);
-                if(tabControl.RowCount == 0)
+                
+                if (tabControl.TabCount == 0)
+                {
                     tabControl.Visible = false;
+                }
+                else
+                {
+                    int resta = tabControl.TabCount - 1;
+                    //Console.WriteLine("Traza--" + tabControl.TabCount);
+                    //Console.WriteLine("Traza--" + resta);
+                    tabControl.SelectTab(resta);
+                }                   
             }
             else
             {
