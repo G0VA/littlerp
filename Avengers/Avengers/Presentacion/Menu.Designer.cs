@@ -34,11 +34,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.products = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnCustomers = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.customers = new Bunifu.Framework.UI.BunifuFlatButton();
             this.users = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnOrders = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnExit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSys = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.btnCloseTab = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.products);
-            this.bunifuGradientPanel1.Controls.Add(this.btnCustomers);
+            this.bunifuGradientPanel1.Controls.Add(this.customers);
             this.bunifuGradientPanel1.Controls.Add(this.users);
             this.bunifuGradientPanel1.Controls.Add(this.btnOrders);
             this.bunifuGradientPanel1.Controls.Add(this.btnExit);
@@ -114,44 +116,45 @@
             this.products.Textcolor = System.Drawing.Color.White;
             this.products.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.products.Visible = false;
+            this.products.Click += new System.EventHandler(this.products_Click);
             // 
-            // btnCustomers
+            // customers
             // 
-            this.btnCustomers.Activecolor = System.Drawing.Color.Transparent;
-            this.btnCustomers.BackColor = System.Drawing.Color.Transparent;
-            this.btnCustomers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCustomers.BorderRadius = 0;
-            this.btnCustomers.ButtonText = "       Customers";
-            this.btnCustomers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCustomers.DisabledColor = System.Drawing.Color.Gray;
-            this.btnCustomers.Enabled = false;
-            this.btnCustomers.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCustomers.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnCustomers.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Iconimage")));
-            this.btnCustomers.Iconimage_right = null;
-            this.btnCustomers.Iconimage_right_Selected = null;
-            this.btnCustomers.Iconimage_Selected = null;
-            this.btnCustomers.IconMarginLeft = 0;
-            this.btnCustomers.IconMarginRight = 0;
-            this.btnCustomers.IconRightVisible = true;
-            this.btnCustomers.IconRightZoom = 0D;
-            this.btnCustomers.IconVisible = false;
-            this.btnCustomers.IconZoom = 90D;
-            this.btnCustomers.IsTab = false;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 95);
-            this.btnCustomers.Name = "btnCustomers";
-            this.btnCustomers.Normalcolor = System.Drawing.Color.Transparent;
-            this.btnCustomers.OnHovercolor = System.Drawing.Color.DodgerBlue;
-            this.btnCustomers.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnCustomers.selected = false;
-            this.btnCustomers.Size = new System.Drawing.Size(177, 19);
-            this.btnCustomers.TabIndex = 4;
-            this.btnCustomers.Text = "       Customers";
-            this.btnCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.Textcolor = System.Drawing.Color.White;
-            this.btnCustomers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCustomers.Visible = false;
-            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            this.customers.Activecolor = System.Drawing.Color.Transparent;
+            this.customers.BackColor = System.Drawing.Color.Transparent;
+            this.customers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.customers.BorderRadius = 0;
+            this.customers.ButtonText = "       Customers";
+            this.customers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customers.DisabledColor = System.Drawing.Color.Gray;
+            this.customers.Enabled = false;
+            this.customers.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.customers.Iconcolor = System.Drawing.Color.Transparent;
+            this.customers.Iconimage = ((System.Drawing.Image)(resources.GetObject("customers.Iconimage")));
+            this.customers.Iconimage_right = null;
+            this.customers.Iconimage_right_Selected = null;
+            this.customers.Iconimage_Selected = null;
+            this.customers.IconMarginLeft = 0;
+            this.customers.IconMarginRight = 0;
+            this.customers.IconRightVisible = true;
+            this.customers.IconRightZoom = 0D;
+            this.customers.IconVisible = false;
+            this.customers.IconZoom = 90D;
+            this.customers.IsTab = false;
+            this.customers.Location = new System.Drawing.Point(0, 95);
+            this.customers.Name = "customers";
+            this.customers.Normalcolor = System.Drawing.Color.Transparent;
+            this.customers.OnHovercolor = System.Drawing.Color.DodgerBlue;
+            this.customers.OnHoverTextColor = System.Drawing.Color.White;
+            this.customers.selected = false;
+            this.customers.Size = new System.Drawing.Size(177, 19);
+            this.customers.TabIndex = 4;
+            this.customers.Text = "       Customers";
+            this.customers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.customers.Textcolor = System.Drawing.Color.White;
+            this.customers.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customers.Visible = false;
+            this.customers.Click += new System.EventHandler(this.customers_Click);
             // 
             // users
             // 
@@ -236,6 +239,7 @@
             this.btnExit.ButtonText = "                Exit";
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.DisabledColor = System.Drawing.Color.Gray;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnExit.Iconcolor = System.Drawing.Color.Transparent;
             this.btnExit.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnExit.Iconimage")));
             this.btnExit.Iconimage_right = null;
@@ -248,7 +252,7 @@
             this.btnExit.IconVisible = false;
             this.btnExit.IconZoom = 90D;
             this.btnExit.IsTab = false;
-            this.btnExit.Location = new System.Drawing.Point(0, 294);
+            this.btnExit.Location = new System.Drawing.Point(0, 324);
             this.btnExit.Name = "btnExit";
             this.btnExit.Normalcolor = System.Drawing.Color.Transparent;
             this.btnExit.OnHovercolor = System.Drawing.Color.DodgerBlue;
@@ -298,17 +302,41 @@
             this.btnSys.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSys.Click += new System.EventHandler(this.btnSys_Click);
             // 
+            // tabControl
+            // 
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControl.HotTrack = true;
+            this.tabControl.Location = new System.Drawing.Point(177, 0);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(524, 25);
+            this.tabControl.TabIndex = 2;
+            this.tabControl.Visible = false;
+            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
+            // 
+            // btnCloseTab
+            // 
+            this.btnCloseTab.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCloseTab.ForeColor = System.Drawing.Color.Red;
+            this.btnCloseTab.Location = new System.Drawing.Point(650, 25);
+            this.btnCloseTab.Name = "btnCloseTab";
+            this.btnCloseTab.Size = new System.Drawing.Size(51, 347);
+            this.btnCloseTab.TabIndex = 4;
+            this.btnCloseTab.Text = "Close";
+            this.btnCloseTab.UseVisualStyleBackColor = true;
+            this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 372);
+            this.ClientSize = new System.Drawing.Size(701, 372);
+            this.Controls.Add(this.btnCloseTab);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Menu";
             this.Text = "Menu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -325,6 +353,8 @@
         private Bunifu.Framework.UI.BunifuFlatButton users;
         private Bunifu.Framework.UI.BunifuFlatButton btnOrders;
         private Bunifu.Framework.UI.BunifuFlatButton products;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCustomers;
+        private Bunifu.Framework.UI.BunifuFlatButton customers;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.Button btnCloseTab;
     }
 }

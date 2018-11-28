@@ -16,5 +16,12 @@ namespace Avengers.Presentacion
         {
             InitializeComponent();
         }
+
+        public void limpiar()
+        {
+            comboBox1.ResetText();
+            comboBox2.ResetText();
+            textBox1.Clear();
+        }
     }
 }

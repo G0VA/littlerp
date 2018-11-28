@@ -41,7 +41,6 @@
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
@@ -55,7 +54,15 @@
   <ItemGroup>
     <Compile Include="Dominio\Customer.cs" />
     <Compile Include="Dominio\Gestores\GestorCustomers.cs" />
+    <Compile Include="Dominio\Gestores\GestorProducts.cs" />
+    <Compile Include="Dominio\Product.cs" />
     <Compile Include="Persistencia\ConnectOracle.cs" />
+    <Compile Include="Presentacion\Customers\NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Customers\NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Customers\ViewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +81,17 @@
     <Compile Include="Presentacion\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Customers\NewCustomer.cs">
+    <Compile Include="Presentacion\Orders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Customers\NewCustomer.Designer.cs">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
+    <Compile Include="Presentacion\Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Products\ViewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Products\ViewProduct.Designer.cs">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Users.cs">
       <SubType>Form</SubType>
@@ -99,6 +112,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\Customers\NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Customers\ViewCustomer.resx">
       <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,8 +124,11 @@
     <EmbeddedResource Include="Presentacion\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Customers\NewCustomer.resx">
-      <DependentUpon>NewCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Products\ViewProduct.resx">
+      <DependentUpon>ViewProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
@@ -119,7 +138,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
