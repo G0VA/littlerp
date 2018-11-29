@@ -63,7 +63,6 @@ C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.P
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewCustomer.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Login.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Menu.resources
-C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.ViewProduct.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.ModUser.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewRole.resources
@@ -109,3 +108,6 @@ C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers
 C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe
 C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\bin\Debug\Avengers.pdb
 C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\bin\Debug\Oracle.DataAccess.dll
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.NewOrder.resources
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.ViewOrders.resources
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.NewProduct.resources

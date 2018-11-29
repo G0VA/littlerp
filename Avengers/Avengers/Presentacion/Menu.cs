@@ -124,6 +124,10 @@ namespace Avengers.Presentacion
 
                 this.openO = true;
             }
+            else
+            {
+                ocultarBtn();
+            }
         
         }
 
