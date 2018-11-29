@@ -83,11 +83,17 @@
     <Compile Include="Presentacion\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Orders.cs">
+    <Compile Include="Presentacion\Orders\NewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <Compile Include="Presentacion\Orders\NewOrder.Designer.cs">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Orders\ViewOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Orders\ViewOrders.Designer.cs">
+      <DependentUpon>ViewOrders.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Products\NewProduct.cs">
       <SubType>Form</SubType>
@@ -150,8 +156,11 @@
     <EmbeddedResource Include="Presentacion\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Orders\NewOrder.resx">
+      <DependentUpon>NewOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Orders\ViewOrders.resx">
+      <DependentUpon>ViewOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Products\NewProduct.resx">
       <DependentUpon>NewProduct.cs</DependentUpon>

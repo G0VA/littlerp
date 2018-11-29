@@ -8,13 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Avengers.Presentacion
+namespace Avengers.Presentacion.Orders
 {
-    public partial class Orders : Form
+    public partial class ViewOrders : Form
     {
-        public Orders()
+        public ViewOrders()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            NewOrder o = new NewOrder();
+            o.Show();
         }
     }
 }

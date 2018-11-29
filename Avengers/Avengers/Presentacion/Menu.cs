@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avengers.Presentacion.Products;
+using Avengers.Presentacion.Orders;
 
 namespace Avengers.Presentacion
 {
     public partial class Menu : Form
     {
         private ViewUsers u1 = new ViewUsers();
-        private Orders o1 = new Orders();
+        private ViewOrders o1 = new ViewOrders();
         private ViewCustomer c1 = new ViewCustomer();
         private ViewProduct p1 = new ViewProduct();
 
@@ -114,7 +115,7 @@ namespace Avengers.Presentacion
                 o1.Dock = DockStyle.Fill;
                 o1.Show();
 
-                TabPage tp = new TabPage("Ordes");
+                TabPage tp = new TabPage("Orders");
                 tp.Tag = o1;
                 tp.Name = "o1";
                 tp.Parent = tabControl;
