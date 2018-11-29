@@ -77,6 +77,11 @@ namespace Avengers.Presentacion
 
                 this.openU = true;
             }
+            else
+            {
+                int n = tabControl.TabPages.IndexOfKey("u1");
+                tabControl.SelectTab(n);
+            }
              
         }
  
@@ -127,6 +132,8 @@ namespace Avengers.Presentacion
             else
             {
                 ocultarBtn();
+                int n = tabControl.TabPages.IndexOfKey("o1");
+                tabControl.SelectTab(n);
             }
         
         }
@@ -152,6 +159,12 @@ namespace Avengers.Presentacion
 
                 this.openC = true;
             }
+            else
+            {
+                int n = tabControl.TabPages.IndexOfKey("c1");
+                tabControl.SelectTab(n);
+            }
+            
         }
 
         private void btnCloseTab_Click(object sender, EventArgs e)
@@ -225,6 +238,11 @@ namespace Avengers.Presentacion
                 p1.Tag = tp;
 
                 this.openP = true;
+            }
+            else
+            {
+                int n = tabControl.TabPages.IndexOfKey("p1");
+                tabControl.SelectTab(n);
             }
         }
     }
