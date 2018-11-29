@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Avengers.Utils;
 using Avengers.Dominio;
 using Avengers.Persistencia;
+using Avengers.Dominio.Gestores;
 
 namespace Avengers.Presentacion
 {
@@ -96,7 +97,7 @@ namespace Avengers.Presentacion
          */
         private bool checkAdd()
         {
-            return !(string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtSurname.Text) && string.IsNullOrEmpty(txtDNI.Text)) && Utils.check.checkDNI(txtDNI.Text) && !existCustomer();
+            return !(string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtSurname.Text) && string.IsNullOrEmpty(txtDNI.Text)) && Utils.check.checkDNI(txtDNI.Text) && !GestorCustomers.existDNI(txtDNI.Text);
         }
 
         private String errorDialog()
@@ -120,7 +121,7 @@ namespace Avengers.Presentacion
                 error += "\t - The DNI doesn't the correct format \n" +
                           " \t\t Example- 00000000A \n";
             }
-            if (existCustomer())
+            if (GestorCustomers.existDNI(txtDNI.Text))
             {
                 error += "\t - Already exist a User with the DNI: " + txtDNI.Text;
             }
@@ -128,17 +129,7 @@ namespace Avengers.Presentacion
             return error;
         }
 
-        public bool existCustomer()
-        {
-            bool exist = false;
-            ConnectOracle search = new ConnectOracle();
-            int resp = Convert.ToInt16(search.DLookUp("count(*)", "customers", "UPPER(DNI)= '" + txtDNI.Text.ToUpper() + "' AND DELETED=0"));
-            if (resp > 0)
-            {
-                exist = true;
-            }
-            return exist;
-        }
+   
         public void insertCustomer()
         {
             //Construimos El insert

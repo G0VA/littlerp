@@ -56,6 +56,28 @@ namespace Avengers.Dominio.Gestores
             data = search.getData("Select " + column + " from "+table+" " + cond , "littlerp");
             tabla = data.Tables["littlerp"];
         }
-      
+        public static bool existCustomer(String id)
+        {
+            bool exist = false;
+            ConnectOracle search = new ConnectOracle();
+            int resp = Convert.ToInt16(search.DLookUp("count(*)", "customers", "IDCUSTOMER= '" + id + "' AND DELETED=0"));
+            if (resp > 0)
+            {
+                exist = true;
+            }
+            return exist;
+        }
+        public static bool existDNI(String DNI)
+        {
+            bool exist = false;
+            ConnectOracle search = new ConnectOracle();
+            int resp = Convert.ToInt16(search.DLookUp("count(*)", "customers", "UPPER(DNI)= '" + DNI.ToUpper() + "' AND DELETED=0"));
+            if (resp > 0)
+            {
+                exist = true;
+            }
+            return exist;
+        }
+
     }
 }

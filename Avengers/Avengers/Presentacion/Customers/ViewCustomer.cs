@@ -1,4 +1,5 @@
 ﻿using Avengers.Dominio;
+using Avengers.Dominio.Gestores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -232,7 +233,11 @@ namespace Avengers.Presentacion
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            
+            String valor = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString();
+            if (GestorCustomers.existCustomer(valor))
+            {
+                MessageBox.Show("Existe");
+            }
         }
     }
 }
