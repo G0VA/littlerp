@@ -155,26 +155,26 @@ namespace Avengers.Presentacion
             {
                 if (tabControl.SelectedTab.Name.Equals("u1"))
                 {
-                    Console.WriteLine("Traza-- ¿entra en U?");
+                    //Console.WriteLine("Traza-- ¿entra en U?");
                     this.openU = false;
                     //u1.limpiar();
                     u1.Visible = false;
                 }
                 if (tabControl.SelectedTab.Name.Equals("o1"))
                 {
-                    Console.WriteLine("Traza-- ¿entra en O?");
+                    //Console.WriteLine("Traza-- ¿entra en O?");
                     this.openO = false;
                     o1.Visible = false;
                 }
                 if (tabControl.SelectedTab.Name.Equals("c1"))
                 {
-                    Console.WriteLine("Traza-- ¿entra en C?");
+                    //Console.WriteLine("Traza-- ¿entra en C?");
                     this.openC = false;
                     c1.Visible = false;
                 }
                 if (tabControl.SelectedTab.Name.Equals("p1"))
                 {
-                    Console.WriteLine("Traza-- ¿entra en P?");
+                    //Console.WriteLine("Traza-- ¿entra en P?");
                     this.openP = false;
                     p1.Visible = false;
                 }

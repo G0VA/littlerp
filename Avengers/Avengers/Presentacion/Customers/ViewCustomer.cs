@@ -48,6 +48,7 @@ namespace Avengers.Presentacion
             {
                 dgvCustomer.Rows.Add(row["IDCUSTOMER"], row["NAME"], row["SURNAME"], row["DNI"], row["ADDRESS"], row["PHONE"], row["EMAIL"], row["REFZIPCODESCITIES"]);
             }
+            this.dgvCustomer.Columns["IDCUSTOMER"].Visible = false;
             
         }
 
