@@ -14,15 +14,10 @@ namespace Avengers.Presentacion
 {
     public partial class Menu : Form
     {
-        private ViewUsers u1 = new ViewUsers();
-        private ViewOrders o1 = new ViewOrders();
-        private ViewCustomer c1 = new ViewCustomer();
-        private ViewProduct p1 = new ViewProduct();
-
-        private bool openU = false;
-        private bool openO = false;
-        private bool openC = false;
-        private bool openP = false;
+        private ViewUsers u1;
+        private ViewCustomer c1;
+        private ViewOrders o1;
+        private ViewProduct p1;
 
         public Menu()
         {
@@ -58,8 +53,9 @@ namespace Avengers.Presentacion
         private void users_Click(object sender, EventArgs e)
         {
 
-            if (!openU)
+            if (!tabControl.TabPages.ContainsKey("u1"))
             {
+                u1 = new ViewUsers();
                 tabControl.Visible = true;
                 u1.MdiParent = this;
                 u1.WindowState = FormWindowState.Normal;
@@ -74,8 +70,6 @@ namespace Avengers.Presentacion
                 tpu.Parent = tabControl;
                 tabControl.SelectedTab = tpu;
                 u1.Tag = tpu;
-
-                this.openU = true;
             }
             else
             {
@@ -96,10 +90,6 @@ namespace Avengers.Presentacion
         private void btnSys_Click(object sender, EventArgs e)
         {
             mostrarBtn();
-            //int namepage = tabControl.TabPages.IndexOfKey("u1");
-            //Console.WriteLine("Entra for");
-            //Console.WriteLine(namepage);
-            //Console.WriteLine("Trazaaaaaaaaaa" + tabControl.TabPages.Count);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -109,8 +99,9 @@ namespace Avengers.Presentacion
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            if (!openO)
+            if (!tabControl.TabPages.ContainsKey("o1"))
             {
+                o1 = new ViewOrders();
                 ocultarBtn();
                 tabControl.Visible = true;
                 o1.MdiParent = this;
@@ -126,8 +117,6 @@ namespace Avengers.Presentacion
                 tp.Parent = tabControl;
                 tabControl.SelectedTab = tp;
                 o1.Tag = tp;
-
-                this.openO = true;
             }
             else
             {
@@ -140,8 +129,9 @@ namespace Avengers.Presentacion
 
         private void customers_Click(object sender, EventArgs e)
         {
-            if (!openC)
+            if (!tabControl.TabPages.ContainsKey("c1"))
             {
+                c1 = new ViewCustomer();
                 tabControl.Visible = true;
                 c1.MdiParent = this;
                 c1.WindowState = FormWindowState.Normal;
@@ -156,8 +146,6 @@ namespace Avengers.Presentacion
                 tp.Parent = tabControl;
                 tabControl.SelectedTab = tp;
                 c1.Tag = tp;
-
-                this.openC = true;
             }
             else
             {
@@ -173,28 +161,19 @@ namespace Avengers.Presentacion
             {
                 if (tabControl.SelectedTab.Name.Equals("u1"))
                 {
-                    //Console.WriteLine("Traza-- ¿entra en U?");
-                    this.openU = false;
-                    //u1.limpiar();
-                    u1.Visible = false;
+                    u1.Dispose();
                 }
                 if (tabControl.SelectedTab.Name.Equals("o1"))
                 {
-                    //Console.WriteLine("Traza-- ¿entra en O?");
-                    this.openO = false;
-                    o1.Visible = false;
+                    o1.Dispose();
                 }
                 if (tabControl.SelectedTab.Name.Equals("c1"))
                 {
-                    //Console.WriteLine("Traza-- ¿entra en C?");
-                    this.openC = false;
-                    c1.Visible = false;
+                    c1.Dispose();
                 }
                 if (tabControl.SelectedTab.Name.Equals("p1"))
                 {
-                    //Console.WriteLine("Traza-- ¿entra en P?");
-                    this.openP = false;
-                    p1.Visible = false;
+                    p1.Dispose();
                 }
 
                 tabControl.TabPages.Remove(tabControl.SelectedTab);
@@ -206,8 +185,6 @@ namespace Avengers.Presentacion
                 else
                 {
                     int resta = tabControl.TabCount - 1;
-                    //Console.WriteLine("Traza--" + tabControl.TabCount);
-                    //Console.WriteLine("Traza--" + resta);
                     tabControl.SelectTab(resta);
                 }                   
             }
@@ -220,8 +197,9 @@ namespace Avengers.Presentacion
 
         private void products_Click(object sender, EventArgs e)
         {
-            if (!openP)
+            if (!tabControl.TabPages.ContainsKey("p1"))
             {
+                p1 = new ViewProduct();
                 tabControl.Visible = true;
                 p1.MdiParent = this;
                 p1.WindowState = FormWindowState.Normal;
@@ -236,8 +214,6 @@ namespace Avengers.Presentacion
                 tp.Parent = tabControl;
                 tabControl.SelectedTab = tp;
                 p1.Tag = tp;
-
-                this.openP = true;
             }
             else
             {
