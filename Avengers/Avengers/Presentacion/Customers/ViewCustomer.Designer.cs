@@ -217,6 +217,7 @@
             this.dgvCustomer.Location = new System.Drawing.Point(12, 153);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.RowHeadersVisible = false;
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomer.Size = new System.Drawing.Size(982, 332);
             this.dgvCustomer.TabIndex = 16;
