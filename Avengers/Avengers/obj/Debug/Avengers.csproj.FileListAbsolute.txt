@@ -71,3 +71,23 @@ C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.P
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewUsers.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe.config
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Avengers.pdb
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\bin\Debug\Oracle.DataAccess.dll
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.csprojResolveAssemblyReference.cache
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.NewCustomer.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewCustomer.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Login.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Menu.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.NewProduct.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.ViewProduct.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.ModUser.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewRole.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewUser.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewUsers.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.exe
+F:\Proyectos VisualStudio\littlerp\Avengers\Avengers\obj\Debug\Avengers.pdb

@@ -21,26 +21,31 @@ namespace Avengers.Presentacion.Products
             initComboGender("Where Deleted = 0");
         }
 
-        private void initComboEditorial(String cond) {
+        private void initComboEditorial(String cond)
+        {
             Product p = new Product();
-            p.getGestor().readInProduct(cond, "EDITORIAL");
+            p.getGestor().readInProductV3(cond, "EDITORIAL", "EDITORIAL");
             DataTable tproduct = p.getGestor().getProducts();
             comboEditorial.Items.Clear();
-
-            foreach (DataRow row in tproduct.Rows) {
+            comboEditorial.Items.Add(" ");
+            foreach (DataRow row in tproduct.Rows)
+            {
                 comboEditorial.Items.Add(row["EDITORIAL"]);
+
             }
         }
         private void initComboGender(String cond)
         {
             Product p = new Product();
-            p.getGestor().readInProduct(cond, "GENDER");
+            p.getGestor().readInProductV3(cond, "GENDER", "GENDER");
             DataTable tproduct = p.getGestor().getProducts();
             comboGender.Items.Clear();
-
+            comboGender.Items.Add(" ");
             foreach (DataRow row in tproduct.Rows)
             {
+
                 comboGender.Items.Add(row["GENDER"]);
+
             }
         }
         private void initTable(String cond)
@@ -55,7 +60,7 @@ namespace Avengers.Presentacion.Products
             dgvProduct.Columns.Clear();
 
             //dgvCustomers.DataSource = tcustomers;
-            
+
 
             dgvProduct.Columns.Add("IDPRODUCT", "ID");
             dgvProduct.Columns.Add("GENDER", "GENDER");
@@ -72,30 +77,42 @@ namespace Avengers.Presentacion.Products
             }
 
         }
-        public void filtrar()     
+        public void filtrar()
         {
             String sql = "Where 1=1";
             if (!String.IsNullOrEmpty(txtName.Text))
             {
                 sql += " And Upper(Name) like '%" + txtName.Text.ToUpper() + "%' ";
             }
+
+            if (comboEditorial.SelectedIndex != -1)
+            {
+                sql += " And Upper(Editorial) = Upper('" + comboEditorial.SelectedItem.ToString() + "')";
+            }
+            if (comboGender.SelectedIndex != -1)
+            {
+                sql += " And Upper(Gender) = Upper('" + comboGender.SelectedItem.ToString() + "')";
+            }
+            if (chckDelete.Checked)
+            {
+                sql += " And deleted = 1";
+            }
+            if (!chckDelete.Checked)
+            {
+                sql += " And deleted = 0";
+            }
+            if (rbtnAscend.Checked)
+            {
+                sql += " ORDER BY PRICE ASC";
+            }
+            if (rbtnDescend.Checked)
+            {
+                sql += " ORDER BY PRICE DESC";
+            }
             initTable(sql);
         }
 
-        public void filtrarCombo(String condicion) {
-            String sql = " Where 1=1";
 
-
-            if (!comboEditorial.Items.Equals("Choose Editorial"))
-            {
-                sql += "And Upper(Editorial) = Upper('" + condicion + "')";
-            }
-            if (!comboGender.Items.Equals("Choose Gender"))
-            {
-                sql += "And Upper(Gender) = Upper('" + condicion +"')";
-            }
-            initTable(sql);
-        }
 
         private void txtName_KeyUp(object sender, KeyEventArgs e)
         {
@@ -104,14 +121,47 @@ namespace Avengers.Presentacion.Products
 
         private void comboEditorial_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            String editorial = comboEditorial.Items[comboEditorial.SelectedIndex].ToString();
-            filtrarCombo(editorial);
+            filtrar();
         }
 
         private void comboGender_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            String gender = comboGender.Items[comboGender.SelectedIndex].ToString();
-            filtrarCombo(gender);
+            filtrar();
+        }
+
+        private void rbtnDescend_CheckedChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void rbtnAscend_CheckedChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            NewProduct np = new NewProduct();
+            np.ShowDialog();
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            initTable("Where Deleted = 0");
+            txtName.Clear();
+            comboGender.SelectedItem = " ";
+            comboEditorial.SelectedItem = " ";
+            this.groupBox1.Controls.OfType<RadioButton>().ToList().ForEach((radiobutton) =>
+            {
+                rbtnAscend.Checked = false;
+                rbtnDescend.Checked = false;
+            });
+
+        }
+
+        private void chckDelete_CheckedChanged(object sender, EventArgs e)
+        {
+            filtrar();
         }
     }
 }
