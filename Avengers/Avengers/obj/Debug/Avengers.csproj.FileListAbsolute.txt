@@ -111,3 +111,24 @@ C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\bin\Debug\Oracle.D
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.NewOrder.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.ViewOrders.resources
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.NewProduct.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe.config
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.exe
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.pdb
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\bin\Debug\Avengers.exe
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\bin\Debug\Avengers.pdb
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.csprojResolveAssemblyReference.cache
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.NewCustomer.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewCustomer.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Login.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Menu.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.NewOrder.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.ViewOrders.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.NewProduct.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.ViewProduct.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.ModUser.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewRole.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewUser.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewUsers.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache

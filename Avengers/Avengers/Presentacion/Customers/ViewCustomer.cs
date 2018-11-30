@@ -25,11 +25,11 @@ namespace Avengers.Presentacion
         private void initTable(String cond)
         {
             dgvCustomer.Columns.Clear();
-         
+
             Customer c = new Customer();
             c.getGestor().readCustomers(cond);
 
-            
+
             DataTable tcustomers = c.getGestor().getCustomers();
             dgvCustomer.Columns.Clear();
 
@@ -43,14 +43,14 @@ namespace Avengers.Presentacion
             dgvCustomer.Columns.Add("PHONE", "PHONE");
             dgvCustomer.Columns.Add("EMAIL", "EMAIL");
             dgvCustomer.Columns.Add("REFZIPCODESCITIES", "REFZIP");
-           
+
 
             foreach (DataRow row in tcustomers.Rows)
             {
                 dgvCustomer.Rows.Add(row["IDCUSTOMER"], row["NAME"], row["SURNAME"], row["DNI"], row["ADDRESS"], row["PHONE"], row["EMAIL"], row["REFZIPCODESCITIES"]);
             }
             this.dgvCustomer.Columns["IDCUSTOMER"].Visible = false;
-            
+
         }
 
         private void initCombos()
@@ -64,11 +64,11 @@ namespace Avengers.Presentacion
         private void initRegion(String cond)
         {
             Customer c = new Customer();
-            c.getGestor().readInDB("REGION","REGIONS", cond);
+            c.getGestor().readInDB("REGION", "REGIONS", cond);
             DataTable tregion = c.getGestor().getCustomers();
             cmbReg.Items.Clear();
 
-            foreach(DataRow row in tregion.Rows)
+            foreach (DataRow row in tregion.Rows)
             {
                 cmbReg.Items.Add(row["REGION"]);
             }
@@ -106,8 +106,8 @@ namespace Avengers.Presentacion
             int comb = 0;
             String sql = " Where 1=1";
             String subCons = " AND REFZIPCODESCITIES IN (SELECT IDZIPCODESCITIES FROM ZIPCODESCITIES Z INNER JOIN STATES S " +
-                                "ON Z.REFSTATE = S.IDSTATE INNER JOIN REGIONS R ON S.REFREGION = R.IDREGION "+
-                                " INNER JOIN CITIES CI ON Z.REFCITY = CI.IDCITY "+
+                                "ON Z.REFSTATE = S.IDSTATE INNER JOIN REGIONS R ON S.REFREGION = R.IDREGION " +
+                                " INNER JOIN CITIES CI ON Z.REFCITY = CI.IDCITY " +
                                 " INNER JOIN ZIPCODES ZIP ON ZIP.IDZIPCODE=Z.REFZIPCODE WHERE 1=1 ";
 
             if (!String.IsNullOrEmpty(txtName.Text))
@@ -124,9 +124,9 @@ namespace Avengers.Presentacion
             }
 
 
-            if(cmbReg.SelectedIndex != -1)
+            if (cmbReg.SelectedIndex != -1)
             {
-                subCons += " AND R.REGION = '" + cmbReg.SelectedItem.ToString()+"' ";
+                subCons += " AND R.REGION = '" + cmbReg.SelectedItem.ToString() + "' ";
                 comb++;
             }
             if (cmbProv.SelectedIndex != -1)
@@ -134,7 +134,7 @@ namespace Avengers.Presentacion
                 subCons += " AND  S.STATE = '" + cmbProv.SelectedItem.ToString() + "' ";
                 comb++;
             }
-            if(cmbCity.SelectedIndex != -1)
+            if (cmbCity.SelectedIndex != -1)
             {
                 subCons += " AND CI.CITY = '" + cmbCity.SelectedItem.ToString() + "' ";
                 comb++;
@@ -152,12 +152,13 @@ namespace Avengers.Presentacion
             Console.WriteLine(sql);
             if (comb > 0)
             {
-                initTable(sql+subCons+")");
-            }else
+                initTable(sql + subCons + ")");
+            }
+            else
             {
                 initTable(sql);
             }
-            
+
         }
         private void txtName_KeyUp(object sender, KeyEventArgs e)
         {
@@ -188,14 +189,14 @@ namespace Avengers.Presentacion
         {
             filtrar();
             cmbProv.Items.Clear();
-            String cond = " Where Refregion = (Select idRegion from regions where Region = '"+ cmbReg.SelectedItem.ToString()+ "')";
+            String cond = " Where Refregion = (Select idRegion from regions where Region = '" + cmbReg.SelectedItem.ToString() + "')";
             initProv(cond);
         }
 
         private void cmbProv_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
-            String cond= " Where idcity in(select refcity from zipcodescities z inner join states s on z.refstate= s.idstate where state= '"+cmbProv.SelectedItem.ToString()+"')";
+            String cond = " Where idcity in(select refcity from zipcodescities z inner join states s on z.refstate= s.idstate where state= '" + cmbProv.SelectedItem.ToString() + "')";
             cmbCity.Enabled = true;
             cmbCity.Items.Clear();
             initCities(cond);
@@ -234,9 +235,19 @@ namespace Avengers.Presentacion
         private void btnDelete_Click(object sender, EventArgs e)
         {
             String valor = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString();
-            if (GestorCustomers.existCustomer(valor))
+            if (!GestorCustomers.existCustomer(valor))
             {
-                MessageBox.Show("Existe");
+                if (MessageBox.Show("Do yo Want Delete this Customers ?", "Delete Customer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    String sql = "update customers set Deleted=1 where idcustomer =" + valor;
+                    GestorCustomers.delCustomers(sql);
+                    initTable(" Where Deleted=0");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("This Customer have Orders in DB");
             }
         }
     }

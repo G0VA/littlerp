@@ -27,7 +27,7 @@ namespace Avengers.Dominio.Gestores
             DataSet data = new DataSet();
             ConnectOracle search = new ConnectOracle();
 
-            data = search.getData("Select * from customers order by idcustomer","littlerp");
+            data = search.getData("Select * from customers order by idcustomer", "littlerp");
             tabla = data.Tables["littlerp"];
         }
 
@@ -36,31 +36,31 @@ namespace Avengers.Dominio.Gestores
             DataSet data = new DataSet();
             ConnectOracle search = new ConnectOracle();
 
-            data = search.getData("Select * from customers "+cond+" order by idcustomer", "littlerp");
+            data = search.getData("Select * from customers " + cond + " order by idcustomer", "littlerp");
             tabla = data.Tables["littlerp"];
         }
 
-        public void readInCustomers(String column, String cond )
+        public void readInCustomers(String column, String cond)
         {
             DataSet data = new DataSet();
             ConnectOracle search = new ConnectOracle();
 
-            data = search.getData("Select "+ column +" from customers " + cond + " order by idcustomer", "littlerp");
+            data = search.getData("Select " + column + " from customers " + cond + " order by idcustomer", "littlerp");
             tabla = data.Tables["littlerp"];
         }
-        public void readInDB(String column, String table,String cond)
+        public void readInDB(String column, String table, String cond)
         {
             DataSet data = new DataSet();
             ConnectOracle search = new ConnectOracle();
 
-            data = search.getData("Select " + column + " from "+table+" " + cond , "littlerp");
+            data = search.getData("Select " + column + " from " + table + " " + cond, "littlerp");
             tabla = data.Tables["littlerp"];
         }
         public static bool existCustomer(String id)
         {
             bool exist = false;
             ConnectOracle search = new ConnectOracle();
-            int resp = Convert.ToInt16(search.DLookUp("count(*)", "customers", "IDCUSTOMER= '" + id + "' AND DELETED=0"));
+            int resp = Convert.ToInt16(search.DLookUp("count(*)", "orders", "REFCUSTOMER= '" + id + "' AND DELETED=0"));
             if (resp > 0)
             {
                 exist = true;
@@ -77,6 +77,18 @@ namespace Avengers.Dominio.Gestores
                 exist = true;
             }
             return exist;
+        }
+
+        public static void delCustomers(String sentencia)
+        {
+            ConnectOracle insert = new ConnectOracle();
+            insert.setData(sentencia);
+
+        }
+        public static void insertCustomer(String sentencia)
+        {
+            ConnectOracle insert = new ConnectOracle();
+            insert.setData(sentencia);
         }
 
     }

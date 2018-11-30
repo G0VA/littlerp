@@ -15,7 +15,7 @@ using Avengers.Dominio.Gestores;
 
 namespace Avengers.Presentacion
 {
-    
+
     public partial class NewCustomer : Form
     {
         private int refzipcodescities = 0;
@@ -76,12 +76,12 @@ namespace Avengers.Presentacion
 
             foreach (DataRow row in tzip.Rows)
             {
-               // if (tzip.Rows.Count > 1)
-               // {
-               //     cmbZIP.Visible = true;
-               //     txtZIP.Visible = false;
-               //     txtZIP.Clear();
-                    cmbZIP.Items.Add(row["ZIPCODE"]);
+                // if (tzip.Rows.Count > 1)
+                // {
+                //     cmbZIP.Visible = true;
+                //     txtZIP.Visible = false;
+                //     txtZIP.Clear();
+                cmbZIP.Items.Add(row["ZIPCODE"]);
                 //}else
                 //{
                 //    cmbZIP.Visible = false;
@@ -89,7 +89,7 @@ namespace Avengers.Presentacion
                 //    txtZIP.Clear();
                 //    txtZIP.Text = row["ZIPCODE"].ToString();
                 //}
-               
+
             }
         }
         /*
@@ -129,8 +129,8 @@ namespace Avengers.Presentacion
             return error;
         }
 
-   
-        public void insertCustomer()
+
+        public String inserSql()
         {
             //Construimos El insert
             String sql = "Insert into customers values (null,'" + txtName.Text.ToUpper() + "','" + txtSurname.Text.ToUpper() + "',";
@@ -139,7 +139,8 @@ namespace Avengers.Presentacion
             if (String.IsNullOrEmpty(txtAddress.Text))
             {
                 sql += "null,";
-            }else
+            }
+            else
             {
                 sql += "'" + txtAddress.Text.ToUpper() + "',";
             }
@@ -163,35 +164,29 @@ namespace Avengers.Presentacion
             if (this.refzipcodescities == 0)
             {
                 sql += "0,null,";
-            }else
+            }
+            else
             {
                 sql += "0," + this.refzipcodescities + ",";
             }
             //terminamos insertando el dni
             sql += "'" + txtDNI.Text.ToUpper() + "')";
 
-            ConnectOracle insert = new ConnectOracle();
-            insert.setData(sql);
+            return sql;
 
-            //insertamos en el log de customers
-            //ConnectOracle insertlog = new ConnectOracle();
-
-            //String log = "Insert into log_customers values (null,'USUARIO','INSERT',SYSDATE," + sql + ")";
-            //insertlog.setData(log);
-            
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+
             bool email = true;
-            if (!String.IsNullOrEmpty(txtEmail.Text)&& !Utils.check.checkEmail(txtEmail.Text))
+            if (!String.IsNullOrEmpty(txtEmail.Text) && !Utils.check.checkEmail(txtEmail.Text))
             {
                 email = false;
             }
             if (checkAdd() && email)
             {
-
-                insertCustomer();
+                String sql = inserSql();
+                GestorCustomers.insertCustomer(sql);
                 Dispose();
 
             }
@@ -199,12 +194,13 @@ namespace Avengers.Presentacion
             {
                 if (!email)
                 {
-                    MessageBox.Show(errorDialog()+ "\t - The field \"Email\"doesn't the correct format \n");
-                }else
+                    MessageBox.Show(errorDialog() + "\t - The field \"Email\"doesn't the correct format \n");
+                }
+                else
                 {
                     MessageBox.Show(errorDialog());
                 }
-               
+
             }
         }
 
@@ -217,7 +213,7 @@ namespace Avengers.Presentacion
 
         private void cmbProv_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String cond = " Where idcity in(select refcity from zipcodescities z inner join states s on z.refstate= s.idstate where state= '" + cmbProv.SelectedItem.ToString() + "')";   
+            String cond = " Where idcity in(select refcity from zipcodescities z inner join states s on z.refstate= s.idstate where state= '" + cmbProv.SelectedItem.ToString() + "')";
             cmbCity.Items.Clear();
             initCities(cond);
         }
@@ -242,7 +238,7 @@ namespace Avengers.Presentacion
             String cond = " zipcode='" + cmbZIP.SelectedItem.ToString() + "' And city='" + cmbCity.SelectedItem.ToString() + "' And State= '" + cmbProv.SelectedItem.ToString() + "'";
 
             ConnectOracle search = new ConnectOracle();
-            int resp = Convert.ToInt16(search.DLookUp("IDZIPCODESCITIES", tables, cond)); 
+            int resp = Convert.ToInt16(search.DLookUp("IDZIPCODESCITIES", tables, cond));
             this.refzipcodescities = resp;
         }
         private void clean()
@@ -267,7 +263,8 @@ namespace Avengers.Presentacion
             if (checkAdd() && email)
             {
 
-                insertCustomer();
+                String sql = inserSql();
+                GestorCustomers.insertCustomer(sql);
                 clean();
 
             }
