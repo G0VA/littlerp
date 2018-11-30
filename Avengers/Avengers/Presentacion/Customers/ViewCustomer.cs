@@ -73,6 +73,7 @@ namespace Avengers.Presentacion
             {
                 cmbReg.Items.Add(row["REGION"]);
 
+
             }
         }
         private void initProv(String cond)
@@ -134,10 +135,10 @@ namespace Avengers.Presentacion
         {
             int comb = 0;
             String sql = " Where 1=1";
-            String subCons = " AND REFZIPCODESCITIES IN (SELECT IDZIPCODESCITIES FROM ZIPCODESCITIES Z INNER JOIN STATES S " +
-                                "ON Z.REFSTATE = S.IDSTATE INNER JOIN REGIONS R ON S.REFREGION = R.IDREGION " +
-                                " INNER JOIN CITIES CI ON Z.REFCITY = CI.IDCITY " +
-                                " INNER JOIN ZIPCODES ZIP ON ZIP.IDZIPCODE=Z.REFZIPCODE WHERE 1=1 ";
+            String subCons = " AND REFZIPCODESCITIES IN (SELECT IDZIPCODESCITIES FROM ZIPCODESCITIES Z FULL OUTER JOIN STATES S " +
+                                "ON Z.REFSTATE = S.IDSTATE FULL OUTER JOIN REGIONS R ON S.REFREGION = R.IDREGION " +
+                                " full OUTER JOIN CITIES CI ON Z.REFCITY = CI.IDCITY " +
+                                " full OUTER JOIN ZIPCODES ZIP ON ZIP.IDZIPCODE=Z.REFZIPCODE WHERE 1=1 ";
 
             if (!String.IsNullOrEmpty(txtName.Text))
             {
@@ -181,6 +182,9 @@ namespace Avengers.Presentacion
             if (ckDel.Checked)
             {
                 sql += " And DELETED=1";
+            }else
+            {
+                sql += " And DELETED=0";
             }
 
 
@@ -224,6 +228,8 @@ namespace Avengers.Presentacion
         {
             filtrar();
             cmbProv.Items.Clear();
+            cmbCity.Items.Clear();
+            cmbZip.Items.Clear();
             String cond = " Where Refregion = (Select idRegion from regions where Region = '" + cmbReg.SelectedItem.ToString() + "')";
             initProv(cond);
         }
@@ -241,6 +247,7 @@ namespace Avengers.Presentacion
         {
             filtrar();
             String cond = " Where idzipcode in (select refzipcode from  zipcodescities inner join cities  on refcity= idcity where city='" + cmbCity.SelectedItem.ToString() + "')";
+            cmbZip.Items.Clear();
             cmbZip.Items.Clear();
             initZIP(cond);
         }
@@ -260,12 +267,14 @@ namespace Avengers.Presentacion
             txtName.Clear();
             txtSurname.Clear();
             txtDNI.Clear();
-            //cmbReg.SelectedIndex = -1;
-            cmbCity.SelectedIndex = -1;
-            //cmbProv.SelectedIndex = -1;
-            initCombos();
+            cmbReg.Items.Clear();
+            cmbProv.Items.Clear();
+            cmbCity.Items.Clear();
+            cmbZip.Items.Clear();
             txtZip.Clear();
             ckDel.Checked = false;
+            initCombos();
+            
             initTable(" Where Deleted=0");
 
         }
@@ -291,13 +300,19 @@ namespace Avengers.Presentacion
 
         private void btnMod_Click(object sender, EventArgs e)
         {
-            int idCustomer =Convert.ToInt16( dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString());
-            ModCustomer mc = new ModCustomer(idCustomer);
-            mc.ShowDialog();
-            if (mc.IsDisposed)
+            try
             {
-                initTable(" Where Deleted =0");
+                int idCustomer = Convert.ToInt16(dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString());
+                ModCustomer mc = new ModCustomer(idCustomer);
+                mc.ShowDialog();
+                if (mc.IsDisposed)
+                {
+                    initTable(" Where Deleted =0");
+                }
+            }catch (Exception ex){
+                MessageBox.Show("You must Select a Customer");
             }
+           
         }
 
         private void cmbZip_SelectedIndexChanged(object sender, EventArgs e)

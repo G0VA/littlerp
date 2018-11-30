@@ -79,6 +79,7 @@
             this.btnChange.TabIndex = 44;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // btnCancel
             // 
@@ -108,6 +109,7 @@
             this.cmbCity.Name = "cmbCity";
             this.cmbCity.Size = new System.Drawing.Size(214, 21);
             this.cmbCity.TabIndex = 40;
+            this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
             // cmbProv
             // 
@@ -117,6 +119,7 @@
             this.cmbProv.Name = "cmbProv";
             this.cmbProv.Size = new System.Drawing.Size(214, 21);
             this.cmbProv.TabIndex = 39;
+            this.cmbProv.SelectedIndexChanged += new System.EventHandler(this.cmbProv_SelectedIndexChanged);
             // 
             // cmbReg
             // 
@@ -136,6 +139,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(143, 20);
             this.txtPhone.TabIndex = 37;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtEmail
             // 

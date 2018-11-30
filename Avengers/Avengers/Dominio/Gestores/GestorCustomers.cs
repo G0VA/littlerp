@@ -90,6 +90,18 @@ namespace Avengers.Dominio.Gestores
             ConnectOracle insert = new ConnectOracle();
             insert.setData(sentencia);
         }
+        public static String getData(String column, String table, String cond)
+        {
+            ConnectOracle select = new ConnectOracle();
+            return select.DLookUp(column, table, cond).ToString();
+
+        }
+
+        public static void setData(String sentencia)
+        {
+            ConnectOracle update = new ConnectOracle();
+            update.setData(sentencia);
+        }
 
     }
 }
