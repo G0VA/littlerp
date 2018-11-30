@@ -1,6 +1,6 @@
 ﻿namespace Avengers.Presentacion.Products
 {
-    partial class NewProduct
+    partial class ModifyProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnAddandNew = new System.Windows.Forms.Button();
+            this.btnModify = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,27 +55,16 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnAdd
+            // btnModify
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(349, 423);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 32);
-            this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnAddandNew
-            // 
-            this.btnAddandNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddandNew.Location = new System.Drawing.Point(162, 423);
-            this.btnAddandNew.Name = "btnAddandNew";
-            this.btnAddandNew.Size = new System.Drawing.Size(136, 32);
-            this.btnAddandNew.TabIndex = 2;
-            this.btnAddandNew.Text = "Add and New";
-            this.btnAddandNew.UseVisualStyleBackColor = true;
-            this.btnAddandNew.Click += new System.EventHandler(this.btnAddandNew_Click);
+            this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModify.Location = new System.Drawing.Point(349, 423);
+            this.btnModify.Name = "btnModify";
+            this.btnModify.Size = new System.Drawing.Size(75, 32);
+            this.btnModify.TabIndex = 1;
+            this.btnModify.Text = "Modify";
+            this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // label1
             // 
@@ -186,7 +174,7 @@
             this.txtDescription.Size = new System.Drawing.Size(262, 49);
             this.txtDescription.TabIndex = 14;
             // 
-            // NewProduct
+            // ModifyProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,11 +191,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAddandNew);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnCancel);
-            this.Name = "NewProduct";
-            this.Text = "NewProduct";
+            this.Name = "ModifyProduct";
+            this.Text = "ModifyProduct";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,20 +202,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnAddandNew;
+        public System.Windows.Forms.Button btnCancel;
+        public System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboEditorial;
-        private System.Windows.Forms.ComboBox comboGender;
-        private System.Windows.Forms.TextBox txtStock;
-        private System.Windows.Forms.TextBox txtPrice;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtDescription;
+        public System.Windows.Forms.ComboBox comboEditorial;
+        public System.Windows.Forms.ComboBox comboGender;
+        public System.Windows.Forms.TextBox txtStock;
+        public System.Windows.Forms.TextBox txtPrice;
+        public System.Windows.Forms.TextBox txtName;
+        public System.Windows.Forms.TextBox txtDescription;
     }
 }

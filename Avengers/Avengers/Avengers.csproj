@@ -59,6 +59,12 @@
     <Compile Include="Dominio\Product.cs" />
     <Compile Include="Dominio\User.cs" />
     <Compile Include="Persistencia\ConnectOracle.cs" />
+    <Compile Include="Presentacion\Customers\ModCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Customers\ModCustomer.Designer.cs">
+      <DependentUpon>ModCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Customers\NewCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="Presentacion\Orders\ViewOrders.Designer.cs">
       <DependentUpon>ViewOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Products\ModifyProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Products\ModifyProduct.Designer.cs">
+      <DependentUpon>ModifyProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Products\NewProduct.cs">
       <SubType>Form</SubType>
@@ -144,6 +156,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\Customers\ModCustomer.resx">
+      <DependentUpon>ModCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Customers\NewCustomer.resx">
       <DependentUpon>NewCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Orders\ViewOrders.resx">
       <DependentUpon>ViewOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Products\ModifyProduct.resx">
+      <DependentUpon>ModifyProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Products\NewProduct.resx">
       <DependentUpon>NewProduct.cs</DependentUpon>

@@ -44,7 +44,7 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,6 +53,7 @@
             // 
             this.dgvProduct.AllowUserToAddRows = false;
             this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Location = new System.Drawing.Point(24, 140);
             this.dgvProduct.Name = "dgvProduct";
@@ -133,6 +134,7 @@
             this.chckDelete.TabIndex = 10;
             this.chckDelete.Text = "Delete";
             this.chckDelete.UseVisualStyleBackColor = true;
+            this.chckDelete.CheckedChanged += new System.EventHandler(this.chckDelete_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -155,6 +157,7 @@
             this.rbtnDescend.TabStop = true;
             this.rbtnDescend.Text = "Descend";
             this.rbtnDescend.UseVisualStyleBackColor = true;
+            this.rbtnDescend.CheckedChanged += new System.EventHandler(this.rbtnDescend_CheckedChanged);
             // 
             // rbtnAscend
             // 
@@ -166,6 +169,7 @@
             this.rbtnAscend.TabStop = true;
             this.rbtnAscend.Text = "Ascend";
             this.rbtnAscend.UseVisualStyleBackColor = true;
+            this.rbtnAscend.CheckedChanged += new System.EventHandler(this.rbtnAscend_CheckedChanged);
             // 
             // label4
             // 
@@ -186,6 +190,7 @@
             this.btnClean.TabIndex = 12;
             this.btnClean.Text = "Clean";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // btnModify
             // 
@@ -196,6 +201,7 @@
             this.btnModify.TabIndex = 14;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // btnAdd
             // 
@@ -204,7 +210,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 15;
-            this.btnAdd.Text = "Add";
+            this.btnAdd.Text = "New";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -218,15 +224,16 @@
             this.btnLog.Text = "Log";
             this.btnLog.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnDelete
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(1032, 229);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(1032, 229);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // ViewProduct
             // 
@@ -234,7 +241,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 497);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnClean);
@@ -258,8 +265,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvProduct;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox comboEditorial;
@@ -275,6 +280,7 @@
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnLog;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnDelete;
+        public System.Windows.Forms.DataGridView dgvProduct;
     }
 }

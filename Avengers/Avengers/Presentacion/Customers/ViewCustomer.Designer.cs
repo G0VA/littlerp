@@ -49,6 +49,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnMod = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
+            this.cmbZip = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -253,6 +254,7 @@
             this.btnMod.TabIndex = 19;
             this.btnMod.Text = "Modify";
             this.btnMod.UseVisualStyleBackColor = true;
+            this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
             // 
             // btnLog
             // 
@@ -264,11 +266,23 @@
             this.btnLog.Text = "Log";
             this.btnLog.UseVisualStyleBackColor = true;
             // 
+            // cmbZip
+            // 
+            this.cmbZip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbZip.FormattingEnabled = true;
+            this.cmbZip.Location = new System.Drawing.Point(749, 36);
+            this.cmbZip.Name = "cmbZip";
+            this.cmbZip.Size = new System.Drawing.Size(188, 21);
+            this.cmbZip.TabIndex = 21;
+            this.cmbZip.Visible = false;
+            this.cmbZip.SelectedIndexChanged += new System.EventHandler(this.cmbZip_SelectedIndexChanged);
+            // 
             // ViewCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 497);
+            this.Controls.Add(this.cmbZip);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnMod);
             this.Controls.Add(this.btnDelete);
@@ -321,5 +335,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnMod;
         private System.Windows.Forms.Button btnLog;
+        private System.Windows.Forms.ComboBox cmbZip;
     }
 }

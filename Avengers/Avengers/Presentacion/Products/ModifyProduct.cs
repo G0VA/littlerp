@@ -7,24 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Avengers.Dominio.Gestores;
 using Avengers.Dominio;
+using Avengers.Dominio.Gestores;
+using Avengers.Presentacion.Products;
 
 namespace Avengers.Presentacion.Products
 {
-    public partial class NewProduct : Form
+    public partial class ModifyProduct : Form
     {
-        public NewProduct()
+        public String id;
+        public ModifyProduct()
         {
             InitializeComponent();
             initComboEditorial("Where Deleted = 0");
             initComboGender("Where Deleted = 0");
         }
-
         private bool checkAdd()
         {
             return !(string.IsNullOrEmpty(txtName.Text) && string.IsNullOrEmpty(txtStock.Text) &&
-                string.IsNullOrEmpty(txtPrice.Text) && !comboEditorial.SelectedItem.Equals(" ") && 
+                string.IsNullOrEmpty(txtPrice.Text) && !comboEditorial.SelectedItem.Equals(" ") &&
                 !comboGender.SelectedItem.Equals(" "));
         }
         private void initComboEditorial(String cond)
@@ -52,78 +53,53 @@ namespace Avengers.Presentacion.Products
             }
         }
 
+      
         public String inserSql()
         {
             //Construimos El insert
-            String sql = "Insert into products values (null,'" + comboGender.Text.ToString().ToUpper() + "','" + comboEditorial.Text.ToString().ToUpper() + "',";
+            String sql = "Update products SET GENDER = '" + comboGender.Text.ToString().ToUpper() + "', EDITORIAL = '" + comboEditorial.Text.ToString().ToUpper() + "',";
 
             //en caso de que los campos esten vacios ponemos a null
             if (String.IsNullOrEmpty(txtPrice.Text))
             {
-                sql += "null,";
+                sql += " PRICE = null,";
             }
             else
             {
-                sql +=  txtPrice.Text + ",";
+                sql +=" PRICE ="+ txtPrice.Text + ",";
             }
 
-            sql +=  0 + ",";
 
             if (String.IsNullOrEmpty(txtName.Text))
             {
-                sql += "null,";
+                sql += " NAME = null,";
             }
             else
             {
-                sql += "'" + txtName.Text.ToUpper() + "',";
+                sql += " NAME ='" + txtName.Text.ToUpper() + "',";
             }
             if (String.IsNullOrEmpty(txtDescription.Text))
             {
-                sql += "null,";
+                sql += " DESCRIPTION = null,";
+                Console.WriteLine("TRAZA");
             }
+            
             else
             {
-                sql += "'" + txtDescription.Text.ToUpper() + "',";
+                sql += " DESCRIPTION ='" + txtDescription.Text.ToUpper() + "',";
             }
             if (String.IsNullOrEmpty(txtStock.Text))
             {
-                sql += "null,";
+                sql += " STOCK = null";
             }
             else
             {
-                sql += txtStock.Text + ")";
+                sql += " STOCK = "+ txtStock.Text;
             }
-
+            Console.WriteLine("TRAZA2");
 
             return sql;
 
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            
-            bool price = true;
-            if (!Utils.check.checkPrice(txtPrice.Text))
-            {
-                price = false;
-            }
-            if (checkAdd() && price)
-            {
-                GestorProducts.writeProduct(inserSql());
-                Dispose();
-
-            }
-            else
-            {
-                if (!price)
-                {
-                    MessageBox.Show(errorDialog() + "\t - The field \"Price\"doesn't the correct format \n");
-                }
-                else
-                {
-                    MessageBox.Show(errorDialog());
-                }
-            }
         }
         private String errorDialog()
         {
@@ -153,24 +129,7 @@ namespace Avengers.Presentacion.Products
             return error;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void clean()
-        {
-            txtName.Clear();
-            txtDescription.Clear();
-            txtPrice.Clear();
-            txtStock.Clear();
-            comboEditorial.Items.Clear();
-            comboGender.Items.Clear();
-            initComboEditorial("Where Deleted = 0");
-            initComboGender("Where Deleted = 0");
-        }
-
-        private void btnAddandNew_Click(object sender, EventArgs e)
+        private void btnModify_Click(object sender, EventArgs e)
         {
             bool price = true;
             if (!Utils.check.checkPrice(txtPrice.Text))
@@ -179,8 +138,11 @@ namespace Avengers.Presentacion.Products
             }
             if (checkAdd() && price)
             {
-                GestorProducts.writeProduct(inserSql());
-                clean();
+
+                Console.WriteLine(inserSql()+" Where IDPRODUCT =" + this.id);
+                GestorProducts.updateProduct(inserSql(),this.id);
+                Console.WriteLine("TRAZA3");
+                Dispose();
 
             }
             else
@@ -194,6 +156,11 @@ namespace Avengers.Presentacion.Products
                     MessageBox.Show(errorDialog());
                 }
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

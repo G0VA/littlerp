@@ -1,5 +1,6 @@
 ﻿using Avengers.Dominio;
 using Avengers.Dominio.Gestores;
+using Avengers.Presentacion.Customers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,26 +65,28 @@ namespace Avengers.Presentacion
         private void initRegion(String cond)
         {
             Customer c = new Customer();
-            c.getGestor().readInDB("REGION", "REGIONS", cond);
+            c.getGestor().readInDB(" REGION", "REGIONS", cond);
             DataTable tregion = c.getGestor().getCustomers();
             cmbReg.Items.Clear();
 
             foreach (DataRow row in tregion.Rows)
             {
                 cmbReg.Items.Add(row["REGION"]);
+
             }
         }
         private void initProv(String cond)
         {
 
             Customer c = new Customer();
-            c.getGestor().readInDB("STATE", "STATES", cond);
+            c.getGestor().readInDB(" STATE", "STATES", cond);
             DataTable tstate = c.getGestor().getCustomers();
             cmbProv.Items.Clear();
 
             foreach (DataRow row in tstate.Rows)
             {
                 cmbProv.Items.Add(row["STATE"]);
+
             }
 
         }
@@ -91,15 +94,41 @@ namespace Avengers.Presentacion
         private void initCities(String cond)
         {
             Customer c = new Customer();
-            c.getGestor().readInDB("CITY", "CITIES", cond);
+            c.getGestor().readInDB(" CITY", "CITIES", cond);
             DataTable tcity = c.getGestor().getCustomers();
             cmbCity.Items.Clear();
 
             foreach (DataRow row in tcity.Rows)
             {
                 cmbCity.Items.Add(row["CITY"]);
+
             }
         }
+        private void initZIP(String cond)
+        {
+            Customer c = new Customer();
+            c.getGestor().readInDB(" zipcode", "zipcodes", cond);
+            DataTable tzip = c.getGestor().getCustomers();
+            cmbZip.Items.Clear();
+
+            foreach (DataRow row in tzip.Rows)
+            {
+                if (tzip.Rows.Count > 1)
+                {
+                    txtZip.Visible = false;
+                    cmbZip.Visible = true;
+                    cmbZip.Items.Add(row["zipcode"]);
+                }else
+                {
+                    txtZip.Visible = true;
+                    cmbZip.Visible = false;
+                    txtZip.Text = row["zipcode"].ToString();
+                }
+                
+
+            }
+        }
+
 
         public void filtrar()
         {
@@ -141,7 +170,13 @@ namespace Avengers.Presentacion
             }
             if (!String.IsNullOrEmpty(txtZip.Text))
             {
-                subCons += " AND ZIP.ZIPCODE= '%" + txtZip.Text + "%' ";
+                subCons += " AND ZIP.ZIPCODE= '%" + txtZip.Text.ToUpper() + "%' ";
+                comb++;
+            }
+            if (cmbZip.SelectedIndex != -1)
+            {
+                subCons += " AND ZIP.ZIPCODE= '" + cmbZip.SelectedItem.ToString() + "' ";
+                comb++;
             }
             if (ckDel.Checked)
             {
@@ -205,6 +240,9 @@ namespace Avengers.Presentacion
         private void cmbCity_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
+            String cond = " Where idzipcode in (select refzipcode from  zipcodescities inner join cities  on refcity= idcity where city='" + cmbCity.SelectedItem.ToString() + "')";
+            cmbZip.Items.Clear();
+            initZIP(cond);
         }
 
         private void txtZip_KeyUp(object sender, KeyEventArgs e)
@@ -249,6 +287,22 @@ namespace Avengers.Presentacion
             {
                 MessageBox.Show("This Customer have Orders in DB");
             }
+        }
+
+        private void btnMod_Click(object sender, EventArgs e)
+        {
+            int idCustomer =Convert.ToInt16( dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString());
+            ModCustomer mc = new ModCustomer(idCustomer);
+            mc.ShowDialog();
+            if (mc.IsDisposed)
+            {
+                initTable(" Where Deleted =0");
+            }
+        }
+
+        private void cmbZip_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            filtrar();
         }
     }
 }

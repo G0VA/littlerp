@@ -50,7 +50,7 @@ namespace Avengers.Dominio.Gestores
             tabla = data.Tables["littlerp"];
         }
 
-        public DataSet readInProductV2(String cond, String col)
+        public static DataSet readInProductV2(String cond, String col)
         {
             DataSet data = new DataSet();
             ConnectOracle search = new ConnectOracle();
@@ -69,12 +69,48 @@ namespace Avengers.Dominio.Gestores
             tabla = data.Tables["littlerp"];
         }
 
-
-
-        public void writeProduct(String gender, String editorial, float price, String name, String desc, int stock)
+        public static bool existProduct(String name)
         {
+            bool exist = false;
             ConnectOracle search = new ConnectOracle();
-            search.setData("Insert into products values(1,'" + gender + "','" + editorial + "','" + price + "',0,'" + name + "','" + desc + "','" + stock + "')");
+            int resp = Convert.ToInt16(search.DLookUp("count(*)", "products", "UPPER(NAME)= '" + name.ToUpper() + "' AND DELETED=0"));
+            if (resp > 0)
+            {
+                exist = true;
+            }
+            return exist;
+        }
+
+        public static bool existProductOrders(String id)
+        {
+            bool exist = false;
+            ConnectOracle search = new ConnectOracle();
+            int resp = Convert.ToInt16(search.DLookUp("count(*)", "orders", "IDORDER= (Select REFORDER from ordersproducts Where REFPRODUCT ='" + id +"')"));
+            if (resp > 0)
+            {
+                exist = true;
+            }
+            return exist;
+        }
+
+
+        public static void writeProduct(String sentencia)
+        {
+            ConnectOracle insert = new ConnectOracle();
+            insert.setData(sentencia);
+        }
+
+        public static void deleteProduct(String sentencia)
+        {
+            ConnectOracle delete = new ConnectOracle();
+            delete.setData(sentencia);     
+        }
+
+        public static void updateProduct(String sentencia, String id)
+        {
+            ConnectOracle update = new ConnectOracle();
+            sentencia += " Where IDPRODUCT =" + id;
+            update.setData(sentencia);
         }
     }
 }
