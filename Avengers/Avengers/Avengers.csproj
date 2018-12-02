@@ -53,9 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dominio\Customer.cs" />
+    <Compile Include="Dominio\DtoCustomer.cs" />
+    <Compile Include="Dominio\DtoProduct.cs" />
     <Compile Include="Dominio\Gestores\GestorCustomers.cs" />
+    <Compile Include="Dominio\Gestores\GestorOrders.cs" />
+    <Compile Include="Dominio\Gestores\GestorOrdersProduct.cs" />
     <Compile Include="Dominio\Gestores\GestorProducts.cs" />
     <Compile Include="Dominio\Gestores\GestorUsers.cs" />
+    <Compile Include="Dominio\Order.cs" />
+    <Compile Include="Dominio\OrderProduct.cs" />
     <Compile Include="Dominio\Product.cs" />
     <Compile Include="Dominio\User.cs" />
     <Compile Include="Persistencia\ConnectOracle.cs" />

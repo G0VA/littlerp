@@ -30,21 +30,24 @@
         {
             this.lblCustomers = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
-            this.tbxCustomer = new System.Windows.Forms.TextBox();
-            this.tbxUser = new System.Windows.Forms.TextBox();
+            this.txtCustomer = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblPay = new System.Windows.Forms.Label();
-            this.comboxPay = new System.Windows.Forms.ComboBox();
-            this.date = new System.Windows.Forms.DateTimePicker();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.comboPay = new System.Windows.Forms.ComboBox();
+            this.dateOrder = new System.Windows.Forms.DateTimePicker();
+            this.chkDeleted = new System.Windows.Forms.CheckBox();
+            this.chkPrepaid = new System.Windows.Forms.CheckBox();
             this.btnClean = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnLog = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.ckAct = new System.Windows.Forms.CheckBox();
+            this.txtPrepaid = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCustomers
@@ -67,19 +70,21 @@
             this.lblUser.TabIndex = 1;
             this.lblUser.Text = "User:";
             // 
-            // tbxCustomer
+            // txtCustomer
             // 
-            this.tbxCustomer.Location = new System.Drawing.Point(142, 51);
-            this.tbxCustomer.Name = "tbxCustomer";
-            this.tbxCustomer.Size = new System.Drawing.Size(100, 20);
-            this.tbxCustomer.TabIndex = 2;
+            this.txtCustomer.Location = new System.Drawing.Point(142, 51);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomer.TabIndex = 2;
+            this.txtCustomer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCustomer_KeyUp);
             // 
-            // tbxUser
+            // txtUser
             // 
-            this.tbxUser.Location = new System.Drawing.Point(142, 93);
-            this.tbxUser.Name = "tbxUser";
-            this.tbxUser.Size = new System.Drawing.Size(100, 20);
-            this.tbxUser.TabIndex = 3;
+            this.txtUser.Location = new System.Drawing.Point(142, 93);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(100, 20);
+            this.txtUser.TabIndex = 3;
+            this.txtUser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtUser_KeyUp);
             // 
             // lblDate
             // 
@@ -101,41 +106,46 @@
             this.lblPay.TabIndex = 5;
             this.lblPay.Text = "Payment Method:";
             // 
-            // comboxPay
+            // comboPay
             // 
-            this.comboxPay.FormattingEnabled = true;
-            this.comboxPay.Location = new System.Drawing.Point(429, 93);
-            this.comboxPay.Name = "comboxPay";
-            this.comboxPay.Size = new System.Drawing.Size(121, 21);
-            this.comboxPay.TabIndex = 6;
+            this.comboPay.FormattingEnabled = true;
+            this.comboPay.Location = new System.Drawing.Point(429, 93);
+            this.comboPay.Name = "comboPay";
+            this.comboPay.Size = new System.Drawing.Size(121, 21);
+            this.comboPay.TabIndex = 6;
+            this.comboPay.SelectedValueChanged += new System.EventHandler(this.comboPay_SelectedValueChanged);
             // 
-            // date
+            // dateOrder
             // 
-            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.date.Location = new System.Drawing.Point(429, 49);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(119, 20);
-            this.date.TabIndex = 7;
+            this.dateOrder.Enabled = false;
+            this.dateOrder.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateOrder.Location = new System.Drawing.Point(429, 49);
+            this.dateOrder.Name = "dateOrder";
+            this.dateOrder.Size = new System.Drawing.Size(119, 20);
+            this.dateOrder.TabIndex = 7;
+            this.dateOrder.ValueChanged += new System.EventHandler(this.dateOrder_ValueChanged);
+            this.dateOrder.BindingContextChanged += new System.EventHandler(this.dateOrder_BindingContextChanged);
             // 
-            // checkBox1
+            // chkDeleted
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(645, 49);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Deleted";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkDeleted.AutoSize = true;
+            this.chkDeleted.Location = new System.Drawing.Point(645, 49);
+            this.chkDeleted.Name = "chkDeleted";
+            this.chkDeleted.Size = new System.Drawing.Size(63, 17);
+            this.chkDeleted.TabIndex = 8;
+            this.chkDeleted.Text = "Deleted";
+            this.chkDeleted.UseVisualStyleBackColor = true;
+            this.chkDeleted.CheckedChanged += new System.EventHandler(this.chkDeleted_CheckedChanged);
             // 
-            // checkBox2
+            // chkPrepaid
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(645, 97);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(62, 17);
-            this.checkBox2.TabIndex = 9;
-            this.checkBox2.Text = "Prepaid";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkPrepaid.AutoSize = true;
+            this.chkPrepaid.Location = new System.Drawing.Point(645, 97);
+            this.chkPrepaid.Name = "chkPrepaid";
+            this.chkPrepaid.Size = new System.Drawing.Size(62, 17);
+            this.chkPrepaid.TabIndex = 9;
+            this.chkPrepaid.Text = "Prepaid";
+            this.chkPrepaid.UseVisualStyleBackColor = true;
             // 
             // btnClean
             // 
@@ -146,14 +156,16 @@
             this.btnClean.TabIndex = 10;
             this.btnClean.Text = "Clean";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
-            // dataGridView1
+            // dgvOrders
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 143);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(982, 332);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvOrders.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrders.Location = new System.Drawing.Point(12, 143);
+            this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.Size = new System.Drawing.Size(982, 332);
+            this.dgvOrders.TabIndex = 11;
             // 
             // btnNew
             // 
@@ -196,31 +208,52 @@
             this.btnLog.Text = "Show Logs";
             this.btnLog.UseVisualStyleBackColor = true;
             // 
+            // ckAct
+            // 
+            this.ckAct.AutoSize = true;
+            this.ckAct.Location = new System.Drawing.Point(555, 50);
+            this.ckAct.Name = "ckAct";
+            this.ckAct.Size = new System.Drawing.Size(65, 17);
+            this.ckAct.TabIndex = 16;
+            this.ckAct.Text = "Activate";
+            this.ckAct.UseVisualStyleBackColor = true;
+            this.ckAct.CheckedChanged += new System.EventHandler(this.ckAct_CheckedChanged);
+            // 
+            // txtPrepaid
+            // 
+            this.txtPrepaid.Location = new System.Drawing.Point(725, 93);
+            this.txtPrepaid.Name = "txtPrepaid";
+            this.txtPrepaid.Size = new System.Drawing.Size(100, 20);
+            this.txtPrepaid.TabIndex = 17;
+            this.txtPrepaid.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrepaid_KeyUp);
+            // 
             // ViewOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 485);
+            this.Controls.Add(this.txtPrepaid);
+            this.Controls.Add(this.ckAct);
             this.Controls.Add(this.btnLog);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnNew);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnClean);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.date);
-            this.Controls.Add(this.comboxPay);
+            this.Controls.Add(this.chkPrepaid);
+            this.Controls.Add(this.chkDeleted);
+            this.Controls.Add(this.dateOrder);
+            this.Controls.Add(this.comboPay);
             this.Controls.Add(this.lblPay);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.tbxUser);
-            this.Controls.Add(this.tbxCustomer);
+            this.Controls.Add(this.txtUser);
+            this.Controls.Add(this.txtCustomer);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.lblCustomers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ViewOrders";
             this.Text = "ViewOrders";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,19 +263,22 @@
 
         private System.Windows.Forms.Label lblCustomers;
         private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.TextBox tbxCustomer;
-        private System.Windows.Forms.TextBox tbxUser;
+        private System.Windows.Forms.TextBox txtCustomer;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblPay;
-        private System.Windows.Forms.ComboBox comboxPay;
-        private System.Windows.Forms.DateTimePicker date;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.ComboBox comboPay;
+        private System.Windows.Forms.DateTimePicker dateOrder;
+        private System.Windows.Forms.CheckBox chkDeleted;
+        private System.Windows.Forms.CheckBox chkPrepaid;
         private System.Windows.Forms.Button btnClean;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.Button btnLog;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.CheckBox ckAct;
+        private System.Windows.Forms.TextBox txtPrepaid;
     }
 }

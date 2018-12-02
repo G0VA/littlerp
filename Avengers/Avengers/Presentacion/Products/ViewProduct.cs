@@ -9,13 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avengers.Dominio;
 using Avengers.Dominio.Gestores;
+using Avengers.Presentacion.Orders;
 
 namespace Avengers.Presentacion.Products
 {
     public partial class ViewProduct : Form
     {
+        NewOrder observer = null;
         public ViewProduct()
         {
+            InitializeComponent();
+            initTable("Where Deleted = 0");
+            initComboEditorial("Where Deleted = 0");
+            initComboGender("Where Deleted = 0");
+        }
+        public ViewProduct(NewOrder newOrder)
+        {
+            this.observer = newOrder;
             InitializeComponent();
             initTable("Where Deleted = 0");
             initComboEditorial("Where Deleted = 0");
@@ -238,6 +248,25 @@ namespace Avengers.Presentacion.Products
             }
 
 
+        }
+
+        private void dgvProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String id = (dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString()==null)?"": dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString();
+            String gender =( dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[1].Value.ToString() == null)?"": dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[1].Value.ToString();
+            String editorial =( dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[2].Value.ToString() == null)?"": dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[2].Value.ToString();
+            String precio = (dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[3].Value.ToString() == null)?"": dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[3].Value.ToString();
+            String name = (dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[4].Value.ToString() == null)?"": dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[4].Value.ToString();
+            String description = (dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[5].Value.ToString() == null)?"": dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[5].Value.ToString();
+            String stock = (dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[6].Value.ToString() == null)?"": dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[6].Value.ToString();
+
+            DtoProduct dtoProduct = new DtoProduct(id, gender, editorial, precio, name, description, stock);
+
+            if (observer != null)
+            {
+                observer.updateProduct(dtoProduct);
+                Dispose();
+            }
         }
     }
 }

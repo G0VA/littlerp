@@ -140,30 +140,33 @@
             // cmbReg
             // 
             this.cmbReg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbReg.FormattingEnabled = true;
             this.cmbReg.Location = new System.Drawing.Point(476, 39);
             this.cmbReg.Name = "cmbReg";
-            this.cmbReg.Size = new System.Drawing.Size(191, 21);
+            this.cmbReg.Size = new System.Drawing.Size(191, 24);
             this.cmbReg.TabIndex = 9;
             this.cmbReg.SelectedIndexChanged += new System.EventHandler(this.cmbReg_SelectedIndexChanged);
             // 
             // cmbProv
             // 
             this.cmbProv.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProv.FormattingEnabled = true;
             this.cmbProv.Location = new System.Drawing.Point(476, 69);
             this.cmbProv.Name = "cmbProv";
-            this.cmbProv.Size = new System.Drawing.Size(191, 21);
+            this.cmbProv.Size = new System.Drawing.Size(191, 24);
             this.cmbProv.TabIndex = 10;
             this.cmbProv.SelectedIndexChanged += new System.EventHandler(this.cmbProv_SelectedIndexChanged);
             // 
             // cmbCity
             // 
             this.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCity.FormattingEnabled = true;
             this.cmbCity.Location = new System.Drawing.Point(476, 98);
             this.cmbCity.Name = "cmbCity";
-            this.cmbCity.Size = new System.Drawing.Size(191, 21);
+            this.cmbCity.Size = new System.Drawing.Size(191, 24);
             this.cmbCity.TabIndex = 11;
             this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
@@ -222,6 +225,7 @@
             this.dgvCustomer.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCustomer.Size = new System.Drawing.Size(982, 332);
             this.dgvCustomer.TabIndex = 16;
+            this.dgvCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellDoubleClick);
             // 
             // btnNew
             // 
@@ -269,10 +273,11 @@
             // cmbZip
             // 
             this.cmbZip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbZip.FormattingEnabled = true;
             this.cmbZip.Location = new System.Drawing.Point(749, 36);
             this.cmbZip.Name = "cmbZip";
-            this.cmbZip.Size = new System.Drawing.Size(188, 21);
+            this.cmbZip.Size = new System.Drawing.Size(188, 24);
             this.cmbZip.TabIndex = 21;
             this.cmbZip.Visible = false;
             this.cmbZip.SelectedIndexChanged += new System.EventHandler(this.cmbZip_SelectedIndexChanged);

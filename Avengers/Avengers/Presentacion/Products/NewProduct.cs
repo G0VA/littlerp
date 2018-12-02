@@ -30,7 +30,7 @@ namespace Avengers.Presentacion.Products
         private void initComboEditorial(String cond)
         {
             Product p = new Product();
-            p.getGestor().readInProduct(cond, "EDITORIAL");
+            p.getGestor().readInProductV3(cond, "EDITORIAL", "EDITORIAL");
             DataTable tproduct = p.getGestor().getProducts();
             comboEditorial.Items.Clear();
             foreach (DataRow row in tproduct.Rows)
@@ -42,11 +42,12 @@ namespace Avengers.Presentacion.Products
         private void initComboGender(String cond)
         {
             Product p = new Product();
-            p.getGestor().readInProduct(cond, "GENDER");
+            p.getGestor().readInProductV3(cond, "GENDER", "GENDER");
             DataTable tproduct = p.getGestor().getProducts();
             comboGender.Items.Clear();
             foreach (DataRow row in tproduct.Rows)
             {
+
                 comboGender.Items.Add(row["GENDER"]);
 
             }

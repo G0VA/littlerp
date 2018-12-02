@@ -1,6 +1,7 @@
 ﻿using Avengers.Dominio;
 using Avengers.Dominio.Gestores;
 using Avengers.Presentacion.Customers;
+using Avengers.Presentacion.Orders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,23 @@ namespace Avengers.Presentacion
     public partial class ViewCustomer : Form
     {
 
+        private NewOrder observer = null;
+
         public ViewCustomer()
         {
             InitializeComponent();
             initTable(" Where Deleted =0");
             initCombos();
         }
+
+        public ViewCustomer(NewOrder newOrder)
+        {
+            observer = newOrder;
+            InitializeComponent();
+            initTable(" Where Deleted =0");
+            initCombos();
+        }
+
 
         private void initTable(String cond)
         {
@@ -318,6 +330,27 @@ namespace Avengers.Presentacion
         private void cmbZip_SelectedIndexChanged(object sender, EventArgs e)
         {
             filtrar();
+        }
+
+        private void dgvCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            String id = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString();
+            String name = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[1].Value.ToString();
+            String surname = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[2].Value.ToString();
+            String dni = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[3].Value.ToString();
+            String address = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[4].Value.ToString();
+            String phone = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[5].Value.ToString();
+            String email = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[6].Value.ToString();
+            String refzipcodescities = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[7].Value.ToString();
+
+
+            DtoCustomer dtoC = new DtoCustomer(id, name, surname, address, phone, email, refzipcodescities, dni);
+            if (observer!= null)
+            {
+                observer.updateCustomer(dtoC);
+                Dispose();
+            }
+
         }
     }
 }

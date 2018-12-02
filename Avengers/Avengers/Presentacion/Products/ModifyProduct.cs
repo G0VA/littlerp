@@ -81,7 +81,7 @@ namespace Avengers.Presentacion.Products
             if (String.IsNullOrEmpty(txtDescription.Text))
             {
                 sql += " DESCRIPTION = null,";
-                Console.WriteLine("TRAZA");
+               
             }
             
             else
@@ -96,7 +96,7 @@ namespace Avengers.Presentacion.Products
             {
                 sql += " STOCK = "+ txtStock.Text;
             }
-            Console.WriteLine("TRAZA2");
+            
 
             return sql;
 
