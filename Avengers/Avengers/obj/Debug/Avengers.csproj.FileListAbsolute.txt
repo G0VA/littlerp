@@ -134,3 +134,5 @@ C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avenge
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Customers.ModCustomer.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.ModifyProduct.resources
+C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Customers.ModCustomer.resources
+C:\Users\b14-16m\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Products.ModifyProduct.resources

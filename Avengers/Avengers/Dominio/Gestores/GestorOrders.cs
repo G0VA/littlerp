@@ -31,6 +31,12 @@ namespace Avengers.Dominio.Gestores
             data = search.getData("Select * from orders order by idorder", "littlerp");
             tabla = data.Tables["littlerp"];
         }
+        public  String getDataV2(String column, String table, String cond)
+        {
+            ConnectOracle select = new ConnectOracle();
+            return select.DLookUp(column, table, cond).ToString();
+
+        }
 
         public void readOrders2(String cond)
         {
@@ -99,7 +105,7 @@ namespace Avengers.Dominio.Gestores
 
         }
 
-        public static void setData(String sentencia)
+        public void setData(String sentencia)
         {
             ConnectOracle update = new ConnectOracle();
             update.setData(sentencia);

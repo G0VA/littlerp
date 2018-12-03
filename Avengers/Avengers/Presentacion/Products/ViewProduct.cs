@@ -192,60 +192,76 @@ namespace Avengers.Presentacion.Products
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            String valor = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString();
-            if (!GestorProducts.existProductOrders(valor))
+            try
             {
-                if (MessageBox.Show("Do yo Want Delete this Product ?", "Delete Product", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                String valor = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString();
+                if (!GestorProducts.existProductOrders(valor))
                 {
-                    String sql = "update products set Deleted=1 where idproduct =" + valor;
-                    GestorProducts.deleteProduct(sql);
-                    initTable(" Where Deleted=0");
-                }
+                    if (MessageBox.Show("Do yo Want Delete this Product ?", "Delete Product", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        String sql = "update products set Deleted=1 where idproduct =" + valor;
+                        GestorProducts.deleteProduct(sql);
+                        initTable(" Where Deleted=0");
+                    }
 
+                }
+                else
+                {
+                    MessageBox.Show("This Product is in Orders in DB");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("This Product is in Orders in DB");
+                MessageBox.Show("Unselected any row");
             }
         }
+            
+       
 
-        private void btnModify_Click(object sender, EventArgs e)
+    private void btnModify_Click(object sender, EventArgs e)
         {
-            ModifyProduct mp = new ModifyProduct();
-            
-            String id = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString();
-            String gender = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[1].Value.ToString();
-            String editorial = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[2].Value.ToString();
-            String precio = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[3].Value.ToString();
-            String name = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[4].Value.ToString();
-            String description = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[5].Value.ToString();
-            String stock = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[6].Value.ToString();
-            
-            if (!GestorProducts.existProductOrders(id))
+            try
             {
-                
-                mp.id = id;
-                mp.comboGender.SelectedItem = gender;
-                mp.comboEditorial.SelectedItem = editorial;
-                mp.txtPrice.Text = precio;
-                mp.txtName.Text = name;
-                mp.txtDescription.Text = description;
-                mp.txtStock.Text = stock;
-                mp.ShowDialog();
+                ModifyProduct mp = new ModifyProduct();
 
-            }
-            else
+                String id = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString();
+                String gender = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[1].Value.ToString();
+                String editorial = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[2].Value.ToString();
+                String precio = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[3].Value.ToString();
+                String name = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[4].Value.ToString();
+                String description = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[5].Value.ToString();
+                String stock = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[6].Value.ToString();
+
+                if (!GestorProducts.existProductOrders(id))
+                {
+
+                    mp.id = id;
+                    mp.comboGender.SelectedItem = gender;
+                    mp.comboEditorial.SelectedItem = editorial;
+                    mp.txtPrice.Text = precio;
+                    mp.txtName.Text = name;
+                    mp.txtDescription.Text = description;
+                    mp.txtStock.Text = stock;
+                    mp.ShowDialog();
+
+                }
+                else
+                {
+                    MessageBox.Show("This Product is in Orders in DB");
+                }
+                if (mp.IsDisposed)
+                {
+                    initTable("Where Deleted = 0");
+                    comboEditorial.Items.Clear();
+                    comboGender.Items.Clear();
+                    initComboEditorial("Where Deleted = 0");
+                    initComboGender("Where Deleted = 0");
+                }
+            }catch(Exception ex)
             {
-                MessageBox.Show("This Product is in Orders in DB");
+                MessageBox.Show("Unselected any row");
             }
-            if (mp.IsDisposed)
-            {
-                initTable("Where Deleted = 0");
-                comboEditorial.Items.Clear();
-                comboGender.Items.Clear();
-                initComboEditorial("Where Deleted = 0");
-                initComboGender("Where Deleted = 0");
-            }
+           
 
 
         }

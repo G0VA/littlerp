@@ -37,7 +37,6 @@
             this.comboPay = new System.Windows.Forms.ComboBox();
             this.dateOrder = new System.Windows.Forms.DateTimePicker();
             this.chkDeleted = new System.Windows.Forms.CheckBox();
-            this.chkPrepaid = new System.Windows.Forms.CheckBox();
             this.btnClean = new System.Windows.Forms.Button();
             this.dgvOrders = new System.Windows.Forms.DataGridView();
             this.btnNew = new System.Windows.Forms.Button();
@@ -47,6 +46,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ckAct = new System.Windows.Forms.CheckBox();
             this.txtPrepaid = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,16 +137,6 @@
             this.chkDeleted.UseVisualStyleBackColor = true;
             this.chkDeleted.CheckedChanged += new System.EventHandler(this.chkDeleted_CheckedChanged);
             // 
-            // chkPrepaid
-            // 
-            this.chkPrepaid.AutoSize = true;
-            this.chkPrepaid.Location = new System.Drawing.Point(645, 97);
-            this.chkPrepaid.Name = "chkPrepaid";
-            this.chkPrepaid.Size = new System.Drawing.Size(62, 17);
-            this.chkPrepaid.TabIndex = 9;
-            this.chkPrepaid.Text = "Prepaid";
-            this.chkPrepaid.UseVisualStyleBackColor = true;
-            // 
             // btnClean
             // 
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,6 +154,7 @@
             this.dgvOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrders.Location = new System.Drawing.Point(12, 143);
             this.dgvOrders.Name = "dgvOrders";
+            this.dgvOrders.RowHeadersVisible = false;
             this.dgvOrders.Size = new System.Drawing.Size(982, 332);
             this.dgvOrders.TabIndex = 11;
             // 
@@ -227,11 +218,22 @@
             this.txtPrepaid.TabIndex = 17;
             this.txtPrepaid.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrepaid_KeyUp);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(658, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 15);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Prepaid:";
+            // 
             // ViewOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 485);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrepaid);
             this.Controls.Add(this.ckAct);
             this.Controls.Add(this.btnLog);
@@ -240,7 +242,6 @@
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.dgvOrders);
             this.Controls.Add(this.btnClean);
-            this.Controls.Add(this.chkPrepaid);
             this.Controls.Add(this.chkDeleted);
             this.Controls.Add(this.dateOrder);
             this.Controls.Add(this.comboPay);
@@ -270,7 +271,6 @@
         private System.Windows.Forms.ComboBox comboPay;
         private System.Windows.Forms.DateTimePicker dateOrder;
         private System.Windows.Forms.CheckBox chkDeleted;
-        private System.Windows.Forms.CheckBox chkPrepaid;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.DataGridView dgvOrders;
         private System.Windows.Forms.Button btnNew;
@@ -280,5 +280,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.CheckBox ckAct;
         private System.Windows.Forms.TextBox txtPrepaid;
+        private System.Windows.Forms.Label label1;
     }
 }
