@@ -151,5 +151,14 @@ namespace Avengers.Presentacion.Orders
             //String id2 = o.getGestor().getDataV2("IDPAYMENTMETHOD", "PAYMENTMETHODS", "WHERE UPPER(PAYMENTMETHOD) ='" + .Text.ToUpper() + "'");
            
         }
+
+        //private void btnRemove_Click(object sender, EventArgs e)
+        //{
+        //    foreach (DataRow row in dataGridView1.Rows){
+
+        //        dataGridView1.Rows.Remove(row);
+        //        next();
+        //    }
+        //}
     }
 }
