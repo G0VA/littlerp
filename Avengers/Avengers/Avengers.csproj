@@ -128,25 +128,25 @@
     <Compile Include="Presentacion\Users\ModUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Users\ModUser.Designer.cs">
+    <Compile Include="Presentacion\Users\ModUser.designer.cs">
       <DependentUpon>ModUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Users\NewRole.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Users\NewRole.Designer.cs">
+    <Compile Include="Presentacion\Users\NewRole.designer.cs">
       <DependentUpon>NewRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Users\NewUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Users\NewUser.Designer.cs">
+    <Compile Include="Presentacion\Users\NewUser.designer.cs">
       <DependentUpon>NewUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Users\ViewUsers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Users\ViewUsers.Designer.cs">
+    <Compile Include="Presentacion\Users\ViewUsers.designer.cs">
       <DependentUpon>ViewUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

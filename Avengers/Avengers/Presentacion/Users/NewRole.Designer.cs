@@ -79,6 +79,7 @@
             this.btnCancel.TabIndex = 37;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAddAll
             // 
@@ -88,6 +89,7 @@
             this.btnAddAll.TabIndex = 39;
             this.btnAddAll.Text = ">>";
             this.btnAddAll.UseVisualStyleBackColor = true;
+            this.btnAddAll.Click += new System.EventHandler(this.btnAddAll_Click);
             // 
             // btnRemoveAll
             // 
@@ -97,6 +99,7 @@
             this.btnRemoveAll.TabIndex = 40;
             this.btnRemoveAll.Text = "<<";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
             // 
             // btnRemoveOne
             // 
@@ -106,6 +109,7 @@
             this.btnRemoveOne.TabIndex = 41;
             this.btnRemoveOne.Text = "<";
             this.btnRemoveOne.UseVisualStyleBackColor = true;
+            this.btnRemoveOne.Click += new System.EventHandler(this.btnRemoveOne_Click);
             // 
             // btnAddOne
             // 
@@ -115,6 +119,7 @@
             this.btnAddOne.TabIndex = 42;
             this.btnAddOne.Text = ">";
             this.btnAddOne.UseVisualStyleBackColor = true;
+            this.btnAddOne.Click += new System.EventHandler(this.btnAddOne_Click);
             // 
             // lblSelectedPerm
             // 
@@ -156,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 491);
+            this.ClientSize = new System.Drawing.Size(533, 491);
             this.Controls.Add(this.lbxSelectedPerm);
             this.Controls.Add(this.lbxPermissionList);
             this.Controls.Add(this.lblPermList);

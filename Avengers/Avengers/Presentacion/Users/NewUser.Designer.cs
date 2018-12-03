@@ -65,6 +65,7 @@
             this.txtPassword.Location = new System.Drawing.Point(195, 94);
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(205, 20);
             this.txtPassword.TabIndex = 13;
             // 
@@ -83,6 +84,7 @@
             this.txtRepPass.Location = new System.Drawing.Point(195, 134);
             this.txtRepPass.MaxLength = 30;
             this.txtRepPass.Name = "txtRepPass";
+            this.txtRepPass.PasswordChar = '*';
             this.txtRepPass.Size = new System.Drawing.Size(205, 20);
             this.txtRepPass.TabIndex = 15;
             // 
@@ -113,6 +115,7 @@
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(143, 21);
             this.cmbRol.TabIndex = 19;
+            this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -123,6 +126,7 @@
             this.btnAdd.TabIndex = 24;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnAddNew
             // 
@@ -133,6 +137,7 @@
             this.btnAddNew.TabIndex = 23;
             this.btnAddNew.Text = "Add and New";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnCancel
             // 
@@ -143,6 +148,7 @@
             this.btnCancel.TabIndex = 22;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCreateRole
             // 
@@ -152,6 +158,7 @@
             this.btnCreateRole.TabIndex = 25;
             this.btnCreateRole.Text = "Create Role";
             this.btnCreateRole.UseVisualStyleBackColor = true;
+            this.btnCreateRole.Click += new System.EventHandler(this.btnCreateRole_Click);
             // 
             // NewUser
             // 

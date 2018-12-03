@@ -49,6 +49,7 @@
             this.btnCreateRole.TabIndex = 37;
             this.btnCreateRole.Text = "Create Role";
             this.btnCreateRole.UseVisualStyleBackColor = true;
+            this.btnCreateRole.Click += new System.EventHandler(this.btnCreateRole_Click);
             // 
             // btnChange
             // 
@@ -59,6 +60,7 @@
             this.btnChange.TabIndex = 36;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // btnCancel
             // 
@@ -69,6 +71,7 @@
             this.btnCancel.TabIndex = 34;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cmbRol
             // 
@@ -77,6 +80,7 @@
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(143, 21);
             this.cmbRol.TabIndex = 33;
+            this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRole_SelectedIndexChanged);
             // 
             // lblRole
             // 
@@ -93,6 +97,7 @@
             this.txtRepPass.Location = new System.Drawing.Point(183, 131);
             this.txtRepPass.MaxLength = 30;
             this.txtRepPass.Name = "txtRepPass";
+            this.txtRepPass.PasswordChar = '*';
             this.txtRepPass.Size = new System.Drawing.Size(205, 20);
             this.txtRepPass.TabIndex = 31;
             // 
@@ -111,6 +116,7 @@
             this.txtNewPass.Location = new System.Drawing.Point(183, 91);
             this.txtNewPass.MaxLength = 30;
             this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.PasswordChar = '*';
             this.txtNewPass.Size = new System.Drawing.Size(205, 20);
             this.txtNewPass.TabIndex = 29;
             // 
@@ -129,6 +135,7 @@
             this.txtOldPass.Location = new System.Drawing.Point(183, 51);
             this.txtOldPass.MaxLength = 30;
             this.txtOldPass.Name = "txtOldPass";
+            this.txtOldPass.PasswordChar = '*';
             this.txtOldPass.Size = new System.Drawing.Size(205, 20);
             this.txtOldPass.TabIndex = 27;
             // 
