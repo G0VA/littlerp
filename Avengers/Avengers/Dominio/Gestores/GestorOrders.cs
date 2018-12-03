@@ -31,11 +31,17 @@ namespace Avengers.Dominio.Gestores
             data = search.getData("Select * from orders order by idorder", "littlerp");
             tabla = data.Tables["littlerp"];
         }
-        public  String getDataV2(String column, String table, String cond)
+        public String getDataV2(String column, String table, String cond)
         {
             ConnectOracle select = new ConnectOracle();
             return select.DLookUp(column, table, cond).ToString();
 
+        }
+
+        public String getUnString(String sql)
+        {
+            ConnectOracle select = new ConnectOracle();
+            return select.getData(sql);
         }
 
         public void readOrders2(String cond)

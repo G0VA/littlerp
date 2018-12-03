@@ -39,6 +39,16 @@ namespace Avengers.Persistencia
 
             return requestQuery;
         }
+        public String getData(String sql)
+        {
+            OracleConnection cn = new OracleConnection(driver);
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = cn;
+            cn.Open();
+            cmd.CommandText = sql;
+
+            return cmd.ExecuteScalar().ToString();
+        }
 
         /**
          * Method to insert data in a table

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avengers.Dominio;
 using Avengers.Presentacion.Products;
+using Oracle.DataAccess.Client;
 
 namespace Avengers.Presentacion.Orders
 {
@@ -107,17 +108,20 @@ namespace Avengers.Presentacion.Orders
             {
                 MessageBox.Show("You must select one Product");
             }
-                
+
 
 
             //dataGridView1.Rows.Add(0, dataGridView1.Rows[0].Cells[1], txtProduct.Text, nudAmount.Value.ToString(), txtPrice.Text);
 
-            
-            
-             //String sql="Insert into ordersproducts values(null,"
+
+
+            //String sql="Insert into ordersproducts values(null,"
             //if(Dominio.Gestores.GestorCustomers.existCustomer(this.dtoCustomer.Idcustomer) && Dominio.Gestores.GestorProducts.existProduct(this.dtoProduct.Name){
             //    Dominio.Gestores.GestorOrdersProduct.insertOrderProduct()
             //}
+            //String ido = o.getGestor().getDataV2("IDORDER", "ORDERS", "WHERE TOTAL =" + float.Parse(tbxTotal.Text) + "'");
+            //Console.WriteLine("Traza--  " + ido);
+            
         }
 
         private void iniTable()
@@ -128,7 +132,7 @@ namespace Avengers.Presentacion.Orders
             dataGridView1.Columns.Add("AMOUNT", "AMOUNT");
             dataGridView1.Columns.Add("PRICESALE", "PRICESALE");
 
-            
+
 
         }
 
@@ -144,19 +148,67 @@ namespace Avengers.Presentacion.Orders
         private void btnOk_Click(object sender, EventArgs e)
         {
             Order o = new Order();
-            //String id = o.getGestor().getDataV2("IDCUSTOMER", "CUSTOMERS", "WHERE UPPER(NAME) ='" + txtCustomer.Text.ToUpper() + "'");
+            
 
             if(check())
             {
                 String id = dtoCustomer.Idcustomer;
-                String sql = "Insert into orders values (null,'" + id + "', 1, SYSDATE, '" + cmbPay.SelectedValue + "', " + int.Parse(tbxTotal.Text) + ", DEFAULT,0)";
+                String sql = "Insert into orders values (null,'" + id + "', 1, SYSDATE, '" + cmbPay.SelectedValue + "', " + float.Parse(tbxTotal.Text) + ", DEFAULT,0)";
                 o.getGestor().setData(sql);
+
+                sql = "SELECT IDORDER FROM ORDERS WHERE TOTAL = " + float.Parse(tbxTotal.Text);
+                String ido = o.getGestor().getUnString(sql);
+                //Console.WriteLine("Traza-- ID ORDER  " + ido);
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    //String idp = o.getGestor().getDataV2("IDPRODUCT", "PRODUCTS", "WHERE UPPER(NAME) =" + dataGridView1.Rows[i].Cells[0].Value.ToString().ToUpper() + "'");
+                    sql = "SELECT IDPRODUCT FROM PRODUCTS WHERE UPPER(NAME) = '" + dataGridView1.Rows[i].Cells[0].Value.ToString().ToUpper() + "'";
+                    String idp = o.getGestor().getUnString(sql);
+                    //Console.WriteLine("Traza-- ID PRODURC " + idp);
+
+                    sql = "Insert into ordersproducts values (null, '" + ido + "', '" + idp + "', " + float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) + ", " + float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString())+")";
+                    o.getGestor().setData(sql);
+                }
+
+
                 this.Dispose();
             }
             else
             {
                 MessageBox.Show("error");
             }               
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            this.t = 0;
+            if(dataGridView1.RowCount > 1)
+            {
+                dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+                if (!String.IsNullOrEmpty(txtDiscount.Text))
+                {
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
+                    }
+                    this.t = this.t - (this.t * ((float.Parse(txtDiscount.Text)) / 100));
+                    tbxTotal.Text = Convert.ToString(t);
+
+                }
+                else
+                {
+                    if (dataGridView1.RowCount > 1)
+                    {
+
+                        for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                        {
+                            this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
+                        }
+                        tbxTotal.Text = Convert.ToString(t);
+                    }
+                }
+            }
+                
         }
     }
 }
