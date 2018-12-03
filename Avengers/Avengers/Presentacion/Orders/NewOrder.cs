@@ -17,8 +17,7 @@ namespace Avengers.Presentacion.Orders
     {
         private DtoCustomer dtoCustomer;
         private DtoProduct dtoProduct;
-        private float total;
-        private float totald;
+        private float t;
         public NewOrder()
         {
             InitializeComponent();
@@ -72,7 +71,7 @@ namespace Avengers.Presentacion.Orders
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            this.t = 0; 
             Order o = new Order();
             //String id = o.getGestor().getDataV2("IDCUSTOMER", "CUSTOMERS",
             //    "WHERE UPPER(NAME) ='" + txtCustomer.Text.ToUpper() + "'");
@@ -84,15 +83,24 @@ namespace Avengers.Presentacion.Orders
                 dataGridView1.Rows.Add(txtProduct.Text, nudAmount.Value.ToString(), txtPrice.Text);
                 if (!String.IsNullOrEmpty(txtDiscount.Text))
                 {
-                    this.total = this.total + (float.Parse(txtPrice.Text) * float.Parse(nudAmount.Value.ToString()));
-                    float descuento = this.total * ((float.Parse(txtDiscount.Text)) / 100);
-                    this.total = this.total - descuento;                    
-                    tbxTotal.Text = Convert.ToString(this.total);
-                    
+                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    {
+                        this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));                        
+                    }
+                    this.t = this.t - (this.t * ((float.Parse(txtDiscount.Text)) / 100));
+                    tbxTotal.Text = Convert.ToString(t);
+
                 }
                 else {
-                    this.total = this.total + (float.Parse(txtPrice.Text) * int.Parse(nudAmount.Value.ToString()));                    
-                    tbxTotal.Text = Convert.ToString(this.total);
+                    if (dataGridView1.RowCount > 1)
+                    {
+                        
+                        for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                        {
+                            this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
+                        }
+                        tbxTotal.Text = Convert.ToString(t);
+                    }                      
                 }
             }
             else
@@ -120,6 +128,8 @@ namespace Avengers.Presentacion.Orders
             dataGridView1.Columns.Add("AMOUNT", "AMOUNT");
             dataGridView1.Columns.Add("PRICESALE", "PRICESALE");
 
+            
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -146,19 +156,7 @@ namespace Avengers.Presentacion.Orders
             else
             {
                 MessageBox.Show("error");
-            }
-            
-            //String id2 = o.getGestor().getDataV2("IDPAYMENTMETHOD", "PAYMENTMETHODS", "WHERE UPPER(PAYMENTMETHOD) ='" + .Text.ToUpper() + "'");
-           
+            }               
         }
-
-        //private void btnRemove_Click(object sender, EventArgs e)
-        //{
-        //    foreach (DataRow row in dataGridView1.Rows){
-
-        //        dataGridView1.Rows.Remove(row);
-        //        next();
-        //    }
-        //}
     }
 }
