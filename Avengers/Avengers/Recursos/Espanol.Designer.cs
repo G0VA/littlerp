@@ -61,6 +61,51 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Añadir.
+        /// </summary>
+        internal static string btnAdd {
+            get {
+                return ResourceManager.GetString("btnAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Añadir y Nuevo.
+        /// </summary>
+        internal static string btnAddNew {
+            get {
+                return ResourceManager.GetString("btnAddNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        internal static string btnCancel {
+            get {
+                return ResourceManager.GetString("btnCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guardar.
+        /// </summary>
+        internal static string btnChange {
+            get {
+                return ResourceManager.GetString("btnChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Limpiar.
+        /// </summary>
+        internal static string btnClean {
+            get {
+                return ResourceManager.GetString("btnClean", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cerrar.
         /// </summary>
         internal static string btnCloseTab {
@@ -70,11 +115,47 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Salir.
+        ///   Busca una cadena traducida similar a Crear.
+        /// </summary>
+        internal static string btnCreate {
+            get {
+                return ResourceManager.GetString("btnCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Eliminar.
+        /// </summary>
+        internal static string btnDeleteUser {
+            get {
+                return ResourceManager.GetString("btnDeleteUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a                  Salir.
         /// </summary>
         internal static string btnExit {
             get {
                 return ResourceManager.GetString("btnExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modificar.
+        /// </summary>
+        internal static string btnModUser {
+            get {
+                return ResourceManager.GetString("btnModUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nuevo.
+        /// </summary>
+        internal static string btnNewUser {
+            get {
+                return ResourceManager.GetString("btnNewUser", resourceCulture);
             }
         }
         
@@ -115,6 +196,15 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Eliminado.
+        /// </summary>
+        internal static string ckDel {
+            get {
+                return ResourceManager.GetString("ckDel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Clientes.
         /// </summary>
         internal static string customers {
@@ -124,11 +214,92 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nombre:.
+        /// </summary>
+        internal static string lblName {
+            get {
+                return ResourceManager.GetString("lblName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nueva contraseña:.
+        /// </summary>
+        internal static string lblNewPass {
+            get {
+                return ResourceManager.GetString("lblNewPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña actual:.
+        /// </summary>
+        internal static string lblOldPass {
+            get {
+                return ResourceManager.GetString("lblOldPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Contraseña.
         /// </summary>
         internal static string lblP {
             get {
                 return ResourceManager.GetString("lblP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña:.
+        /// </summary>
+        internal static string lblPassword {
+            get {
+                return ResourceManager.GetString("lblPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Permisos.
+        /// </summary>
+        internal static string lblPermList {
+            get {
+                return ResourceManager.GetString("lblPermList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Repite nueva contraseña:.
+        /// </summary>
+        internal static string lblRepPass {
+            get {
+                return ResourceManager.GetString("lblRepPass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Rol:.
+        /// </summary>
+        internal static string lblRol {
+            get {
+                return ResourceManager.GetString("lblRol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre rol:.
+        /// </summary>
+        internal static string lblRoleName {
+            get {
+                return ResourceManager.GetString("lblRoleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Permisos seleccionados.
+        /// </summary>
+        internal static string lblSelectedPerm {
+            get {
+                return ResourceManager.GetString("lblSelectedPerm", resourceCulture);
             }
         }
         
@@ -147,6 +318,15 @@ namespace Avengers.Recursos {
         internal static string lblU {
             get {
                 return ResourceManager.GetString("lblU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Usuario:.
+        /// </summary>
+        internal static string lblUser {
+            get {
+                return ResourceManager.GetString("lblUser", resourceCulture);
             }
         }
         

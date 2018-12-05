@@ -68,7 +68,7 @@
             // 
             this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(190, 207);
+            this.cmbRol.Location = new System.Drawing.Point(221, 207);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(205, 21);
             this.cmbRol.TabIndex = 33;
@@ -86,7 +86,7 @@
             // 
             // txtRepPass
             // 
-            this.txtRepPass.Location = new System.Drawing.Point(190, 165);
+            this.txtRepPass.Location = new System.Drawing.Point(221, 165);
             this.txtRepPass.MaxLength = 30;
             this.txtRepPass.Name = "txtRepPass";
             this.txtRepPass.PasswordChar = '*';
@@ -105,7 +105,7 @@
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(190, 125);
+            this.txtNewPass.Location = new System.Drawing.Point(221, 125);
             this.txtNewPass.MaxLength = 30;
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '*';
@@ -124,7 +124,7 @@
             // 
             // txtOldPass
             // 
-            this.txtOldPass.Location = new System.Drawing.Point(190, 85);
+            this.txtOldPass.Location = new System.Drawing.Point(221, 85);
             this.txtOldPass.MaxLength = 30;
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.PasswordChar = '*';
@@ -164,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 355);
+            this.ClientSize = new System.Drawing.Size(490, 355);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnChange);

@@ -18,7 +18,8 @@ namespace Avengers
         String idioma;
         public Login()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            comboBox1.SelectedIndex = 0;     
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -94,10 +95,12 @@ namespace Avengers
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
+                this.Text = "Identificarse";
             }
             else if(this.idioma == "INGLES")
             {
                 idioma_en();
+                this.Text = "Login";
             }
            
         }

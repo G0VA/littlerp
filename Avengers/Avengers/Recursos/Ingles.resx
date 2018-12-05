@@ -117,11 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnAddNew" xml:space="preserve">
+    <value>Add and New</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnChange" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnClean" xml:space="preserve">
+    <value>Clean</value>
+  </data>
   <data name="btnCloseTab" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="btnCreate" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="btnDeleteUser" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="btnExit" xml:space="preserve">
-    <value>Exit</value>
+    <value>                 Exit</value>
+  </data>
+  <data name="btnModUser" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="btnNewUser" xml:space="preserve">
+    <value>New</value>
   </data>
   <data name="btnOrders" xml:space="preserve">
     <value>Orders</value>
@@ -135,17 +162,50 @@
   <data name="button2" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="ckDel" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
   <data name="customers" xml:space="preserve">
     <value>Customers</value>
   </data>
+  <data name="lblName" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="lblNewPass" xml:space="preserve">
+    <value>New password:</value>
+  </data>
+  <data name="lblOldPass" xml:space="preserve">
+    <value>Current password:</value>
+  </data>
   <data name="lblP" xml:space="preserve">
     <value>Password</value>
+  </data>
+  <data name="lblPassword" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="lblPermList" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="lblRepPass" xml:space="preserve">
+    <value>Repeat new password:</value>
+  </data>
+  <data name="lblRol" xml:space="preserve">
+    <value>Role:</value>
+  </data>
+  <data name="lblRoleName" xml:space="preserve">
+    <value>Role Name:</value>
+  </data>
+  <data name="lblSelectedPerm" xml:space="preserve">
+    <value>Selected permissions</value>
   </data>
   <data name="lblSelectIdioma" xml:space="preserve">
     <value>Select Languaje</value>
   </data>
   <data name="lblU" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="lblUser" xml:space="preserve">
+    <value>User:</value>
   </data>
   <data name="products" xml:space="preserve">
     <value>Products</value>

@@ -11,14 +11,47 @@ namespace Avengers.Presentacion.Users
         private string oldPass;
         private int refRol;
         private string usuario;
+        private string idioma;
 
-        public ModUser(string usuario)
+        public ModUser(string usuario, string idioma)
         {
             this.usuario = usuario;
             oldPass = GestorUsers.getData("password", "usuario", "upper(name) = '" + usuario.ToUpper() + "'");
             InitializeComponent();
             lblUsuario.Text = usuario;
             initRole(" where deleted = 0");
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Modificar Usuario";
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+                this.Text = "Modify User";
+            }
+        }
+
+        public void idioma_es()
+        {
+            lblUser.Text = Recursos.Espanol.lblUser;
+            lblOldPass.Text = Recursos.Espanol.lblOldPass;
+            lblNewPass.Text = Recursos.Espanol.lblNewPass;
+            lblRepPass.Text = Recursos.Espanol.lblRepPass;
+            lblRole.Text = Recursos.Espanol.lblRol;
+            btnCancel.Text = Recursos.Espanol.btnCancel;
+            btnChange.Text = Recursos.Espanol.btnChange;
+        }
+        public void idioma_en()
+        {
+            lblUser.Text = Recursos.Ingles.lblUser;
+            lblOldPass.Text = Recursos.Ingles.lblOldPass;
+            lblNewPass.Text = Recursos.Ingles.lblNewPass;
+            lblRepPass.Text = Recursos.Ingles.lblRepPass;
+            lblRole.Text = Recursos.Ingles.lblRol;
+            btnCancel.Text = Recursos.Ingles.btnCancel;
+            btnChange.Text = Recursos.Ingles.btnChange;
         }
 
         private void btnChange_Click(object sender, EventArgs e)
@@ -59,33 +92,65 @@ namespace Avengers.Presentacion.Users
 
         private String errorDialog()
         {
-            String error = " Some Errors have been found: \n";
-            if (string.IsNullOrEmpty(txtOldPass.Text))
+            if (this.idioma == "ESPAÑOL")
             {
-                error += "\t - The field \"Old Password\" can't be empty. \n";
+                String error = "Se han encontrado algunos errores: \n";
+                if (string.IsNullOrEmpty(txtOldPass.Text))
+                {
+                    error += "\t - El campo \"Contraseña actual\" no puede estar vacio. \n";
+                }
+                if (string.IsNullOrEmpty(txtNewPass.Text))
+                {
+                    error += "\t - El campo \"Nueva contraseña\" no puede estar vacio. \n";
+                }
+                if (string.IsNullOrEmpty(txtRepPass.Text))
+                {
+                    error += "\t - El campo \"Repetir contraseña\" no puede estar vacio. \n";
+                }
+                if (string.IsNullOrEmpty(cmbRol.Text))
+                {
+                    error += "\t - El campo \"Rol\" no puede estar vacio. \n";
+                }
+                if (!GestorUsers.GetMD5(txtOldPass.Text).Equals(oldPass))
+                {
+                    error += "\t - La contraseña actual es incorrecta. \n";
+                }
+                if (!txtNewPass.Text.Equals(txtRepPass))
+                {
+                    error += "\t - Las contraseñas no coinciden";
+                }
+                return error;
             }
-            if (string.IsNullOrEmpty(txtNewPass.Text))
+            else
             {
-                error += "\t - The field \"New Password\" can't be empty. \n";
+                String error = "Some Errors have been found: \n";
+                if (string.IsNullOrEmpty(txtOldPass.Text))
+                {
+                    error += "\t - The field \"Old Password\" can't be empty. \n";
+                }
+                if (string.IsNullOrEmpty(txtNewPass.Text))
+                {
+                    error += "\t - The field \"New Password\" can't be empty. \n";
+                }
+                if (string.IsNullOrEmpty(txtRepPass.Text))
+                {
+                    error += "\t - The field \"Repeat Password\" can't be empty. \n";
+                }
+                if (string.IsNullOrEmpty(cmbRol.Text))
+                {
+                    error += "\t - The field \"Role\" can't be empty. \n";
+                }
+                if (!GestorUsers.GetMD5(txtOldPass.Text).Equals(oldPass))
+                {
+                    error += "\t - The old password is wrong. \n";
+                }
+                if (!txtNewPass.Text.Equals(txtRepPass))
+                {
+                    error += "\t - New passwords don't match";
+                }
+                return error;
             }
-            if (string.IsNullOrEmpty(txtRepPass.Text))
-            {
-                error += "\t - The field \"Repeat Password\" can't be empty. \n";
-            }
-            if (string.IsNullOrEmpty(cmbRol.Text))
-            {
-                error += "\t - The field \"Role\" can't be empty. \n";
-            }
-            if (!GestorUsers.GetMD5(txtOldPass.Text).Equals(oldPass))
-            {
-                error += "\t - The old password is wrong. \n";
-            }
-            if (!txtNewPass.Text.Equals(txtRepPass))
-            {
-                error += "\t - New passwords don't match";
-            }
-            
-            return error;
+                
         }
 
         public String updateSql()
@@ -138,7 +203,7 @@ namespace Avengers.Presentacion.Users
 
         private void btnCreateRole_Click(object sender, EventArgs e)
         {
-            NewRole nr = new NewRole();
+            NewRole nr = new NewRole(this.idioma);
             nr.ShowDialog();
         }
     }

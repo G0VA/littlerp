@@ -9,13 +9,43 @@ namespace Avengers.Presentacion
 {
     public partial class ViewUsers : Form
     {
+        private string idioma;
 
-        public ViewUsers()
+        public ViewUsers(String idioma)
         {
             InitializeComponent();
             initTable("where us.deleted = 0");
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+            }
         }
 
+        public void idioma_es()
+        {
+            lblName.Text = Recursos.Espanol.lblName;
+            ckDel.Text = Recursos.Espanol.ckDel;
+            btnClean.Text = Recursos.Espanol.btnClean;
+            btnNewUser.Text = Recursos.Espanol.btnNewUser;
+            btnDeleteUser.Text = Recursos.Espanol.btnDeleteUser;
+            btnModUser.Text = Recursos.Espanol.btnModUser;
+            lblRol.Text = Recursos.Espanol.lblRol;
+        }
+        public void idioma_en()
+        {
+            lblName.Text = Recursos.Ingles.lblName;
+            ckDel.Text = Recursos.Ingles.ckDel;
+            btnClean.Text = Recursos.Ingles.btnClean;
+            btnNewUser.Text = Recursos.Ingles.btnNewUser;
+            btnDeleteUser.Text = Recursos.Ingles.btnDeleteUser;
+            btnModUser.Text = Recursos.Ingles.btnModUser;
+            lblRol.Text = Recursos.Ingles.lblRol;
+        }
         private void initTable(String condition)
         {
             dgvUsers.Columns.Clear();
@@ -25,7 +55,6 @@ namespace Avengers.Presentacion
 
             DataTable tUsers = u.gestor().getUsers();
             dgvUsers.Columns.Clear();
-
             dgvUsers.Columns.Add("NAME", "NAME");
             dgvUsers.Columns.Add("ROLE", "ROLE");
 
@@ -56,7 +85,7 @@ namespace Avengers.Presentacion
 
         private void btnNewUser_Click(object sender, EventArgs e)
         {
-            NewUser nu = new NewUser();
+            NewUser nu = new NewUser(this.idioma);
             nu.ShowDialog();
             if (nu.IsDisposed)
             {
@@ -90,18 +119,31 @@ namespace Avengers.Presentacion
         private void btnDelete_Click(object sender, EventArgs e)
         {
             String usuario = dgvUsers.Rows[dgvUsers.CurrentRow.Index].Cells[0].Value.ToString();
-            if (MessageBox.Show("Do yo want to delete this user?", "Delete User", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(this.idioma == "ESPAÑOL")
             {
-                String sql = "update usuario set deleted=1 where upper(name) ='" + usuario.ToUpper() + "'";
-                GestorUsers.delUser(sql);
-                initTable(" where us.deleted = 0");
+                if (MessageBox.Show("¿Estas seguro de eliminar el usuario?", "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    String sql = "update usuario set deleted=1 where upper(name) ='" + usuario.ToUpper() + "'";
+                    GestorUsers.delUser(sql);
+                    initTable(" where us.deleted = 0");
+                }
             }
+            else
+            {
+                if (MessageBox.Show("Do yo want to delete this user?", "Delete User", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    String sql = "update usuario set deleted=1 where upper(name) ='" + usuario.ToUpper() + "'";
+                    GestorUsers.delUser(sql);
+                    initTable(" where us.deleted = 0");
+                }
+            }
+                
         }
 
         private void btnModUser_Click(object sender, EventArgs e)
         {
             string usuario = dgvUsers.Rows[dgvUsers.CurrentRow.Index].Cells[0].Value.ToString();
-            ModUser mu = new ModUser(usuario);
+            ModUser mu = new ModUser(usuario,this.idioma);
             mu.ShowDialog();
             if (mu.IsDisposed)
             {

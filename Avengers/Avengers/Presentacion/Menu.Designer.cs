@@ -33,6 +33,7 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.lblUser = new Bunifu.Framework.UI.BunifuFlatButton();
             this.products = new Bunifu.Framework.UI.BunifuFlatButton();
             this.customers = new Bunifu.Framework.UI.BunifuFlatButton();
             this.users = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -41,7 +42,6 @@
             this.btnSys = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.btnCloseTab = new System.Windows.Forms.Button();
-            this.lblUser = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +81,41 @@
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(177, 372);
             this.bunifuGradientPanel1.TabIndex = 0;
+            // 
+            // lblUser
+            // 
+            this.lblUser.Activecolor = System.Drawing.Color.Transparent;
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.lblUser.BorderRadius = 0;
+            this.lblUser.ButtonText = "";
+            this.lblUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblUser.DisabledColor = System.Drawing.Color.Gray;
+            this.lblUser.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblUser.Iconcolor = System.Drawing.Color.Transparent;
+            this.lblUser.Iconimage = ((System.Drawing.Image)(resources.GetObject("lblUser.Iconimage")));
+            this.lblUser.Iconimage_right = null;
+            this.lblUser.Iconimage_right_Selected = null;
+            this.lblUser.Iconimage_Selected = null;
+            this.lblUser.IconMarginLeft = 0;
+            this.lblUser.IconMarginRight = 0;
+            this.lblUser.IconRightVisible = true;
+            this.lblUser.IconRightZoom = 0D;
+            this.lblUser.IconVisible = false;
+            this.lblUser.IconZoom = 90D;
+            this.lblUser.IsTab = false;
+            this.lblUser.Location = new System.Drawing.Point(0, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Normalcolor = System.Drawing.Color.Transparent;
+            this.lblUser.OnHovercolor = System.Drawing.Color.Transparent;
+            this.lblUser.OnHoverTextColor = System.Drawing.Color.White;
+            this.lblUser.selected = false;
+            this.lblUser.Size = new System.Drawing.Size(177, 48);
+            this.lblUser.TabIndex = 6;
+            this.lblUser.TabStop = false;
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUser.Textcolor = System.Drawing.Color.White;
+            this.lblUser.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // products
             // 
@@ -330,41 +365,6 @@
             this.btnCloseTab.UseVisualStyleBackColor = true;
             this.btnCloseTab.Click += new System.EventHandler(this.btnCloseTab_Click);
             // 
-            // lblUser
-            // 
-            this.lblUser.Activecolor = System.Drawing.Color.Transparent;
-            this.lblUser.BackColor = System.Drawing.Color.Transparent;
-            this.lblUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.lblUser.BorderRadius = 0;
-            this.lblUser.ButtonText = "";
-            this.lblUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblUser.DisabledColor = System.Drawing.Color.Gray;
-            this.lblUser.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblUser.Iconcolor = System.Drawing.Color.Transparent;
-            this.lblUser.Iconimage = ((System.Drawing.Image)(resources.GetObject("lblUser.Iconimage")));
-            this.lblUser.Iconimage_right = null;
-            this.lblUser.Iconimage_right_Selected = null;
-            this.lblUser.Iconimage_Selected = null;
-            this.lblUser.IconMarginLeft = 0;
-            this.lblUser.IconMarginRight = 0;
-            this.lblUser.IconRightVisible = true;
-            this.lblUser.IconRightZoom = 0D;
-            this.lblUser.IconVisible = false;
-            this.lblUser.IconZoom = 90D;
-            this.lblUser.IsTab = false;
-            this.lblUser.Location = new System.Drawing.Point(0, 0);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Normalcolor = System.Drawing.Color.Transparent;
-            this.lblUser.OnHovercolor = System.Drawing.Color.Transparent;
-            this.lblUser.OnHoverTextColor = System.Drawing.Color.White;
-            this.lblUser.selected = false;
-            this.lblUser.Size = new System.Drawing.Size(177, 48);
-            this.lblUser.TabIndex = 6;
-            this.lblUser.TabStop = false;
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUser.Textcolor = System.Drawing.Color.White;
-            this.lblUser.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,7 +376,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Menu";
-            this.Text = "Menu";
             this.panel1.ResumeLayout(false);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

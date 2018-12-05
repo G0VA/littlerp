@@ -54,7 +54,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(120, 41);
+            this.txtName.Location = new System.Drawing.Point(137, 41);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(188, 20);
             this.txtName.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             // txtRole
             // 
-            this.txtRole.Location = new System.Drawing.Point(410, 42);
+            this.txtRole.Location = new System.Drawing.Point(431, 41);
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(188, 20);
             this.txtRole.TabIndex = 4;
@@ -104,7 +104,7 @@
             this.btnModUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModUser.Location = new System.Drawing.Point(873, 299);
             this.btnModUser.Name = "btnModUser";
-            this.btnModUser.Size = new System.Drawing.Size(75, 23);
+            this.btnModUser.Size = new System.Drawing.Size(87, 23);
             this.btnModUser.TabIndex = 23;
             this.btnModUser.Text = "Modify";
             this.btnModUser.UseVisualStyleBackColor = true;

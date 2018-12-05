@@ -43,7 +43,7 @@
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(195, 54);
+            this.txtUser.Location = new System.Drawing.Point(221, 54);
             this.txtUser.MaxLength = 30;
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(205, 20);
@@ -61,7 +61,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(195, 94);
+            this.txtPassword.Location = new System.Drawing.Point(221, 93);
             this.txtPassword.MaxLength = 30;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -80,7 +80,7 @@
             // 
             // txtRepPass
             // 
-            this.txtRepPass.Location = new System.Drawing.Point(195, 134);
+            this.txtRepPass.Location = new System.Drawing.Point(221, 133);
             this.txtRepPass.MaxLength = 30;
             this.txtRepPass.Name = "txtRepPass";
             this.txtRepPass.PasswordChar = '*';
@@ -111,7 +111,7 @@
             // 
             this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(195, 176);
+            this.cmbRol.Location = new System.Drawing.Point(221, 176);
             this.cmbRol.Name = "cmbRol";
             this.cmbRol.Size = new System.Drawing.Size(205, 21);
             this.cmbRol.TabIndex = 19;

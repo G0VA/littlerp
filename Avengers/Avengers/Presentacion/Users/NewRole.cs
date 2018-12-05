@@ -13,10 +13,38 @@ namespace Avengers.Presentacion.Users
 {
     public partial class NewRole : Form
     {
-        public NewRole()
+        private String idioma;
+
+        public NewRole(String idioma)
         {
             InitializeComponent();
             initListBox(" where deleted = 0");
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+            }
+        }
+
+        public void idioma_es()
+        {
+            lblRoleName.Text = Recursos.Espanol.lblRoleName;
+            lblPermList.Text = Recursos.Espanol.lblPermList;
+            lblSelectedPerm.Text = Recursos.Espanol.lblSelectedPerm;
+            btnCancel.Text = Recursos.Espanol.btnCancel;
+            btnCreate.Text = Recursos.Espanol.btnCreate;
+        }
+        public void idioma_en()
+        {
+            lblRoleName.Text = Recursos.Ingles.lblRoleName;
+            lblPermList.Text = Recursos.Ingles.lblPermList;
+            lblSelectedPerm.Text = Recursos.Ingles.lblSelectedPerm;
+            btnCancel.Text = Recursos.Ingles.btnCancel;
+            btnCreate.Text = Recursos.Ingles.btnCreate;
         }
 
         private void initListBox(String condition)
