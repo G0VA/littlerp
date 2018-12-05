@@ -74,16 +74,13 @@ namespace Avengers.Presentacion.Orders
         {
             this.t = 0; 
             Order o = new Order();
-            //String id = o.getGestor().getDataV2("IDCUSTOMER", "CUSTOMERS",
-            //    "WHERE UPPER(NAME) ='" + txtCustomer.Text.ToUpper() + "'");
-            //Console.WriteLine(txtCustomer.Text.ToUpper());
 
-            //if(dataGridView1.Rows[0].Cells[1].Value.ToString().Length==0)
             if (!String.IsNullOrEmpty(txtProduct.Text) )
             {
                 dataGridView1.Rows.Add(txtProduct.Text, nudAmount.Value.ToString(), txtPrice.Text);
                 if (!String.IsNullOrEmpty(txtDiscount.Text))
                 {
+                    // -1 esta puesto por la fila en blanco
                     for (int i = 0; i < dataGridView1.RowCount - 1; i++)
                     {
                         this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));                        
@@ -108,20 +105,7 @@ namespace Avengers.Presentacion.Orders
             {
                 MessageBox.Show("You must select one Product");
             }
-
-
-
-            //dataGridView1.Rows.Add(0, dataGridView1.Rows[0].Cells[1], txtProduct.Text, nudAmount.Value.ToString(), txtPrice.Text);
-
-
-
-            //String sql="Insert into ordersproducts values(null,"
-            //if(Dominio.Gestores.GestorCustomers.existCustomer(this.dtoCustomer.Idcustomer) && Dominio.Gestores.GestorProducts.existProduct(this.dtoProduct.Name){
-            //    Dominio.Gestores.GestorOrdersProduct.insertOrderProduct()
-            //}
-            //String ido = o.getGestor().getDataV2("IDORDER", "ORDERS", "WHERE TOTAL =" + float.Parse(tbxTotal.Text) + "'");
-            //Console.WriteLine("Traza--  " + ido);
-            
+    
         }
 
         private void iniTable()
@@ -131,8 +115,6 @@ namespace Avengers.Presentacion.Orders
             dataGridView1.Columns.Add("PRODUCT", "PRODUCT");
             dataGridView1.Columns.Add("AMOUNT", "AMOUNT");
             dataGridView1.Columns.Add("PRICESALE", "PRICESALE");
-
-
 
         }
 
@@ -148,15 +130,15 @@ namespace Avengers.Presentacion.Orders
         private void btnOk_Click(object sender, EventArgs e)
         {
             Order o = new Order();
-            
 
             if(check())
             {
                 String id = dtoCustomer.Idcustomer;
-                String sql = "Insert into orders values (null,'" + id + "', 1, SYSDATE, '" + cmbPay.SelectedValue + "', " + float.Parse(tbxTotal.Text) + ", DEFAULT,0)";
+                //Sql para insertar order al hacer click en OK -- modificar el valor numero 3 que hace ref a user
+                String sql = "Insert into orders values (null,'" + id + "', 1, SYSDATE, '" + cmbPay.SelectedValue + "', '" + tbxTotal.Text + "', DEFAULT,0)";
                 o.getGestor().setData(sql);
-
-                sql = "SELECT IDORDER FROM ORDERS WHERE TOTAL = " + float.Parse(tbxTotal.Text);
+                //Console.WriteLine(sql);
+                sql = "SELECT IDORDER FROM ORDERS WHERE TOTAL = '" + (tbxTotal.Text) + "'";
                 String ido = o.getGestor().getUnString(sql);
                 //Console.WriteLine("Traza-- ID ORDER  " + ido);
                 for (int i = 0; i < dataGridView1.RowCount - 1; i++)
@@ -175,7 +157,7 @@ namespace Avengers.Presentacion.Orders
             }
             else
             {
-                MessageBox.Show("error");
+                MessageBox.Show("Select one customer and any paymentmethod");
             }               
         }
 

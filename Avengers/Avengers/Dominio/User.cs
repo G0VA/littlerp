@@ -3,9 +3,10 @@ using System;
 
 namespace Avengers.Dominio
 {
-    class User
+    public class User
     {
         private String Nombre;
+        private String contra;
         private GestorUsers g;
 
         public User()
@@ -23,6 +24,22 @@ namespace Avengers.Dominio
         public void setNombre(String nombre)
         {
             this.Nombre = nombre;
+        }
+        public String getContra()
+        {
+            return this.contra;
+        }
+        public void setContra(String contra)
+        {
+            if (contra.Equals("admin1234", StringComparison.OrdinalIgnoreCase))
+            {
+                this.contra = (contra);
+            }
+            else
+            {
+                GestorUsers g = new GestorUsers();
+                this.contra = g.GetMD5V2(contra);
+            }
         }
     }
 }

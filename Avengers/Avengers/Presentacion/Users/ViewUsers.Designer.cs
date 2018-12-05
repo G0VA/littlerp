@@ -64,7 +64,7 @@
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Location = new System.Drawing.Point(367, 42);
+            this.lblRol.Location = new System.Drawing.Point(359, 42);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(45, 16);
             this.lblRol.TabIndex = 5;
@@ -72,7 +72,7 @@
             // 
             // txtRole
             // 
-            this.txtRole.Location = new System.Drawing.Point(418, 42);
+            this.txtRole.Location = new System.Drawing.Point(410, 42);
             this.txtRole.Name = "txtRole";
             this.txtRole.Size = new System.Drawing.Size(188, 20);
             this.txtRole.TabIndex = 4;
@@ -81,7 +81,7 @@
             // ckDel
             // 
             this.ckDel.AutoSize = true;
-            this.ckDel.Location = new System.Drawing.Point(671, 44);
+            this.ckDel.Location = new System.Drawing.Point(657, 45);
             this.ckDel.Name = "ckDel";
             this.ckDel.Size = new System.Drawing.Size(63, 17);
             this.ckDel.TabIndex = 15;
@@ -92,7 +92,7 @@
             // btnLog
             // 
             this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.Location = new System.Drawing.Point(844, 340);
+            this.btnLog.Location = new System.Drawing.Point(873, 340);
             this.btnLog.Name = "btnLog";
             this.btnLog.Size = new System.Drawing.Size(75, 27);
             this.btnLog.TabIndex = 24;
@@ -102,7 +102,7 @@
             // btnModUser
             // 
             this.btnModUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModUser.Location = new System.Drawing.Point(844, 299);
+            this.btnModUser.Location = new System.Drawing.Point(873, 299);
             this.btnModUser.Name = "btnModUser";
             this.btnModUser.Size = new System.Drawing.Size(75, 23);
             this.btnModUser.TabIndex = 23;
@@ -113,7 +113,7 @@
             // btnDeleteUser
             // 
             this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteUser.Location = new System.Drawing.Point(844, 258);
+            this.btnDeleteUser.Location = new System.Drawing.Point(873, 258);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteUser.TabIndex = 22;
@@ -124,7 +124,7 @@
             // btnNewUser
             // 
             this.btnNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewUser.Location = new System.Drawing.Point(844, 216);
+            this.btnNewUser.Location = new System.Drawing.Point(873, 216);
             this.btnNewUser.Name = "btnNewUser";
             this.btnNewUser.Size = new System.Drawing.Size(75, 23);
             this.btnNewUser.TabIndex = 21;
@@ -138,16 +138,16 @@
             this.dgvUsers.AllowUserToDeleteRows = false;
             this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.Location = new System.Drawing.Point(36, 103);
+            this.dgvUsers.Location = new System.Drawing.Point(64, 102);
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.RowHeadersVisible = false;
-            this.dgvUsers.Size = new System.Drawing.Size(740, 399);
+            this.dgvUsers.Size = new System.Drawing.Size(774, 399);
             this.dgvUsers.TabIndex = 25;
             // 
             // btnClean
             // 
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(844, 39);
+            this.btnClean.Location = new System.Drawing.Point(763, 42);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(75, 23);
             this.btnClean.TabIndex = 26;
@@ -159,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 545);
+            this.ClientSize = new System.Drawing.Size(984, 545);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.dgvUsers);
             this.Controls.Add(this.btnLog);

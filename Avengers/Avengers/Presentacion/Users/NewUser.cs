@@ -13,7 +13,7 @@ namespace Avengers.Presentacion.Users
         public NewUser()
         {
             InitializeComponent();
-            initRole("");
+            initRole(" where deleted = 0");
         }
 
         public void initRole(String condition)
@@ -31,7 +31,32 @@ namespace Avengers.Presentacion.Users
 
         private bool checkAdd()
         {
-            return !(string.IsNullOrEmpty(txtUser.Text) && string.IsNullOrEmpty(txtPassword.Text) && string.IsNullOrEmpty(txtRepPass.Text)) && !GestorUsers.existsUser(txtUser.Text) && txtPassword.Text.Equals(txtRepPass.Text);
+            bool correct = true;
+            if (string.IsNullOrEmpty(txtUser.Text))
+            {
+                correct = false;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                correct = false;
+            }
+            if (string.IsNullOrEmpty(txtRepPass.Text))
+            {
+                correct = false;
+            }
+            if (string.IsNullOrEmpty(cmbRol.Text))
+            {
+                correct = false;
+            }
+            if (!txtPassword.Text.Equals(txtRepPass.Text))
+            {
+                correct = false;
+            }
+            if (GestorUsers.existsUser(txtUser.Text))
+            {
+                correct = false;
+            }
+            return correct;
         }
 
         private String errorDialog()
@@ -49,24 +74,26 @@ namespace Avengers.Presentacion.Users
             if (string.IsNullOrEmpty(txtRepPass.Text))
             {
                 error += "\t - The field \"Repeat Password\" can't be empty. \n";
-            }            
+            }
+            if (string.IsNullOrEmpty(cmbRol.Text))
+            {
+                error += "\t - The field \"Role\" can't be empty. \n";
+            }
             if (GestorUsers.existsUser(txtUser.Text))
             {
-                error += "\t - This user already exists.";
+                error += "\t - This user already exists. \n";
             }
             if (!txtPassword.Text.Equals(txtRepPass.Text))
             {
-                Console.WriteLine(txtPassword.Text);
-                Console.WriteLine(txtRepPass.Text);
-                error += "\t - The passwords don't match.";
+                error += "\t - Passwords do not match.";
             }
             return error;
         }
 
         public String insertSql()
         {
-            String sql = "insert into usuario values (null,'" + txtUser.Text.ToUpper() + "','" + GestorUsers.GetMD5(txtPassword.Text.ToUpper()) + "',";
-            sql += "0," + this.refRol + ")";
+            String sql = "insert into usuario values (null,'" + txtUser.Text.ToUpper() + "','" + GestorUsers.GetMD5(txtPassword.Text) + "',";
+            sql += "0," + refRol + ")";
             return sql;
         }
 
@@ -76,6 +103,7 @@ namespace Avengers.Presentacion.Users
             {
                 String sql = insertSql();
                 GestorUsers.insertUser(sql);
+                Console.WriteLine(GestorUsers.GetMD5(txtPassword.Text));
                 Dispose();
             }
             else
@@ -86,8 +114,7 @@ namespace Avengers.Presentacion.Users
 
         private void cmbRol_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string condition = "refrol = (select idrol from rol where name = '" + cmbRol.SelectedItem.ToString().ToUpper() + "')";
-            refRol = Convert.ToInt16(GestorUsers.getData("refRol", "usuario", condition));
+            refRol = Convert.ToInt16(GestorUsers.getData("idRol", "rol", "upper(name) = '" + cmbRol.SelectedItem.ToString().ToUpper() + "'"));
         }
 
         private void clean()
@@ -95,7 +122,6 @@ namespace Avengers.Presentacion.Users
             txtUser.Clear();
             txtPassword.Clear();
             txtRepPass.Clear();
-            initRole("");
         }
 
         private void btnAddNew_Click(object sender, EventArgs e)
@@ -103,7 +129,7 @@ namespace Avengers.Presentacion.Users
             if (checkAdd())
             {
                 String sql = insertSql();
-                GestorCustomers.insertCustomer(sql);
+                GestorUsers.insertUser(sql);
                 clean();
             }
             else

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreateRole = new System.Windows.Forms.Button();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmbRol = new System.Windows.Forms.ComboBox();
@@ -39,22 +38,14 @@
             this.lblNewPass = new System.Windows.Forms.Label();
             this.txtOldPass = new System.Windows.Forms.TextBox();
             this.lblOldPass = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btnCreateRole
-            // 
-            this.btnCreateRole.Location = new System.Drawing.Point(283, 174);
-            this.btnCreateRole.Name = "btnCreateRole";
-            this.btnCreateRole.Size = new System.Drawing.Size(105, 25);
-            this.btnCreateRole.TabIndex = 37;
-            this.btnCreateRole.Text = "Create Role";
-            this.btnCreateRole.UseVisualStyleBackColor = true;
-            this.btnCreateRole.Click += new System.EventHandler(this.btnCreateRole_Click);
             // 
             // btnChange
             // 
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChange.Location = new System.Drawing.Point(241, 244);
+            this.btnChange.Location = new System.Drawing.Point(238, 278);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(84, 32);
             this.btnChange.TabIndex = 36;
@@ -65,7 +56,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(124, 244);
+            this.btnCancel.Location = new System.Drawing.Point(121, 278);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 32);
             this.btnCancel.TabIndex = 34;
@@ -75,10 +66,11 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(114, 177);
+            this.cmbRol.Location = new System.Drawing.Point(190, 207);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(143, 21);
+            this.cmbRol.Size = new System.Drawing.Size(205, 21);
             this.cmbRol.TabIndex = 33;
             this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRole_SelectedIndexChanged);
             // 
@@ -86,7 +78,7 @@
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.Location = new System.Drawing.Point(42, 178);
+            this.lblRole.Location = new System.Drawing.Point(49, 212);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(40, 16);
             this.lblRole.TabIndex = 32;
@@ -94,7 +86,7 @@
             // 
             // txtRepPass
             // 
-            this.txtRepPass.Location = new System.Drawing.Point(183, 131);
+            this.txtRepPass.Location = new System.Drawing.Point(190, 165);
             this.txtRepPass.MaxLength = 30;
             this.txtRepPass.Name = "txtRepPass";
             this.txtRepPass.PasswordChar = '*';
@@ -105,7 +97,7 @@
             // 
             this.lblRepPass.AutoSize = true;
             this.lblRepPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRepPass.Location = new System.Drawing.Point(42, 131);
+            this.lblRepPass.Location = new System.Drawing.Point(49, 165);
             this.lblRepPass.Name = "lblRepPass";
             this.lblRepPass.Size = new System.Drawing.Size(119, 16);
             this.lblRepPass.TabIndex = 30;
@@ -113,7 +105,7 @@
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(183, 91);
+            this.txtNewPass.Location = new System.Drawing.Point(190, 125);
             this.txtNewPass.MaxLength = 30;
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '*';
@@ -124,7 +116,7 @@
             // 
             this.lblNewPass.AutoSize = true;
             this.lblNewPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewPass.Location = new System.Drawing.Point(42, 91);
+            this.lblNewPass.Location = new System.Drawing.Point(49, 125);
             this.lblNewPass.Name = "lblNewPass";
             this.lblNewPass.Size = new System.Drawing.Size(101, 16);
             this.lblNewPass.TabIndex = 28;
@@ -132,7 +124,7 @@
             // 
             // txtOldPass
             // 
-            this.txtOldPass.Location = new System.Drawing.Point(183, 51);
+            this.txtOldPass.Location = new System.Drawing.Point(190, 85);
             this.txtOldPass.MaxLength = 30;
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.PasswordChar = '*';
@@ -143,18 +135,38 @@
             // 
             this.lblOldPass.AutoSize = true;
             this.lblOldPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOldPass.Location = new System.Drawing.Point(42, 51);
+            this.lblOldPass.Location = new System.Drawing.Point(49, 85);
             this.lblOldPass.Name = "lblOldPass";
             this.lblOldPass.Size = new System.Drawing.Size(95, 16);
             this.lblOldPass.TabIndex = 26;
             this.lblOldPass.Text = "Old Password:";
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.Location = new System.Drawing.Point(49, 44);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(40, 16);
+            this.lblUser.TabIndex = 37;
+            this.lblUser.Text = "User:";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(187, 44);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(0, 16);
+            this.lblUsuario.TabIndex = 38;
+            // 
             // ModUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 320);
-            this.Controls.Add(this.btnCreateRole);
+            this.ClientSize = new System.Drawing.Size(450, 355);
+            this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.lblUser);
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.cmbRol);
@@ -173,8 +185,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCreateRole;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cmbRol;
@@ -185,5 +195,7 @@
         private System.Windows.Forms.Label lblNewPass;
         private System.Windows.Forms.TextBox txtOldPass;
         private System.Windows.Forms.Label lblOldPass;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label lblUsuario;
     }
 }

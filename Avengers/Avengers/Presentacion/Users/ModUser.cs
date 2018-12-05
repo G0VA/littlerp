@@ -14,16 +14,23 @@ namespace Avengers.Presentacion.Users
 
         public ModUser(string usuario)
         {
-            this.usuario = usuario.ToUpper();
-            oldPass = GestorUsers.getData("password", "usuario", "upper(name) = '" + usuario + "'");
+            this.usuario = usuario;
+            oldPass = GestorUsers.getData("password", "usuario", "upper(name) = '" + usuario.ToUpper() + "'");
             InitializeComponent();
-            initRole("");
+            lblUsuario.Text = usuario;
+            initRole(" where deleted = 0");
         }
 
         private void btnChange_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do yo want to update this user's info?", "Update User", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+
+                Console.WriteLine(refRol);
+                Console.WriteLine(usuario);
+                Console.WriteLine(oldPass);
+                Console.WriteLine(GestorUsers.GetMD5(txtOldPass.Text.ToString()));
+
                 if (checkUpdate())
                 {
                     String sql = updateSql();
@@ -53,14 +60,31 @@ namespace Avengers.Presentacion.Users
         private String errorDialog()
         {
             String error = " Some Errors have been found: \n";
+            if (string.IsNullOrEmpty(txtOldPass.Text))
+            {
+                error += "\t - The field \"Old Password\" can't be empty. \n";
+            }
+            if (string.IsNullOrEmpty(txtNewPass.Text))
+            {
+                error += "\t - The field \"New Password\" can't be empty. \n";
+            }
+            if (string.IsNullOrEmpty(txtRepPass.Text))
+            {
+                error += "\t - The field \"Repeat Password\" can't be empty. \n";
+            }
+            if (string.IsNullOrEmpty(cmbRol.Text))
+            {
+                error += "\t - The field \"Role\" can't be empty. \n";
+            }
             if (!GestorUsers.GetMD5(txtOldPass.Text).Equals(oldPass))
             {
-                error += "\t - The old password is wrong.";
+                error += "\t - The old password is wrong. \n";
             }
-            if (txtNewPass.Text.Equals(txtRepPass))
+            if (!txtNewPass.Text.Equals(txtRepPass))
             {
-                error += "\t - The new passwords don't match";
+                error += "\t - New passwords don't match";
             }
+            
             return error;
         }
 
@@ -74,7 +98,32 @@ namespace Avengers.Presentacion.Users
 
         private bool checkUpdate()
         {
-            return oldPass.Equals(GestorUsers.GetMD5(txtOldPass.Text)) && txtNewPass.Text.Equals(txtRepPass.Text);
+            bool correct = true;
+            if (string.IsNullOrEmpty(txtOldPass.Text))
+            {
+                correct = false;
+            }
+            if (string.IsNullOrEmpty(txtNewPass.Text))
+            {
+                correct = false;
+            }
+            if (string.IsNullOrEmpty(txtRepPass.Text))
+            {
+                correct = false;
+            }
+            if (string.IsNullOrEmpty(cmbRol.Text))
+            {
+                correct = false;
+            }
+            if (!txtNewPass.Text.Equals(txtRepPass.Text))
+            {
+                correct = false;
+            }
+            if (!oldPass.Equals(GestorUsers.GetMD5(txtOldPass.Text)))
+            {
+                correct = false;
+            }
+            return correct;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -84,8 +133,7 @@ namespace Avengers.Presentacion.Users
 
         private void cmbRole_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string condition = "refrol = (select idrol from rol where name = '" + cmbRol.SelectedItem.ToString().ToUpper() + "')";
-            refRol = Convert.ToInt16(GestorUsers.getData("refRol", "usuario", condition));
+            refRol = Convert.ToInt16(GestorUsers.getData("idRol", "rol", "upper(name) = '" + cmbRol.SelectedItem.ToString().ToUpper() + "'"));
         }
 
         private void btnCreateRole_Click(object sender, EventArgs e)

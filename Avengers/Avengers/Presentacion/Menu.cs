@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Avengers.Presentacion.Products;
 using Avengers.Presentacion.Orders;
+using Avengers.Dominio;
 
 namespace Avengers.Presentacion
 {
@@ -18,13 +19,15 @@ namespace Avengers.Presentacion
         private ViewCustomer c1;
         private ViewOrders o1;
         private ViewProduct p1;
+        private User u;
 
-        public Menu()
+        public Menu(User u)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.Sizable;
-               
+            this.u = u;   
         }
+
 
         private void mostrarBtn()
         {

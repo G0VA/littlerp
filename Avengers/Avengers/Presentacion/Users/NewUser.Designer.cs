@@ -39,7 +39,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnCreateRole = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtUser
@@ -110,17 +109,18 @@
             // 
             // cmbRol
             // 
+            this.cmbRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRol.FormattingEnabled = true;
-            this.cmbRol.Location = new System.Drawing.Point(126, 180);
+            this.cmbRol.Location = new System.Drawing.Point(195, 176);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(143, 21);
+            this.cmbRol.Size = new System.Drawing.Size(205, 21);
             this.cmbRol.TabIndex = 19;
             this.cmbRol.SelectedIndexChanged += new System.EventHandler(this.cmbRol_SelectedIndexChanged);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(349, 268);
+            this.btnAdd.Location = new System.Drawing.Point(342, 268);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(84, 32);
             this.btnAdd.TabIndex = 24;
@@ -131,7 +131,7 @@
             // btnAddNew
             // 
             this.btnAddNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.Location = new System.Drawing.Point(170, 268);
+            this.btnAddNew.Location = new System.Drawing.Point(181, 268);
             this.btnAddNew.Name = "btnAddNew";
             this.btnAddNew.Size = new System.Drawing.Size(121, 32);
             this.btnAddNew.TabIndex = 23;
@@ -142,7 +142,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(36, 268);
+            this.btnCancel.Location = new System.Drawing.Point(57, 268);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(84, 32);
             this.btnCancel.TabIndex = 22;
@@ -150,22 +150,11 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnCreateRole
-            // 
-            this.btnCreateRole.Location = new System.Drawing.Point(295, 177);
-            this.btnCreateRole.Name = "btnCreateRole";
-            this.btnCreateRole.Size = new System.Drawing.Size(105, 25);
-            this.btnCreateRole.TabIndex = 25;
-            this.btnCreateRole.Text = "Create Role";
-            this.btnCreateRole.UseVisualStyleBackColor = true;
-            this.btnCreateRole.Click += new System.EventHandler(this.btnCreateRole_Click);
-            // 
             // NewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 349);
-            this.Controls.Add(this.btnCreateRole);
+            this.ClientSize = new System.Drawing.Size(472, 337);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnAddNew);
             this.Controls.Add(this.btnCancel);
@@ -197,6 +186,5 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnCreateRole;
     }
 }
