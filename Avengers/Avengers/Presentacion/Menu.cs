@@ -20,13 +20,23 @@ namespace Avengers.Presentacion
         private ViewOrders o1;
         private ViewProduct p1;
         private User u;
+        private string idioma;
 
-        public Menu(User u)
+        public Menu(User u,String idioma)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.Sizable;
             this.u = u;
             lblUser.Text = "                 " +u.getNombre();
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+            }
         }
 
 
@@ -68,7 +78,7 @@ namespace Avengers.Presentacion
                 u1.Dock = DockStyle.Fill;
                 u1.Show();
 
-                TabPage tpu = new TabPage("Users");
+                TabPage tpu = new TabPage(users.Text);
                 tpu.Tag = u1;
                 tpu.Name = "u1";
                 tpu.Parent = tabControl;
@@ -101,6 +111,17 @@ namespace Avengers.Presentacion
             Application.Exit();
         }
 
+        public void idioma_es()
+        {
+            btnCloseTab.Text = Recursos.Espanol.btnCloseTab;
+            btnSys.Text = Recursos.Espanol.btnSys;
+            btnOrders.Text = Recursos.Espanol.btnOrders;
+            users.Text = Recursos.Espanol.users;
+            customers.Text = Recursos.Espanol.customers;
+            products.Text = Recursos.Espanol.products;
+            btnExit.Text = Recursos.Espanol.btnExit;
+        }
+
         private void btnOrders_Click(object sender, EventArgs e)
         {
             if (!tabControl.TabPages.ContainsKey("o1"))
@@ -115,7 +136,7 @@ namespace Avengers.Presentacion
                 o1.Dock = DockStyle.Fill;
                 o1.Show();
 
-                TabPage tp = new TabPage("Orders");
+                TabPage tp = new TabPage(btnOrders.Text);
                 tp.Tag = o1;
                 tp.Name = "o1";
                 tp.Parent = tabControl;
@@ -131,6 +152,17 @@ namespace Avengers.Presentacion
         
         }
 
+        public void idioma_en()
+        {
+            btnCloseTab.Text = Recursos.Ingles.btnCloseTab;
+            btnSys.Text = Recursos.Ingles.btnSys;
+            btnOrders.Text = Recursos.Ingles.btnOrders;
+            users.Text = Recursos.Ingles.users;
+            customers.Text = Recursos.Ingles.customers;
+            products.Text = Recursos.Ingles.products;
+            btnExit.Text = Recursos.Ingles.btnExit;
+        }
+
         private void customers_Click(object sender, EventArgs e)
         {
             if (!tabControl.TabPages.ContainsKey("c1"))
@@ -144,7 +176,7 @@ namespace Avengers.Presentacion
                 c1.Dock = DockStyle.Fill;
                 c1.Show();
 
-                TabPage tp = new TabPage("Customers");
+                TabPage tp = new TabPage(customers.Text);
                 tp.Tag = c1;
                 tp.Name = "c1";
                 tp.Parent = tabControl;
@@ -212,7 +244,7 @@ namespace Avengers.Presentacion
                 p1.Dock = DockStyle.Fill;
                 p1.Show();
 
-                TabPage tp = new TabPage("Products");
+                TabPage tp = new TabPage(products.Text);
                 tp.Tag = p1;
                 tp.Name = "p1";
                 tp.Parent = tabControl;

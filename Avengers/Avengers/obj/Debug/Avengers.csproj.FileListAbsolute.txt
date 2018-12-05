@@ -185,3 +185,5 @@ G:\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Users.NewUser.resources
 G:\Avengers\Avengers\obj\Debug\Avengers.Presentacion.ViewUsers.resources
 G:\Avengers\Avengers\obj\Debug\Avengers.Properties.Resources.resources
 G:\Avengers\Avengers\obj\Debug\Avengers.csproj.GenerateResource.Cache
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Recursos.Espanol.resources
+C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Recursos.Ingles.resources

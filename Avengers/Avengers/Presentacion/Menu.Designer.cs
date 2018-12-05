@@ -318,6 +318,8 @@
             // 
             // btnCloseTab
             // 
+            this.btnCloseTab.AccessibleDescription = "btnCloseTab";
+            this.btnCloseTab.AccessibleName = "btnCloseTab";
             this.btnCloseTab.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCloseTab.ForeColor = System.Drawing.Color.Red;
             this.btnCloseTab.Location = new System.Drawing.Point(650, 25);

@@ -156,6 +156,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Recursos\Espanol.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Espanol.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Recursos\Ingles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ingles.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\check.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +217,14 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\Espanol.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Espanol.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\Ingles.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Ingles.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

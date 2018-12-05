@@ -15,9 +15,10 @@ namespace Avengers
     public partial class Login : Form
     {
         private User u1;
+        String idioma;
         public Login()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -48,22 +49,77 @@ namespace Avengers
             if (id != -1)
             {
                 if (u1.getContra().Equals("admin1234", StringComparison.OrdinalIgnoreCase)){
-                    String newPass = (Interaction.InputBox("Welcolme " + u1.getNombre() + " Input your new pass", "New Pass"));
-                    //Console.WriteLine(newPass);
-                    u1.setContra(newPass);                    
-                    u1.gestor().setDataV2("update usuario set password = '" + u1.getContra() + "' Where iduser = 1");
-                    MessageBox.Show("pass modify successful");
-                    Presentacion.Menu m1 = new Presentacion.Menu(u1);
+                    if (this.idioma == "ESPAÑOL")
+                    {
+                        String newPass = (Interaction.InputBox("Bienvenido " + u1.getNombre() + " Introduce nueva contraseña", "Nueva contraseña"));
+                        //Console.WriteLine(newPass);
+                        u1.setContra(newPass);
+                        u1.gestor().setDataV2("update usuario set password = '" + u1.getContra() + "' Where iduser = 1");
+                        MessageBox.Show("Contraseña modificada correctamente");
+                    }
+                    else
+                    {
+                        String newPass = (Interaction.InputBox("Welcolme " + u1.getNombre() + " Input your new pass", "New Pass"));
+                        //Console.WriteLine(newPass);
+                        u1.setContra(newPass);
+                        u1.gestor().setDataV2("update usuario set password = '" + u1.getContra() + "' Where iduser = 1");
+                        MessageBox.Show("pass modify successful");
+                    }
+                    
+                    Presentacion.Menu m1 = new Presentacion.Menu(u1,this.idioma);
                     this.Hide();
                     m1.Show();
                 }
                 else{
-                    MessageBox.Show("Login successful " + u1.getNombre());
-                    Presentacion.Menu m1 = new Presentacion.Menu(u1);
+                    if (this.idioma == "ESPAÑOL")
+                    {
+                        MessageBox.Show("Acceso correcto " + u1.getNombre());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login successful " + u1.getNombre());
+                    }
+                        
+
+                    Presentacion.Menu m1 = new Presentacion.Menu(u1,this.idioma);
                     this.Hide();
                     m1.Show();
                 }              
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.idioma = comboBox1.Text.ToUpper();
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+            }
+            else if(this.idioma == "INGLES")
+            {
+                idioma_en();
+            }
+           
+        }
+
+        private void idioma_en()
+        {
+            //Login
+            lblSelectIdioma.Text = Avengers.Recursos.Ingles.lblSelectIdioma;
+            lblU.Text = Avengers.Recursos.Ingles.lblU;
+            lblP.Text = Avengers.Recursos.Ingles.lblP;
+            button1.Text = Avengers.Recursos.Ingles.button1;
+            button2.Text = Avengers.Recursos.Ingles.button2;           
+        }
+
+        private void idioma_es()
+        {
+            //Login
+            lblSelectIdioma.Text = Avengers.Recursos.Espanol.lblSelectIdioma;
+            lblU.Text = Avengers.Recursos.Espanol.lblU;
+            lblP.Text = Avengers.Recursos.Espanol.lblP;
+            button1.Text = Avengers.Recursos.Espanol.button1;
+            button2.Text = Avengers.Recursos.Espanol.button2;
         }
     }
 }
