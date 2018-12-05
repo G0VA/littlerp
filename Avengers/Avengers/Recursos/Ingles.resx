@@ -234,4 +234,61 @@
   <data name="users" xml:space="preserve">
     <value>Users</value>
   </data>
+  <data name="btnOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="btnRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="ckAct" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="lblAdrees" xml:space="preserve">
+    <value>Address:</value>
+  </data>
+  <data name="lblAmount" xml:space="preserve">
+    <value>Amount:</value>
+  </data>
+  <data name="lblCity" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="lblCustomer" xml:space="preserve">
+    <value>Customer:</value>
+  </data>
+  <data name="lblDate" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="lblDiscount" xml:space="preserve">
+    <value>Discount:</value>
+  </data>
+  <data name="lblDni" xml:space="preserve">
+    <value>DNI:</value>
+  </data>
+  <data name="lblModDni" xml:space="preserve">
+    <value>USER DNI:</value>
+  </data>
+  <data name="lblPay" xml:space="preserve">
+    <value>PaymentMethod:</value>
+  </data>
+  <data name="lblPhone" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="lblPrepago" xml:space="preserve">
+    <value>Prepaid:</value>
+  </data>
+  <data name="lblPricesale" xml:space="preserve">
+    <value>Pricesale:</value>
+  </data>
+  <data name="lblProduct" xml:space="preserve">
+    <value>Product:</value>
+  </data>
+  <data name="lblProvince" xml:space="preserve">
+    <value>Province:</value>
+  </data>
+  <data name="lblRegion" xml:space="preserve">
+    <value>Region:</value>
+  </data>
+  <data name="lblSurname" xml:space="preserve">
+    <value>Surname:</value>
+  </data>
 </root>

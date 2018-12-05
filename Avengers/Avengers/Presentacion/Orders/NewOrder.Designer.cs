@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewOrder));
             this.lblDate = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblProduct = new System.Windows.Forms.Label();
             this.txtProduct = new System.Windows.Forms.TextBox();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.lblCustomer = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPricesale = new System.Windows.Forms.Label();
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.btnFindCust = new System.Windows.Forms.Button();
             this.nudAmount = new System.Windows.Forms.NumericUpDown();
             this.cmbPay = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPayMethod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.SuspendLayout();
@@ -66,15 +66,15 @@
             this.lblDate.TabIndex = 0;
             this.lblDate.Text = "Date:";
             // 
-            // label1
+            // lblProduct
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Product:";
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Location = new System.Drawing.Point(29, 75);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(65, 16);
+            this.lblProduct.TabIndex = 1;
+            this.lblProduct.Text = "Product:";
             // 
             // txtProduct
             // 
@@ -102,15 +102,15 @@
             this.lblCustomer.TabIndex = 4;
             this.lblCustomer.Text = "Customer:";
             // 
-            // label2
+            // lblPricesale
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(347, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 16);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Pricesale:";
+            this.lblPricesale.AutoSize = true;
+            this.lblPricesale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPricesale.Location = new System.Drawing.Point(347, 75);
+            this.lblPricesale.Name = "lblPricesale";
+            this.lblPricesale.Size = new System.Drawing.Size(78, 16);
+            this.lblPricesale.TabIndex = 5;
+            this.lblPricesale.Text = "Pricesale:";
             // 
             // txtCustomer
             // 
@@ -140,7 +140,7 @@
             // 
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(730, 74);
+            this.lblDiscount.Location = new System.Drawing.Point(721, 74);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(72, 16);
             this.lblDiscount.TabIndex = 10;
@@ -190,7 +190,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(609, 459);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.Size = new System.Drawing.Size(85, 23);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -260,22 +260,22 @@
             this.cmbPay.Size = new System.Drawing.Size(143, 21);
             this.cmbPay.TabIndex = 22;
             // 
-            // label3
+            // lblPayMethod
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(608, 27);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 16);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "PaymentMethod";
+            this.lblPayMethod.AutoSize = true;
+            this.lblPayMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPayMethod.Location = new System.Drawing.Point(608, 27);
+            this.lblPayMethod.Name = "lblPayMethod";
+            this.lblPayMethod.Size = new System.Drawing.Size(119, 16);
+            this.lblPayMethod.TabIndex = 23;
+            this.lblPayMethod.Text = "PaymentMethod";
             // 
             // NewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 494);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblPayMethod);
             this.Controls.Add(this.cmbPay);
             this.Controls.Add(this.nudAmount);
             this.Controls.Add(this.btnFindCust);
@@ -292,11 +292,11 @@
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtCustomer);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblPricesale);
             this.Controls.Add(this.lblCustomer);
             this.Controls.Add(this.date);
             this.Controls.Add(this.txtProduct);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblProduct);
             this.Controls.Add(this.lblDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewOrder";
@@ -311,11 +311,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.TextBox txtProduct;
         private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.Label lblCustomer;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPricesale;
         private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblAmount;
@@ -332,6 +332,6 @@
         private System.Windows.Forms.Button btnFindCust;
         private System.Windows.Forms.NumericUpDown nudAmount;
         private System.Windows.Forms.ComboBox cmbPay;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPayMethod;
     }
 }

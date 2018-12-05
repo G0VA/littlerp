@@ -160,11 +160,29 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aceptar.
+        /// </summary>
+        internal static string btnOk {
+            get {
+                return ResourceManager.GetString("btnOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Pedidos.
         /// </summary>
         internal static string btnOrders {
             get {
                 return ResourceManager.GetString("btnOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Quitar.
+        /// </summary>
+        internal static string btnRemove {
+            get {
+                return ResourceManager.GetString("btnRemove", resourceCulture);
             }
         }
         
@@ -192,6 +210,15 @@ namespace Avengers.Recursos {
         internal static string button2 {
             get {
                 return ResourceManager.GetString("button2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Activar.
+        /// </summary>
+        internal static string ckAct {
+            get {
+                return ResourceManager.GetString("ckAct", resourceCulture);
             }
         }
         
@@ -250,11 +277,83 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Dirección:.
+        /// </summary>
+        internal static string lblAdrees {
+            get {
+                return ResourceManager.GetString("lblAdrees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cantidad:.
+        /// </summary>
+        internal static string lblAmount {
+            get {
+                return ResourceManager.GetString("lblAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ciudad:.
+        /// </summary>
+        internal static string lblCity {
+            get {
+                return ResourceManager.GetString("lblCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cliente:.
+        /// </summary>
+        internal static string lblCustomer {
+            get {
+                return ResourceManager.GetString("lblCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha:.
+        /// </summary>
+        internal static string lblDate {
+            get {
+                return ResourceManager.GetString("lblDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descripción:.
         /// </summary>
         internal static string lblDescrip {
             get {
                 return ResourceManager.GetString("lblDescrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descuento:.
+        /// </summary>
+        internal static string lblDiscount {
+            get {
+                return ResourceManager.GetString("lblDiscount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a DNI:.
+        /// </summary>
+        internal static string lblDni {
+            get {
+                return ResourceManager.GetString("lblDni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a USUARIO DNI:.
+        /// </summary>
+        internal static string lblModDni {
+            get {
+                return ResourceManager.GetString("lblModDni", resourceCulture);
             }
         }
         
@@ -304,11 +403,74 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Forma de Pago:.
+        /// </summary>
+        internal static string lblPay {
+            get {
+                return ResourceManager.GetString("lblPay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Permisos.
         /// </summary>
         internal static string lblPermList {
             get {
                 return ResourceManager.GetString("lblPermList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Telefono:.
+        /// </summary>
+        internal static string lblPhone {
+            get {
+                return ResourceManager.GetString("lblPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pagado.
+        /// </summary>
+        internal static string lblPrepago {
+            get {
+                return ResourceManager.GetString("lblPrepago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio:.
+        /// </summary>
+        internal static string lblPricesale {
+            get {
+                return ResourceManager.GetString("lblPricesale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Producto:.
+        /// </summary>
+        internal static string lblProduct {
+            get {
+                return ResourceManager.GetString("lblProduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Provincia:.
+        /// </summary>
+        internal static string lblProvince {
+            get {
+                return ResourceManager.GetString("lblProvince", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Región:.
+        /// </summary>
+        internal static string lblRegion {
+            get {
+                return ResourceManager.GetString("lblRegion", resourceCulture);
             }
         }
         
@@ -354,6 +516,15 @@ namespace Avengers.Recursos {
         internal static string lblSelectIdioma {
             get {
                 return ResourceManager.GetString("lblSelectIdioma", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Apellido:.
+        /// </summary>
+        internal static string lblSurname {
+            get {
+                return ResourceManager.GetString("lblSurname", resourceCulture);
             }
         }
         

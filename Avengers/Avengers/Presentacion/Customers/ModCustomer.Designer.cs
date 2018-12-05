@@ -48,7 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblModDni = new System.Windows.Forms.Label();
             this.lblDNI = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -86,7 +86,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(225, 454);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(84, 32);
+            this.btnCancel.Size = new System.Drawing.Size(96, 32);
             this.btnCancel.TabIndex = 42;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -245,15 +245,15 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Name:";
             // 
-            // label3
+            // lblModDni
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 25);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "User DNI:";
+            this.lblModDni.AutoSize = true;
+            this.lblModDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModDni.Location = new System.Drawing.Point(42, 29);
+            this.lblModDni.Name = "lblModDni";
+            this.lblModDni.Size = new System.Drawing.Size(113, 25);
+            this.lblModDni.TabIndex = 47;
+            this.lblModDni.Text = "User DNI:";
             // 
             // lblDNI
             // 
@@ -271,7 +271,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 532);
             this.Controls.Add(this.lblDNI);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblModDni);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnChange);
@@ -321,7 +321,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblModDni;
         private System.Windows.Forms.Label lblDNI;
     }
 }

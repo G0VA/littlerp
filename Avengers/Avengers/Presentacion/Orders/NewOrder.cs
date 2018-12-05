@@ -33,26 +33,48 @@ namespace Avengers.Presentacion.Orders
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
+                this.Text = "Nuevo pedido";
             }
             else if (this.idioma == "INGLES")
             {
                 idioma_en();
+                this.Text = "New order";
             }
         }
 
         public void idioma_es()
         {
-
+            lblDate.Text = Avengers.Recursos.Espanol.lblDate;
+            lblProduct.Text = Avengers.Recursos.Espanol.lblProduct;
+            lblCustomer.Text = Avengers.Recursos.Espanol.lblCustomer;
+            lblPricesale.Text = Avengers.Recursos.Espanol.lblPricesale;
+            lblPayMethod.Text = Avengers.Recursos.Espanol.lblPay;
+            lblAmount.Text = Avengers.Recursos.Espanol.lblAmount;
+            lblDiscount.Text = Avengers.Recursos.Espanol.lblDiscount;
+            btnAdd.Text = Avengers.Recursos.Espanol.btnAdd;
+            btnRemove.Text = Avengers.Recursos.Espanol.btnRemove;
+            btnCancel.Text = Avengers.Recursos.Espanol.btnCancel;
+            btnOk.Text = Avengers.Recursos.Espanol.btnOk;
         }
         public void idioma_en()
         {
-
+            lblDate.Text = Avengers.Recursos.Ingles.lblDate;
+            lblProduct.Text = Avengers.Recursos.Ingles.lblProduct;
+            lblCustomer.Text = Avengers.Recursos.Ingles.lblCustomer;
+            lblPricesale.Text = Avengers.Recursos.Ingles.lblPricesale;
+            lblPayMethod.Text = Avengers.Recursos.Ingles.lblPay;
+            lblAmount.Text = Avengers.Recursos.Ingles.lblAmount;
+            lblDiscount.Text = Avengers.Recursos.Ingles.lblDiscount;
+            btnAdd.Text = Avengers.Recursos.Ingles.btnAdd;
+            btnRemove.Text = Avengers.Recursos.Ingles.btnRemove;
+            btnCancel.Text = Avengers.Recursos.Ingles.btnCancel;
+            btnOk.Text = Avengers.Recursos.Ingles.btnOk;
         }
 
 
         private void btnFindCust_Click(object sender, EventArgs e)
         {
-            ViewCustomer vc = new ViewCustomer(this);
+            ViewCustomer vc = new ViewCustomer(this,this.idioma);
          
             vc.ShowDialog(this);
         }
@@ -124,7 +146,15 @@ namespace Avengers.Presentacion.Orders
             }
             else
             {
-                MessageBox.Show("You must select one Product");
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("Debes seleccionar un producto");
+                }
+                else
+                {
+                    MessageBox.Show("You must select one Product");
+                }
+                    
             }
     
         }
@@ -178,7 +208,15 @@ namespace Avengers.Presentacion.Orders
             }
             else
             {
-                MessageBox.Show("Select one customer and any paymentmethod");
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("Debes seleccionar alguna forma de pago");
+                }
+                else
+                {
+                    MessageBox.Show("Select one customer and any paymentmethod");
+                }
+                
             }               
         }
 

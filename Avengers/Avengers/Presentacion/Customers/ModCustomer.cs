@@ -16,14 +16,54 @@ namespace Avengers.Presentacion.Customers
     {
         private int idCustomer;
         private string refzipcodescities;
-        public ModCustomer(int id)
+        private String idioma;
+        public ModCustomer(int id,String idioma)
         {
             this.idCustomer = id;
-            InitializeComponent();
-           
+            InitializeComponent();           
             initReg("");
             initCustomer();
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Modificar cliente";
+            }
+            else
+            {
+                idioma_en();
+                this.Text = "Modify Customer";
+            }
         }
+
+        private void idioma_es()
+        {
+            lblModDni.Text = Avengers.Recursos.Espanol.lblModDni;
+            label1.Text = Avengers.Recursos.Espanol.lblName;
+            label2.Text = Avengers.Recursos.Espanol.lblSurname;
+            label5.Text = Avengers.Recursos.Espanol.lblPhone;
+            label10.Text = Avengers.Recursos.Espanol.lblAdrees;
+            label6.Text = Avengers.Recursos.Espanol.lblRegion;
+            label7.Text = Avengers.Recursos.Espanol.lblProvince;
+            label8.Text = Avengers.Recursos.Espanol.lblCity;
+            btnCancel.Text = Avengers.Recursos.Espanol.btnCancel;
+            btnChange.Text = Avengers.Recursos.Espanol.btnChange;
+        }
+        private void idioma_en()
+        {
+            lblModDni.Text = Avengers.Recursos.Ingles.lblModDni;
+            label1.Text = Avengers.Recursos.Ingles.lblName;
+            label2.Text = Avengers.Recursos.Ingles.lblSurname;
+            label5.Text = Avengers.Recursos.Ingles.lblPhone;
+            label10.Text = Avengers.Recursos.Ingles.lblAdrees;
+            label6.Text = Avengers.Recursos.Ingles.lblRegion;
+            label7.Text = Avengers.Recursos.Ingles.lblProvince;
+            label8.Text = Avengers.Recursos.Ingles.lblCity;
+            btnCancel.Text = Avengers.Recursos.Ingles.btnCancel;
+            btnChange.Text = Avengers.Recursos.Ingles.btnChange;
+        }
+        
+
         private void initCustomer()
         {
             Customer c = new Customer();
@@ -123,18 +163,33 @@ namespace Avengers.Presentacion.Customers
 
         private String errorDialog()
         {
-            String error = " Some Errors has been found: \n";
-
-            if (string.IsNullOrEmpty(txtName.Text))
+            if (this.idioma == "ESPAÑOL")
             {
-                error += "\t - The field \"Name\" can`t be empty \n";
+                String error = "Se han encontrado algunos errores: \n";
+                if (string.IsNullOrEmpty(txtName.Text))
+                {
+                    error += "\t - El campo \"Nombre\" no puede estar vacio \n";
+                }
+                if (string.IsNullOrEmpty(txtSurname.Text))
+                {
+                    error += "\t - El campo \"Apellido\" no puede estar vacio \n";
+                }
+                return error;
             }
-            if (string.IsNullOrEmpty(txtSurname.Text))
+            else
             {
-                error += "\t - The field \"Surname\" can`t be empty \n";
+                String error = "Some Errors has been found: \n";
+                if (string.IsNullOrEmpty(txtName.Text))
+                {
+                    error += "\t - The field \"Name\" can`t be empty \n";
+                }
+                if (string.IsNullOrEmpty(txtSurname.Text))
+                {
+                    error += "\t - The field \"Surname\" can`t be empty \n";
+                }
+                return error;
             }
-
-            return error;
+            
         }
         private String extraerRefZipCodesCities()
         {
@@ -243,34 +298,69 @@ namespace Avengers.Presentacion.Customers
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Do yo Want Update this Customers ?", "Update Customer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (this.idioma == "ESPAÑOL")
             {
-                bool email = true;
-                if (!String.IsNullOrEmpty(txtEmail.Text) && !Utils.check.checkEmail(txtEmail.Text))
+                if (MessageBox.Show("¿Estas seguro de modificar este cliente?", "Modificar Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    email = false;
-                }
-                if (checkUpdate() && email)
-                {
-                    String sql = updateSql();
-                    Console.WriteLine(sql);
-                    GestorCustomers.setData(sql);
-                    Dispose();
-
-                }
-                else
-                {
-                    if (!email)
+                    bool email = true;
+                    if (!String.IsNullOrEmpty(txtEmail.Text) && !Utils.check.checkEmail(txtEmail.Text))
                     {
-                        MessageBox.Show(errorDialog() + "\t - The field \"Email\"doesn't the correct format \n");
+                        email = false;
+                    }
+                    if (checkUpdate() && email)
+                    {
+                        String sql = updateSql();
+                        Console.WriteLine(sql);
+                        GestorCustomers.setData(sql);
+                        Dispose();
+
                     }
                     else
                     {
-                        MessageBox.Show(errorDialog());
-                    }
+                        if (!email)
+                        {
+                            MessageBox.Show(errorDialog() + "\t - El campo \"Email\" no tiene el formato correcto  \n");                            
+                        }
+                        else
+                        {
+                            MessageBox.Show(errorDialog());
+                        }
 
+                    }
                 }
             }
+            else
+            {
+                if (MessageBox.Show("Do yo Want Update this Customers ?", "Update Customer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    bool email = true;
+                    if (!String.IsNullOrEmpty(txtEmail.Text) && !Utils.check.checkEmail(txtEmail.Text))
+                    {
+                        email = false;
+                    }
+                    if (checkUpdate() && email)
+                    {
+                        String sql = updateSql();
+                        Console.WriteLine(sql);
+                        GestorCustomers.setData(sql);
+                        Dispose();
+
+                    }
+                    else
+                    {
+                        if (!email)
+                        {                            
+                            MessageBox.Show(errorDialog() + "\t - The field \"Email\" doesn't the correct format \n");
+                        }
+                        else
+                        {
+                            MessageBox.Show(errorDialog());
+                        }
+
+                    }
+                }
+            }
+                
            
         }
 

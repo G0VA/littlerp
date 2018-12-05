@@ -44,7 +44,7 @@ namespace Avengers.Presentacion.Products
             label5.Text = Avengers.Recursos.Espanol.label4;
             label2.Text = Avengers.Recursos.Espanol.lblDescrip;
             btnCancel.Text = Avengers.Recursos.Espanol.btnCancel;
-            btnModify.Text = Avengers.Recursos.Espanol.btnModUser;
+            btnModify.Text = Avengers.Recursos.Espanol.btnChange;
         }
         public void idioma_en()
         {
@@ -55,7 +55,7 @@ namespace Avengers.Presentacion.Products
             label5.Text = Avengers.Recursos.Ingles.label4;
             label2.Text = Avengers.Recursos.Ingles.lblDescrip;
             btnCancel.Text = Avengers.Recursos.Ingles.btnCancel;
-            btnModify.Text = Avengers.Recursos.Ingles.btnModUser;
+            btnModify.Text = Avengers.Recursos.Ingles.btnChange;
         }
         private bool checkAdd()
         {

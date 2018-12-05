@@ -30,17 +30,17 @@
         {
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSurname = new System.Windows.Forms.Label();
             this.txtSurname = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblRegion = new System.Windows.Forms.Label();
+            this.lblProvince = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
             this.cmbReg = new System.Windows.Forms.ComboBox();
             this.cmbProv = new System.Windows.Forms.ComboBox();
             this.cmbCity = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblZip = new System.Windows.Forms.Label();
             this.txtZip = new System.Windows.Forms.TextBox();
             this.ckDel = new System.Windows.Forms.CheckBox();
             this.btnClean = new System.Windows.Forms.Button();
@@ -71,15 +71,15 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name:";
             // 
-            // label1
+            // lblSurname
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Surname:";
+            this.lblSurname.AutoSize = true;
+            this.lblSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSurname.Location = new System.Drawing.Point(33, 74);
+            this.lblSurname.Name = "lblSurname";
+            this.lblSurname.Size = new System.Drawing.Size(73, 16);
+            this.lblSurname.TabIndex = 2;
+            this.lblSurname.Text = "Surname:";
             // 
             // txtSurname
             // 
@@ -89,15 +89,15 @@
             this.txtSurname.TabIndex = 3;
             this.txtSurname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSurname_KeyUp);
             // 
-            // label2
+            // lblDni
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 103);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "NIF/DNI:";
+            this.lblDni.AutoSize = true;
+            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDni.Location = new System.Drawing.Point(33, 103);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(67, 16);
+            this.lblDni.TabIndex = 4;
+            this.lblDni.Text = "NIF/DNI:";
             // 
             // txtDNI
             // 
@@ -107,35 +107,35 @@
             this.txtDNI.TabIndex = 5;
             this.txtDNI.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDNI_KeyUp);
             // 
-            // label3
+            // lblRegion
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(361, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 16);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Region:";
+            this.lblRegion.AutoSize = true;
+            this.lblRegion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegion.Location = new System.Drawing.Point(361, 44);
+            this.lblRegion.Name = "lblRegion";
+            this.lblRegion.Size = new System.Drawing.Size(62, 16);
+            this.lblRegion.TabIndex = 6;
+            this.lblRegion.Text = "Region:";
             // 
-            // label4
+            // lblProvince
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(361, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Province:";
+            this.lblProvince.AutoSize = true;
+            this.lblProvince.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProvince.Location = new System.Drawing.Point(361, 74);
+            this.lblProvince.Name = "lblProvince";
+            this.lblProvince.Size = new System.Drawing.Size(73, 16);
+            this.lblProvince.TabIndex = 7;
+            this.lblProvince.Text = "Province:";
             // 
-            // label5
+            // lblCity
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(361, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "City:";
+            this.lblCity.AutoSize = true;
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCity.Location = new System.Drawing.Point(361, 103);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(38, 16);
+            this.lblCity.TabIndex = 8;
+            this.lblCity.Text = "City:";
             // 
             // cmbReg
             // 
@@ -170,15 +170,15 @@
             this.cmbCity.TabIndex = 11;
             this.cmbCity.SelectedIndexChanged += new System.EventHandler(this.cmbCity_SelectedIndexChanged);
             // 
-            // label6
+            // lblZip
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(708, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "ZIP:";
+            this.lblZip.AutoSize = true;
+            this.lblZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZip.Location = new System.Drawing.Point(708, 41);
+            this.lblZip.Name = "lblZip";
+            this.lblZip.Size = new System.Drawing.Size(35, 16);
+            this.lblZip.TabIndex = 12;
+            this.lblZip.Text = "ZIP:";
             // 
             // txtZip
             // 
@@ -254,7 +254,7 @@
             this.btnMod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMod.Location = new System.Drawing.Point(1018, 359);
             this.btnMod.Name = "btnMod";
-            this.btnMod.Size = new System.Drawing.Size(75, 23);
+            this.btnMod.Size = new System.Drawing.Size(89, 23);
             this.btnMod.TabIndex = 19;
             this.btnMod.Text = "Modify";
             this.btnMod.UseVisualStyleBackColor = true;
@@ -296,17 +296,17 @@
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.ckDel);
             this.Controls.Add(this.txtZip);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblZip);
             this.Controls.Add(this.cmbCity);
             this.Controls.Add(this.cmbProv);
             this.Controls.Add(this.cmbReg);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblCity);
+            this.Controls.Add(this.lblProvince);
+            this.Controls.Add(this.lblRegion);
             this.Controls.Add(this.txtDNI);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblDni);
             this.Controls.Add(this.txtSurname);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtName);
             this.Name = "ViewCustomer";
@@ -321,17 +321,17 @@
 
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSurname;
         private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblDni;
         private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblRegion;
+        private System.Windows.Forms.Label lblProvince;
+        private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.ComboBox cmbReg;
         private System.Windows.Forms.ComboBox cmbProv;
         private System.Windows.Forms.ComboBox cmbCity;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblZip;
         private System.Windows.Forms.TextBox txtZip;
         private System.Windows.Forms.CheckBox ckDel;
         private System.Windows.Forms.Button btnClean;

@@ -46,7 +46,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ckAct = new System.Windows.Forms.CheckBox();
             this.txtPrepaid = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblPrepago = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,7 +184,7 @@
             this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.Location = new System.Drawing.Point(1024, 335);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.Size = new System.Drawing.Size(88, 23);
             this.btnModify.TabIndex = 14;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -192,11 +192,11 @@
             // btnLog
             // 
             this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLog.Location = new System.Drawing.Point(1010, 380);
+            this.btnLog.Location = new System.Drawing.Point(1024, 380);
             this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(99, 23);
+            this.btnLog.Size = new System.Drawing.Size(75, 23);
             this.btnLog.TabIndex = 15;
-            this.btnLog.Text = "Show Logs";
+            this.btnLog.Text = "Log";
             this.btnLog.UseVisualStyleBackColor = true;
             // 
             // ckAct
@@ -218,22 +218,22 @@
             this.txtPrepaid.TabIndex = 17;
             this.txtPrepaid.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPrepaid_KeyUp);
             // 
-            // label1
+            // lblPrepago
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(658, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 15);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Prepaid:";
+            this.lblPrepago.AutoSize = true;
+            this.lblPrepago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrepago.Location = new System.Drawing.Point(658, 94);
+            this.lblPrepago.Name = "lblPrepago";
+            this.lblPrepago.Size = new System.Drawing.Size(61, 15);
+            this.lblPrepago.TabIndex = 18;
+            this.lblPrepago.Text = "Prepaid:";
             // 
             // ViewOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1135, 485);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblPrepago);
             this.Controls.Add(this.txtPrepaid);
             this.Controls.Add(this.ckAct);
             this.Controls.Add(this.btnLog);
@@ -280,6 +280,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.CheckBox ckAct;
         private System.Windows.Forms.TextBox txtPrepaid;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblPrepago;
     }
 }

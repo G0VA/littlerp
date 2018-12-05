@@ -167,7 +167,7 @@ namespace Avengers.Presentacion
         {
             if (!tabControl.TabPages.ContainsKey("c1"))
             {
-                c1 = new ViewCustomer();
+                c1 = new ViewCustomer(this.idioma);
                 tabControl.Visible = true;
                 c1.MdiParent = this;
                 c1.WindowState = FormWindowState.Normal;

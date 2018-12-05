@@ -30,20 +30,42 @@ namespace Avengers.Presentacion.Orders
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
+                this.Text = "Pedidos";
             }
             else if (this.idioma == "INGLES")
             {
                 idioma_en();
+                this.Text = "Orders";
             }
         }
 
         public void idioma_es()
         {
-
+            lblCustomers.Text = Avengers.Recursos.Espanol.lblCustomer;
+            lblUser.Text = Avengers.Recursos.Espanol.lblUser;
+            lblDate.Text = Avengers.Recursos.Espanol.lblDate;
+            lblPay.Text = Avengers.Recursos.Espanol.lblPay;
+            ckAct.Text = Avengers.Recursos.Espanol.ckAct;
+            chkDeleted.Text = Avengers.Recursos.Espanol.ckDel;
+            lblPrepago.Text = Avengers.Recursos.Espanol.lblPrepago;
+            btnClean.Text = Avengers.Recursos.Espanol.btnClean;
+            btnNew.Text = Avengers.Recursos.Espanol.btnNewUser;
+            btnDelete.Text = Avengers.Recursos.Espanol.btnDeleteUser;
+            btnModify.Text = Avengers.Recursos.Espanol.btnModUser;
         }
         public void idioma_en()
         {
-
+            lblCustomers.Text = Avengers.Recursos.Ingles.lblCustomer;
+            lblUser.Text = Avengers.Recursos.Ingles.lblUser;
+            lblDate.Text = Avengers.Recursos.Ingles.lblDate;
+            lblPay.Text = Avengers.Recursos.Ingles.lblPay;
+            ckAct.Text = Avengers.Recursos.Ingles.ckAct;
+            chkDeleted.Text = Avengers.Recursos.Ingles.ckDel;
+            lblPrepago.Text = Avengers.Recursos.Ingles.lblPrepago;
+            btnClean.Text = Avengers.Recursos.Ingles.btnClean;
+            btnNew.Text = Avengers.Recursos.Ingles.btnNewUser;
+            btnDelete.Text = Avengers.Recursos.Ingles.btnDeleteUser;
+            btnModify.Text = Avengers.Recursos.Ingles.btnModUser;
         }
 
         private void btnNew_Click(object sender, EventArgs e)

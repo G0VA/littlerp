@@ -19,12 +19,53 @@ namespace Avengers.Presentacion
     public partial class NewCustomer : Form
     {
         private int refzipcodescities = 0;
-        public NewCustomer()
+        private String idioma;
+        public NewCustomer(String idioma)
         {
             InitializeComponent();
             initReg("");
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Nuevo cliente";
+            }
+            else
+            {
+                idioma_en();
+                this.Text = "New Customer";
+            }
+        }
+        private void idioma_es()
+        {
+            label1.Text = Avengers.Recursos.Espanol.lblName;
+            label2.Text = Avengers.Recursos.Espanol.lblSurname;
+            label3.Text = Avengers.Recursos.Espanol.lblDni;
+            lblPhone.Text = Avengers.Recursos.Espanol.lblPhone;
+            lblAdrees.Text = Avengers.Recursos.Espanol.lblAdrees;
+            label6.Text = Avengers.Recursos.Espanol.lblRegion;
+            label7.Text = Avengers.Recursos.Espanol.lblProvince;
+            label8.Text = Avengers.Recursos.Espanol.lblCity;
+            btnCancel.Text = Avengers.Recursos.Espanol.btnCancel;
+            btnAddNew.Text = Avengers.Recursos.Espanol.btnAddNew;
+            btnAdd.Text = Avengers.Recursos.Espanol.btnAdd;
+        }
+        private void idioma_en()
+        {
+            label1.Text = Avengers.Recursos.Ingles.lblName;
+            label2.Text = Avengers.Recursos.Ingles.lblSurname;
+            label3.Text = Avengers.Recursos.Ingles.lblDni;
+            lblPhone.Text = Avengers.Recursos.Ingles.lblPhone;
+            lblAdrees.Text = Avengers.Recursos.Ingles.lblAdrees;
+            label6.Text = Avengers.Recursos.Ingles.lblRegion;
+            label7.Text = Avengers.Recursos.Ingles.lblProvince;
+            label8.Text = Avengers.Recursos.Ingles.lblCity;
+            btnCancel.Text = Avengers.Recursos.Ingles.btnCancel;
+            btnAddNew.Text = Avengers.Recursos.Ingles.btnAddNew;
+            btnAdd.Text = Avengers.Recursos.Ingles.btnAdd;
         }
 
+        
         public void initReg(String cond)
         {
             Customer c = new Customer();
@@ -102,31 +143,59 @@ namespace Avengers.Presentacion
 
         private String errorDialog()
         {
-            String error = " Some Errors has been found: \n";
-
-            if (string.IsNullOrEmpty(txtName.Text))
+            if (this.idioma == "ESPAÑOL")
             {
-                error += "\t - The field \"Name\" can`t be empty \n";
+                String error = "Se han encontrado algunos errores: \n";
+                if (string.IsNullOrEmpty(txtName.Text))
+                {
+                    error += "\t - El campo \"Nombre\" no puede estar vacio \n";
+                }
+                if (string.IsNullOrEmpty(txtSurname.Text))
+                {
+                    error += "\t - El campo \"Apellido\" no puede estar vacio \n";
+                }
+                if (string.IsNullOrEmpty(txtDNI.Text))
+                {
+                    error += "\t - El campo \"DNI\" no puede estar vacio \n";
+                }
+                if (!Utils.check.checkDNI(txtDNI.Text))
+                {
+                    error += "\t - El DNI no tiene el formato correcto \n" +
+                              " \t\t ejemplo- 00000000A \n";
+                }
+                if (GestorCustomers.existDNI(txtDNI.Text))
+                {
+                    error += "\t - Ya existe un cliente con este DNI: " + txtDNI.Text;
+                }
+                return error;
             }
-            if (string.IsNullOrEmpty(txtSurname.Text))
+            else
             {
-                error += "\t - The field \"Surname\" can`t be empty \n";
+                String error = "Some Errors has been found: \n";
+                if (string.IsNullOrEmpty(txtName.Text))
+                {
+                    error += "\t - The field \"Name\" can`t be empty \n";
+                }
+                if (string.IsNullOrEmpty(txtSurname.Text))
+                {
+                    error += "\t - The field \"Surname\" can`t be empty \n";
+                }
+                if (string.IsNullOrEmpty(txtDNI.Text))
+                {
+                    error += "\t - The field \"DNI\" can`t be empty \n";
+                }
+                if (!Utils.check.checkDNI(txtDNI.Text))
+                {
+                    error += "\t - The DNI doesn't the correct format \n" +
+                              " \t\t Example- 00000000A \n";
+                }
+                if (GestorCustomers.existDNI(txtDNI.Text))
+                {
+                    error += "\t - Already exist a User with the DNI: " + txtDNI.Text;
+                }
+                return error;
             }
-            if (string.IsNullOrEmpty(txtDNI.Text))
-            {
-                error += "\t - The field \"DNI\" can`t be empty \n";
-            }
-            if (!Utils.check.checkDNI(txtDNI.Text))
-            {
-                error += "\t - The DNI doesn't the correct format \n" +
-                          " \t\t Example- 00000000A \n";
-            }
-            if (GestorCustomers.existDNI(txtDNI.Text))
-            {
-                error += "\t - Already exist a User with the DNI: " + txtDNI.Text;
-            }
-
-            return error;
+            
         }
 
 
@@ -194,7 +263,14 @@ namespace Avengers.Presentacion
             {
                 if (!email)
                 {
-                    MessageBox.Show(errorDialog() + "\t - The field \"Email\"doesn't the correct format \n");
+                    if (this.idioma == "ESPAÑOL")
+                    {
+                        MessageBox.Show(errorDialog() + "\t - El campo \"Email\"no tiene el formato correcto \n");
+                    }
+                    else
+                    {
+                        MessageBox.Show(errorDialog() + "\t - The field \"Email\"doesn't the correct format \n");
+                    }
                 }
                 else
                 {
@@ -272,7 +348,15 @@ namespace Avengers.Presentacion
             {
                 if (!email)
                 {
-                    MessageBox.Show(errorDialog() + "\t - The field \"Email\"doesn't the correct format \n");
+                    if (this.idioma == "ESPAÑOL")
+                    {
+                        MessageBox.Show(errorDialog() + "\t - El campo \"Email\"no tiene el formato correcto \n");
+                    }
+                    else
+                    {
+                        MessageBox.Show(errorDialog() + "\t - The field \"Email\"doesn't the correct format \n");
+                    }
+                        
                 }
                 else
                 {

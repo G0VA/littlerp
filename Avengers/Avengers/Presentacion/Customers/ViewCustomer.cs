@@ -18,23 +18,73 @@ namespace Avengers.Presentacion
     {
 
         private NewOrder observer = null;
+        private String idioma;
 
-        public ViewCustomer()
+        public ViewCustomer(String idioma)
         {
             InitializeComponent();
             initTable(" Where Deleted =0");
             initCombos();
-        }
+            this.idioma = idioma;
+            if(this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Clientes";
+            }
+            else
+            {
+                idioma_en();
+                this.Text = "Customers";
+            }
+        }     
 
-        public ViewCustomer(NewOrder newOrder)
+        public ViewCustomer(NewOrder newOrder, String idioma)
         {
             observer = newOrder;
             InitializeComponent();
             initTable(" Where Deleted =0");
             initCombos();
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Clientes";
+            }
+            else
+            {
+                idioma_en();
+                this.Text = "Customers";
+            }
         }
-
-
+        public void idioma_es()
+        {
+            lblName.Text = Avengers.Recursos.Espanol.lblName;
+            lblSurname.Text = Avengers.Recursos.Espanol.lblSurname;
+            lblDni.Text = Avengers.Recursos.Espanol.lblDni;
+            lblRegion.Text = Avengers.Recursos.Espanol.lblRegion;
+            lblProvince.Text = Avengers.Recursos.Espanol.lblProvince;
+            lblCity.Text = Avengers.Recursos.Espanol.lblCity;
+            ckDel.Text = Avengers.Recursos.Espanol.ckDel;
+            btnClean.Text = Avengers.Recursos.Espanol.btnClean;
+            btnNew.Text = Avengers.Recursos.Espanol.btnNewUser;
+            btnDelete.Text = Avengers.Recursos.Espanol.btnDeleteUser;
+            btnMod.Text = Avengers.Recursos.Espanol.btnModUser;
+        }
+        public void idioma_en()
+        {
+            lblName.Text = Avengers.Recursos.Ingles.lblName;
+            lblSurname.Text = Avengers.Recursos.Ingles.lblSurname;
+            lblDni.Text = Avengers.Recursos.Ingles.lblDni;
+            lblRegion.Text = Avengers.Recursos.Ingles.lblRegion;
+            lblProvince.Text = Avengers.Recursos.Ingles.lblProvince;
+            lblCity.Text = Avengers.Recursos.Ingles.lblCity;
+            ckDel.Text = Avengers.Recursos.Ingles.ckDel;
+            btnClean.Text = Avengers.Recursos.Ingles.btnClean;
+            btnNew.Text = Avengers.Recursos.Ingles.btnNewUser;
+            btnDelete.Text = Avengers.Recursos.Ingles.btnDeleteUser;
+            btnMod.Text = Avengers.Recursos.Ingles.btnModUser;
+        }
+        
         private void initTable(String cond)
         {
             dgvCustomer.Columns.Clear();
@@ -218,7 +268,7 @@ namespace Avengers.Presentacion
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            NewCustomer nc = new NewCustomer();
+            NewCustomer nc = new NewCustomer(this.idioma);
             nc.ShowDialog();
             if (nc.IsDisposed)
             {
@@ -296,17 +346,38 @@ namespace Avengers.Presentacion
             String valor = dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString();
             if (!GestorCustomers.existCustomer(valor))
             {
-                if (MessageBox.Show("Do yo Want Delete this Customers ?", "Delete Customer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (this.idioma == "ESPAÑOL")
                 {
-                    String sql = "update customers set Deleted=1 where idcustomer =" + valor;
-                    GestorCustomers.delCustomers(sql);
-                    initTable(" Where Deleted=0");
+                    if (MessageBox.Show("¿Quieres eliminar a este cliente?", "Eliminar Cliente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        String sql = "update customers set Deleted=1 where idcustomer =" + valor;
+                        GestorCustomers.delCustomers(sql);
+                        initTable(" Where Deleted=0");
+                    }
                 }
+                else
+                {
+                    if (MessageBox.Show("Do yo Want Delete this Customer?", "Delete Customer", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        String sql = "update customers set Deleted=1 where idcustomer =" + valor;
+                        GestorCustomers.delCustomers(sql);
+                        initTable(" Where Deleted=0");
+                    }
+                }
+                
 
             }
             else
             {
-                MessageBox.Show("This Customer have Orders in DB");
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("Este cliente tiene pedidos en DB");
+                }
+                else
+                {
+                    MessageBox.Show("This Customer have Orders in DB");
+                }
+                
             }
         }
 
@@ -315,14 +386,22 @@ namespace Avengers.Presentacion
             try
             {
                 int idCustomer = Convert.ToInt16(dgvCustomer.Rows[dgvCustomer.CurrentRow.Index].Cells[0].Value.ToString());
-                ModCustomer mc = new ModCustomer(idCustomer);
+                ModCustomer mc = new ModCustomer(idCustomer,this.idioma);
                 mc.ShowDialog();
                 if (mc.IsDisposed)
                 {
                     initTable(" Where Deleted =0");
                 }
             }catch (Exception ex){
-                MessageBox.Show("You must Select a Customer");
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("Debes seleccionar un cliente");
+                }
+                else
+                {
+                    MessageBox.Show("You must Select a Customer");
+                }
+
             }
            
         }
