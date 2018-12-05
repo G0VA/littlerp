@@ -16,16 +16,18 @@ namespace Avengers.Presentacion.Orders
    
     public partial class NewOrder : Form 
     {
+        private User u;
         private DtoCustomer dtoCustomer;
         private DtoProduct dtoProduct;
         private float t;
-        public NewOrder()
+        public NewOrder(User u)
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.Sizable;
             iniTable();
             initPay(" Where deleted=0");
             cmbPay.SelectedIndex = -1;
+            this.u = u;
         }
    
 
@@ -135,7 +137,7 @@ namespace Avengers.Presentacion.Orders
             {
                 String id = dtoCustomer.Idcustomer;
                 //Sql para insertar order al hacer click en OK -- modificar el valor numero 3 que hace ref a user
-                String sql = "Insert into orders values (null,'" + id + "', 1, SYSDATE, '" + cmbPay.SelectedValue + "', '" + tbxTotal.Text + "', DEFAULT,0)";
+                String sql = "Insert into orders values (null,'" + id + "', "+u.getId()+", SYSDATE, '" + cmbPay.SelectedValue + "', '" + tbxTotal.Text + "', DEFAULT,0)";
                 o.getGestor().setData(sql);
                 //Console.WriteLine(sql);
                 sql = "SELECT IDORDER FROM ORDERS WHERE TOTAL = '" + (tbxTotal.Text) + "'";

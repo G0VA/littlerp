@@ -14,21 +14,22 @@ namespace Avengers.Presentacion.Orders
 {
     public partial class ViewOrders : Form
     {
+        private User u;
         String condicion = "SELECT ORDERS.IDORDER,CUSTOMERS.NAME,CUSTOMERS.SURNAME,USUARIO.NAME,ORDERS.DATETIME,PAYMENTMETHODS.PAYMENTMETHOD, ORDERS.TOTAL, ORDERS.PREPAID FROM ORDERS INNER JOIN CUSTOMERS ON REFCUSTOMER = IDCUSTOMER INNER JOIN USUARIO ON REFUSER = IDUSER INNER JOIN PAYMENTMETHODS ON REFPAYMENTMETHOD = IDPAYMENTMETHOD ";
         String whereCondition = " Where Orders.Deleted=";
-        public ViewOrders()
+        public ViewOrders(User u)
         {
             InitializeComponent();
             bool checkValue = chkDeleted.Checked;
             int iValue = (checkValue) ? 1 : 0;
             initTable(condicion + whereCondition + iValue);
             initComboPayment("Where Deleted = 0");
-            
+            this.u = u;
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            NewOrder o = new NewOrder();
+            NewOrder o = new NewOrder(u);
             o.Show();
         }
 

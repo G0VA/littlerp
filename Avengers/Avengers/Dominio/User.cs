@@ -7,6 +7,7 @@ namespace Avengers.Dominio
     {
         private String Nombre;
         private String contra;
+        private int id;
         private GestorUsers g;
 
         public User()
@@ -28,6 +29,14 @@ namespace Avengers.Dominio
         public String getContra()
         {
             return this.contra;
+        }
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+        public int getId()
+        {
+            return this.id;
         }
         public void setContra(String contra)
         {

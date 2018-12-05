@@ -41,7 +41,7 @@ namespace Avengers
             }
             
             int id = int.Parse(u1.gestor().getUnString(sql));
-
+            u1.setId(id);
             //Console.WriteLine("Traza--" + u1.getContra());
             //Console.WriteLine("Traza--" + u1.getNombre());
             //Console.WriteLine("Traza--" + id);
@@ -62,9 +62,7 @@ namespace Avengers
                     Presentacion.Menu m1 = new Presentacion.Menu(u1);
                     this.Hide();
                     m1.Show();
-                }
-                
-
+                }              
             }
         }
     }

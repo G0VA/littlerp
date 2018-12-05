@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Avengers.Dominio.Gestores
 {
-    class GestorUsers
+    public class GestorUsers
     {
         private DataTable tabla;
 

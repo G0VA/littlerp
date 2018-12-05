@@ -25,7 +25,8 @@ namespace Avengers.Presentacion
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.Sizable;
-            this.u = u;   
+            this.u = u;
+            lblUser.Text = "                 " +u.getNombre();
         }
 
 
@@ -38,7 +39,7 @@ namespace Avengers.Presentacion
             products.Visible = true;
             products.Enabled = true;
 
-            btnOrders.Location = new Point(0, 160);
+            btnOrders.Location = new Point(0, 180);
         }
 
         private void ocultarBtn()
@@ -50,7 +51,7 @@ namespace Avengers.Presentacion
             products.Visible = false;
             products.Enabled = false;
 
-            btnOrders.Location = new Point(0, 60);
+            btnOrders.Location = new Point(0, 80);
         }
 
         private void users_Click(object sender, EventArgs e)
@@ -104,7 +105,7 @@ namespace Avengers.Presentacion
         {
             if (!tabControl.TabPages.ContainsKey("o1"))
             {
-                o1 = new ViewOrders();
+                o1 = new ViewOrders(this.u);
                 ocultarBtn();
                 tabControl.Visible = true;
                 o1.MdiParent = this;
