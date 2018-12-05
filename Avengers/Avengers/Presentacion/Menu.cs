@@ -126,7 +126,7 @@ namespace Avengers.Presentacion
         {
             if (!tabControl.TabPages.ContainsKey("o1"))
             {
-                o1 = new ViewOrders(this.u);
+                o1 = new ViewOrders(this.u,this.idioma);
                 ocultarBtn();
                 tabControl.Visible = true;
                 o1.MdiParent = this;
@@ -235,7 +235,7 @@ namespace Avengers.Presentacion
         {
             if (!tabControl.TabPages.ContainsKey("p1"))
             {
-                p1 = new ViewProduct();
+                p1 = new ViewProduct(this.idioma);
                 tabControl.Visible = true;
                 p1.MdiParent = this;
                 p1.WindowState = FormWindowState.Normal;

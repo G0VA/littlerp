@@ -16,20 +16,72 @@ namespace Avengers.Presentacion.Products
     public partial class ViewProduct : Form
     {
         NewOrder observer = null;
-        public ViewProduct()
+        private String idioma;
+        public ViewProduct(String idioma)
         {
             InitializeComponent();
             initTable("Where Deleted = 0");
             initComboEditorial("Where Deleted = 0");
             initComboGender("Where Deleted = 0");
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Productos";
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+                this.Text = "Products";
+            }
         }
-        public ViewProduct(NewOrder newOrder)
+
+        public ViewProduct(NewOrder newOrder, String idioma)
         {
             this.observer = newOrder;
             InitializeComponent();
             initTable("Where Deleted = 0");
             initComboEditorial("Where Deleted = 0");
             initComboGender("Where Deleted = 0");
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Productos";
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+                this.Text = "Products";
+            }
+        }
+        public void idioma_es()
+        {
+            label1.Text = Avengers.Recursos.Espanol.lblName;
+            label2.Text = Avengers.Recursos.Espanol.label2;
+            label3.Text = Avengers.Recursos.Espanol.label3;
+            label4.Text = Avengers.Recursos.Espanol.label4;
+            rbtnAscend.Text = Avengers.Recursos.Espanol.rbtnAscend;
+            rbtnDescend.Text = Avengers.Recursos.Espanol.rbtnDescend;
+            chckDelete.Text = Avengers.Recursos.Espanol.ckDel;
+            btnClean.Text = Avengers.Recursos.Espanol.btnClean;
+            btnAdd.Text = Avengers.Recursos.Espanol.btnNewUser;
+            btnDelete.Text = Avengers.Recursos.Espanol.btnDeleteUser;
+            btnModify.Text = Avengers.Recursos.Espanol.btnModUser;
+        }
+        public void idioma_en()
+        {
+            label1.Text = Avengers.Recursos.Ingles.lblName;
+            label2.Text = Avengers.Recursos.Ingles.label2;
+            label3.Text = Avengers.Recursos.Ingles.label3;
+            label4.Text = Avengers.Recursos.Ingles.label4;
+            rbtnAscend.Text = Avengers.Recursos.Ingles.rbtnAscend;
+            rbtnDescend.Text = Avengers.Recursos.Ingles.rbtnDescend;
+            chckDelete.Text = Avengers.Recursos.Ingles.ckDel;
+            btnClean.Text = Avengers.Recursos.Ingles.btnClean;
+            btnAdd.Text = Avengers.Recursos.Ingles.btnNewUser;
+            btnDelete.Text = Avengers.Recursos.Ingles.btnDeleteUser;
+            btnModify.Text = Avengers.Recursos.Ingles.btnModUser;
         }
 
         private void initComboEditorial(String cond)
@@ -151,7 +203,7 @@ namespace Avengers.Presentacion.Products
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            NewProduct np = new NewProduct();
+            NewProduct np = new NewProduct(this.idioma);
             np.ShowDialog();
             if (np.IsDisposed)
             {
@@ -197,22 +249,51 @@ namespace Avengers.Presentacion.Products
                 String valor = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString();
                 if (!GestorProducts.existProductOrders(valor))
                 {
-                    if (MessageBox.Show("Do yo Want Delete this Product ?", "Delete Product", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (this.idioma == "ESPAÑOL")
                     {
-                        String sql = "update products set Deleted=1 where idproduct =" + valor;
-                        GestorProducts.deleteProduct(sql);
-                        initTable(" Where Deleted=0");
+                        if (MessageBox.Show("¿Quieres eliminar este producto?", "Eliminar Producto", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            String sql = "update products set Deleted=1 where idproduct =" + valor;
+                            GestorProducts.deleteProduct(sql);
+                            initTable(" Where Deleted=0");
+                        }
                     }
+                    else
+                    {
+                        if (MessageBox.Show("Do yo Want Delete this Product ?", "Delete Product", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            String sql = "update products set Deleted=1 where idproduct =" + valor;
+                            GestorProducts.deleteProduct(sql);
+                            initTable(" Where Deleted=0");
+                        }
+                    }
+                    
 
                 }
                 else
                 {
-                    MessageBox.Show("This Product is in Orders in DB");
+                    if (this.idioma == "ESPAÑOL")
+                    {
+                        MessageBox.Show("Este producto está en pedidos en DB");
+                    }
+                    else
+                    {
+                        MessageBox.Show("This Product is in Orders in DB");
+                    }
+                    
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unselected any row");
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("No hay ninguna fila seleccionada");
+                }
+                else
+                {
+                    MessageBox.Show("Unselected any row");
+                }
+                
             }
         }
             
@@ -222,7 +303,7 @@ namespace Avengers.Presentacion.Products
         {
             try
             {
-                ModifyProduct mp = new ModifyProduct();
+                ModifyProduct mp = new ModifyProduct(this.idioma);
 
                 String id = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[0].Value.ToString();
                 String gender = dgvProduct.Rows[dgvProduct.CurrentRow.Index].Cells[1].Value.ToString();
@@ -247,7 +328,15 @@ namespace Avengers.Presentacion.Products
                 }
                 else
                 {
-                    MessageBox.Show("This Product is in Orders in DB");
+                    if (this.idioma == "ESPAÑOL")
+                    {
+                        MessageBox.Show("Este producto está en pedidos en DB");
+                    }
+                    else
+                    {
+                        MessageBox.Show("This Product is in Orders in DB");
+                    }
+                    
                 }
                 if (mp.IsDisposed)
                 {
@@ -259,7 +348,15 @@ namespace Avengers.Presentacion.Products
                 }
             }catch(Exception ex)
             {
-                MessageBox.Show("Unselected any row");
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("No hay ninguna fila seleccionada");
+                }
+                else
+                {
+                    MessageBox.Show("Unselected any row");
+                }
+                    
             }
            
 

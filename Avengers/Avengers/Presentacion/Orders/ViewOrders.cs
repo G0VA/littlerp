@@ -15,9 +15,10 @@ namespace Avengers.Presentacion.Orders
     public partial class ViewOrders : Form
     {
         private User u;
+        private String idioma;
         String condicion = "SELECT ORDERS.IDORDER,CUSTOMERS.NAME,CUSTOMERS.SURNAME,USUARIO.NAME,ORDERS.DATETIME,PAYMENTMETHODS.PAYMENTMETHOD, ORDERS.TOTAL, ORDERS.PREPAID FROM ORDERS INNER JOIN CUSTOMERS ON REFCUSTOMER = IDCUSTOMER INNER JOIN USUARIO ON REFUSER = IDUSER INNER JOIN PAYMENTMETHODS ON REFPAYMENTMETHOD = IDPAYMENTMETHOD ";
         String whereCondition = " Where Orders.Deleted=";
-        public ViewOrders(User u)
+        public ViewOrders(User u,String idioma)
         {
             InitializeComponent();
             bool checkValue = chkDeleted.Checked;
@@ -25,11 +26,29 @@ namespace Avengers.Presentacion.Orders
             initTable(condicion + whereCondition + iValue);
             initComboPayment("Where Deleted = 0");
             this.u = u;
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+            }
+        }
+
+        public void idioma_es()
+        {
+
+        }
+        public void idioma_en()
+        {
+
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            NewOrder o = new NewOrder(u);
+            NewOrder o = new NewOrder(u,this.idioma);
             o.Show();
         }
 

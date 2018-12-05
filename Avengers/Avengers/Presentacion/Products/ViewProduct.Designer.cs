@@ -75,7 +75,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(103, 43);
+            this.txtName.Location = new System.Drawing.Point(115, 43);
             this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(151, 20);
@@ -86,7 +86,7 @@
             // 
             this.comboEditorial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboEditorial.FormattingEnabled = true;
-            this.comboEditorial.Location = new System.Drawing.Point(408, 42);
+            this.comboEditorial.Location = new System.Drawing.Point(427, 42);
             this.comboEditorial.Name = "comboEditorial";
             this.comboEditorial.Size = new System.Drawing.Size(150, 24);
             this.comboEditorial.TabIndex = 3;
@@ -97,7 +97,7 @@
             // 
             this.comboGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboGender.FormattingEnabled = true;
-            this.comboGender.Location = new System.Drawing.Point(103, 96);
+            this.comboGender.Location = new System.Drawing.Point(115, 96);
             this.comboGender.MaxLength = 40;
             this.comboGender.Name = "comboGender";
             this.comboGender.Size = new System.Drawing.Size(150, 24);
@@ -144,14 +144,14 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(335, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 62);
+            this.groupBox1.Size = new System.Drawing.Size(242, 62);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
             // rbtnDescend
             // 
             this.rbtnDescend.AutoSize = true;
-            this.rbtnDescend.Location = new System.Drawing.Point(140, 28);
+            this.rbtnDescend.Location = new System.Drawing.Point(154, 28);
             this.rbtnDescend.Name = "rbtnDescend";
             this.rbtnDescend.Size = new System.Drawing.Size(68, 17);
             this.rbtnDescend.TabIndex = 12;
@@ -198,7 +198,7 @@
             this.btnModify.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModify.Location = new System.Drawing.Point(1032, 284);
             this.btnModify.Name = "btnModify";
-            this.btnModify.Size = new System.Drawing.Size(75, 23);
+            this.btnModify.Size = new System.Drawing.Size(94, 23);
             this.btnModify.TabIndex = 14;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
@@ -240,7 +240,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 497);
+            this.ClientSize = new System.Drawing.Size(1138, 497);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnModify);

@@ -214,6 +214,51 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Editorial:.
+        /// </summary>
+        internal static string label2 {
+            get {
+                return ResourceManager.GetString("label2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Género:.
+        /// </summary>
+        internal static string label3 {
+            get {
+                return ResourceManager.GetString("label3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio:.
+        /// </summary>
+        internal static string label4 {
+            get {
+                return ResourceManager.GetString("label4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Stock:.
+        /// </summary>
+        internal static string label6 {
+            get {
+                return ResourceManager.GetString("label6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descripción:.
+        /// </summary>
+        internal static string lblDescrip {
+            get {
+                return ResourceManager.GetString("lblDescrip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nombre:.
         /// </summary>
         internal static string lblName {
@@ -336,6 +381,24 @@ namespace Avengers.Recursos {
         internal static string products {
             get {
                 return ResourceManager.GetString("products", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ascendente.
+        /// </summary>
+        internal static string rbtnAscend {
+            get {
+                return ResourceManager.GetString("rbtnAscend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Descendente.
+        /// </summary>
+        internal static string rbtnDescend {
+            get {
+                return ResourceManager.GetString("rbtnDescend", resourceCulture);
             }
         }
         

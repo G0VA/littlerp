@@ -17,10 +17,11 @@ namespace Avengers.Presentacion.Orders
     public partial class NewOrder : Form 
     {
         private User u;
+        private String idioma;
         private DtoCustomer dtoCustomer;
         private DtoProduct dtoProduct;
         private float t;
-        public NewOrder(User u)
+        public NewOrder(User u,String idioma)
         {
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.Sizable;
@@ -28,8 +29,26 @@ namespace Avengers.Presentacion.Orders
             initPay(" Where deleted=0");
             cmbPay.SelectedIndex = -1;
             this.u = u;
+            this.idioma = idioma;
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+            }
         }
-   
+
+        public void idioma_es()
+        {
+
+        }
+        public void idioma_en()
+        {
+
+        }
+
 
         private void btnFindCust_Click(object sender, EventArgs e)
         {
@@ -68,7 +87,7 @@ namespace Avengers.Presentacion.Orders
 
         private void btnFindProd_Click(object sender, EventArgs e)
         {
-            ViewProduct vp = new ViewProduct(this);
+            ViewProduct vp = new ViewProduct(this,this.idioma);
             vp.ShowDialog(this);
         }
 

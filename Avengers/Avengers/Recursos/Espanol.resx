@@ -168,6 +168,21 @@
   <data name="customers" xml:space="preserve">
     <value>Clientes</value>
   </data>
+  <data name="label2" xml:space="preserve">
+    <value>Editorial:</value>
+  </data>
+  <data name="label3" xml:space="preserve">
+    <value>Género:</value>
+  </data>
+  <data name="label4" xml:space="preserve">
+    <value>Precio:</value>
+  </data>
+  <data name="label6" xml:space="preserve">
+    <value>Stock:</value>
+  </data>
+  <data name="lblDescrip" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
   <data name="lblName" xml:space="preserve">
     <value>Nombre:</value>
   </data>
@@ -209,6 +224,12 @@
   </data>
   <data name="products" xml:space="preserve">
     <value>Productos</value>
+  </data>
+  <data name="rbtnAscend" xml:space="preserve">
+    <value>Ascendente</value>
+  </data>
+  <data name="rbtnDescend" xml:space="preserve">
+    <value>Descendente</value>
   </data>
   <data name="users" xml:space="preserve">
     <value>Usuarios</value>
