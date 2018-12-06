@@ -23,13 +23,13 @@ namespace Avengers.Presentacion.Orders
         private float t;
         public NewOrder(User u,String idioma)
         {
+            this.u = u;
+            this.idioma = idioma;
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.Sizable;
             iniTable();
             initPay(" Where deleted=0");
             cmbPay.SelectedIndex = -1;
-            this.u = u;
-            this.idioma = idioma;
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -163,9 +163,20 @@ namespace Avengers.Presentacion.Orders
         {
             dataGridView1.Columns.Clear();
 
-            dataGridView1.Columns.Add("PRODUCT", "PRODUCT");
-            dataGridView1.Columns.Add("AMOUNT", "AMOUNT");
-            dataGridView1.Columns.Add("PRICESALE", "PRICESALE");
+            if (this.idioma == "ESPAÑOL")
+            {
+                dataGridView1.Columns.Add("PRODUCT", "PRODUCTO");
+                dataGridView1.Columns.Add("AMOUNT", "CANTIDAD");
+                dataGridView1.Columns.Add("PRICESALE", "PRECIO");
+            }
+            else
+            {
+                dataGridView1.Columns.Add("PRODUCT", "PRODUCT");
+                dataGridView1.Columns.Add("AMOUNT", "AMOUNT");
+                dataGridView1.Columns.Add("PRICESALE", "PRICESALE");
+            }
+
+            
 
         }
 

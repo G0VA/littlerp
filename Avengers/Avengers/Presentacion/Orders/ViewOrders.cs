@@ -20,13 +20,13 @@ namespace Avengers.Presentacion.Orders
         String whereCondition = " Where Orders.Deleted=";
         public ViewOrders(User u,String idioma)
         {
+            this.idioma = idioma;
+            this.u = u;
             InitializeComponent();
             bool checkValue = chkDeleted.Checked;
             int iValue = (checkValue) ? 1 : 0;
             initTable(condicion + whereCondition + iValue);
-            initComboPayment("Where Deleted = 0");
-            this.u = u;
-            this.idioma = idioma;
+            initComboPayment("Where Deleted = 0");          
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -86,15 +86,30 @@ namespace Avengers.Presentacion.Orders
             DataTable torders = o.getGestor().getOrders();
             dgvOrders.Columns.Clear();
 
+            if (this.idioma == "ESPAÑOL")
+            {
+                dgvOrders.Columns.Add("IDORDER", "ID");
+                dgvOrders.Columns.Add("REFCUSTOMER", "NOMBRE CLIENTE");
+                dgvOrders.Columns.Add("REFCUSTOMER", "APELLIDO CLIENTE");
+                dgvOrders.Columns.Add("REFUSER", "USUARIO");
+                dgvOrders.Columns.Add("DATETIME", "FECHA");
+                dgvOrders.Columns.Add("REFPAYMENTMETHOD", "FORMA DE PAGO");
+                dgvOrders.Columns.Add("TOTAL", "TOTAL");
+                dgvOrders.Columns.Add("PREPAID", "PAGADO");
+            }
+            else
+            {
+                dgvOrders.Columns.Add("IDORDER", "ID");
+                dgvOrders.Columns.Add("REFCUSTOMER", "NAME CUSTOMER");
+                dgvOrders.Columns.Add("REFCUSTOMER", "SURNAME CUSTOMER");
+                dgvOrders.Columns.Add("REFUSER", "USER");
+                dgvOrders.Columns.Add("DATETIME", "DATE");
+                dgvOrders.Columns.Add("REFPAYMENTMETHOD", "PAYMENTMETHOD");
+                dgvOrders.Columns.Add("TOTAL", "TOTAL");
+                dgvOrders.Columns.Add("PREPAID", "PREPAID");
+            }
 
-            dgvOrders.Columns.Add("IDORDER", "ID");
-            dgvOrders.Columns.Add("REFCUSTOMER", "NAME CUSTOMER");
-            dgvOrders.Columns.Add("REFCUSTOMER", "SURNAME CUSTOMER");
-            dgvOrders.Columns.Add("REFUSER", "USER");
-            dgvOrders.Columns.Add("DATETIME", "DATE");
-            dgvOrders.Columns.Add("REFPAYMENTMETHOD", "PAYMENTMETHOD");
-            dgvOrders.Columns.Add("TOTAL", "TOTAL");
-            dgvOrders.Columns.Add("PREPAID", "PREPAID");
+            
 
 
             foreach (DataRow row in torders.Rows)

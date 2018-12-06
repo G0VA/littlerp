@@ -271,7 +271,7 @@
     <value>Forma de Pago:</value>
   </data>
   <data name="lblPhone" xml:space="preserve">
-    <value>Telefono:</value>
+    <value>Teléfono:</value>
   </data>
   <data name="lblPrepago" xml:space="preserve">
     <value>Pagado</value>

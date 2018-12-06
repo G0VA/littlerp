@@ -22,10 +22,10 @@ namespace Avengers.Presentacion
 
         public ViewCustomer(String idioma)
         {
+            this.idioma = idioma;
             InitializeComponent();
             initTable(" Where Deleted =0");
             initCombos();
-            this.idioma = idioma;
             if(this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -40,11 +40,11 @@ namespace Avengers.Presentacion
 
         public ViewCustomer(NewOrder newOrder, String idioma)
         {
+            this.idioma = idioma;
             observer = newOrder;
             InitializeComponent();
             initTable(" Where Deleted =0");
-            initCombos();
-            this.idioma = idioma;
+            initCombos();            
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -96,16 +96,30 @@ namespace Avengers.Presentacion
             DataTable tcustomers = c.getGestor().getCustomers();
             dgvCustomer.Columns.Clear();
 
-            //dgvCustomers.DataSource = tcustomers;
+            if (this.idioma == "ESPAÑOL")
+            {
+                dgvCustomer.Columns.Add("IDCUSTOMER", "ID");
+                dgvCustomer.Columns.Add("NAME", "NOMBRE");
+                dgvCustomer.Columns.Add("SURNAME", "APELLIDO");
+                dgvCustomer.Columns.Add("DNI", "NIF/DNI");
+                dgvCustomer.Columns.Add("ADDRESS", "DIRECCIÓN");
+                dgvCustomer.Columns.Add("PHONE", "TELÉFONO");
+                dgvCustomer.Columns.Add("EMAIL", "EMAIL");
+                dgvCustomer.Columns.Add("REFZIPCODESCITIES", "REFZIP");
+            }
+            else
+            {
+                dgvCustomer.Columns.Add("IDCUSTOMER", "ID");
+                dgvCustomer.Columns.Add("NAME", "NAME");
+                dgvCustomer.Columns.Add("SURNAME", "SURNAME");
+                dgvCustomer.Columns.Add("DNI", "NIF/DNI");
+                dgvCustomer.Columns.Add("ADDRESS", "ADDRESS");
+                dgvCustomer.Columns.Add("PHONE", "PHONE");
+                dgvCustomer.Columns.Add("EMAIL", "EMAIL");
+                dgvCustomer.Columns.Add("REFZIPCODESCITIES", "REFZIP");
+            }
 
-            dgvCustomer.Columns.Add("IDCUSTOMER", "ID");
-            dgvCustomer.Columns.Add("NAME", "NAME");
-            dgvCustomer.Columns.Add("SURNAME", "SURNAME");
-            dgvCustomer.Columns.Add("DNI", "NIF/DNI");
-            dgvCustomer.Columns.Add("ADDRESS", "ADDRESS");
-            dgvCustomer.Columns.Add("PHONE", "PHONE");
-            dgvCustomer.Columns.Add("EMAIL", "EMAIL");
-            dgvCustomer.Columns.Add("REFZIPCODESCITIES", "REFZIP");
+            
 
 
             foreach (DataRow row in tcustomers.Rows)

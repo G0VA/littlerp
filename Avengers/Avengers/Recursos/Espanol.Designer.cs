@@ -421,7 +421,7 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Telefono:.
+        ///   Busca una cadena traducida similar a Teléfono:.
         /// </summary>
         internal static string lblPhone {
             get {

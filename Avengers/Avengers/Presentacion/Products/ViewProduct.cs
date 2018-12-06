@@ -19,11 +19,11 @@ namespace Avengers.Presentacion.Products
         private String idioma;
         public ViewProduct(String idioma)
         {
+            this.idioma = idioma;
             InitializeComponent();
             initTable("Where Deleted = 0");
             initComboEditorial("Where Deleted = 0");
-            initComboGender("Where Deleted = 0");
-            this.idioma = idioma;
+            initComboGender("Where Deleted = 0");          
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -38,12 +38,12 @@ namespace Avengers.Presentacion.Products
 
         public ViewProduct(NewOrder newOrder, String idioma)
         {
+            this.idioma = idioma;
             this.observer = newOrder;
             InitializeComponent();
             initTable("Where Deleted = 0");
             initComboEditorial("Where Deleted = 0");
-            initComboGender("Where Deleted = 0");
-            this.idioma = idioma;
+            initComboGender("Where Deleted = 0");          
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -122,14 +122,27 @@ namespace Avengers.Presentacion.Products
 
             //dgvCustomers.DataSource = tcustomers;
 
-
-            dgvProduct.Columns.Add("IDPRODUCT", "ID");
-            dgvProduct.Columns.Add("GENDER", "GENDER");
-            dgvProduct.Columns.Add("EDITORIAL", "EDITORIAL");
-            dgvProduct.Columns.Add("PRICE", "PRICE €");
-            dgvProduct.Columns.Add("NAME", "NAME");
-            dgvProduct.Columns.Add("DESCRIPTION", "DESCRIPTION");
-            dgvProduct.Columns.Add("STOCK", "STOCK");
+            if (this.idioma == "ESPAÑOL")
+            {
+                dgvProduct.Columns.Add("IDPRODUCT", "ID");
+                dgvProduct.Columns.Add("GENDER", "GENERO");
+                dgvProduct.Columns.Add("EDITORIAL", "EDITORIAL");
+                dgvProduct.Columns.Add("PRICE", "PRECIO €");
+                dgvProduct.Columns.Add("NAME", "NOMBRE");
+                dgvProduct.Columns.Add("DESCRIPTION", "DESCRIPCIÓN");
+                dgvProduct.Columns.Add("STOCK", "STOCK");
+            }
+            else
+            {
+                dgvProduct.Columns.Add("IDPRODUCT", "ID");
+                dgvProduct.Columns.Add("GENDER", "GENDER");
+                dgvProduct.Columns.Add("EDITORIAL", "EDITORIAL");
+                dgvProduct.Columns.Add("PRICE", "PRICE €");
+                dgvProduct.Columns.Add("NAME", "NAME");
+                dgvProduct.Columns.Add("DESCRIPTION", "DESCRIPTION");
+                dgvProduct.Columns.Add("STOCK", "STOCK");
+            }
+            
 
 
             foreach (DataRow row in tproducts.Rows)

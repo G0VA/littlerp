@@ -13,9 +13,9 @@ namespace Avengers.Presentacion
 
         public ViewUsers(String idioma)
         {
-            InitializeComponent();
-            initTable("where us.deleted = 0");
             this.idioma = idioma;
+            InitializeComponent();
+            initTable("where us.deleted = 0");            
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -55,8 +55,17 @@ namespace Avengers.Presentacion
 
             DataTable tUsers = u.gestor().getUsers();
             dgvUsers.Columns.Clear();
-            dgvUsers.Columns.Add("NAME", "NAME");
-            dgvUsers.Columns.Add("ROLE", "ROLE");
+            if (this.idioma == "ESPAÑOL")
+            {
+                dgvUsers.Columns.Add("NAME", "NOMBRE");
+                dgvUsers.Columns.Add("ROLE", "ROL");
+            }
+            else
+            {
+                dgvUsers.Columns.Add("NAME", "NAME");
+                dgvUsers.Columns.Add("ROLE", "ROLE");
+            }
+            
 
             foreach (DataRow row in tUsers.Rows)
             {
