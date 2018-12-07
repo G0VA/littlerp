@@ -96,8 +96,14 @@ namespace Avengers
                 }
             }else
             {
-               
-                MessageBox.Show("Incorrect User");
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("Usuario Incorrecto ");
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect User ");
+                }
                 nom.Text = null;
                 pass.Text = null;
 

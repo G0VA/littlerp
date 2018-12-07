@@ -28,6 +28,8 @@ namespace Avengers.Presentacion.Orders
             InitializeComponent();
             FormBorderStyle = FormBorderStyle.Sizable;
             iniTable();
+            nudAmount.Value = 1;
+            nudAmount.Minimum = 1;
             initPay(" Where deleted=0");
             cmbPay.SelectedIndex = -1;
             if (this.idioma == "ESPAÑOL")

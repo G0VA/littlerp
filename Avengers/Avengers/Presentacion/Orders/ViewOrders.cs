@@ -213,5 +213,28 @@ namespace Avengers.Presentacion.Orders
             comboPay.SelectedIndex = -1;
             chkDeleted.Checked = false;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            String id= dgvOrders.Rows[dgvOrders.CurrentRow.Index].Cells[0].Value.ToString();
+            String sql = "Update orders set Deleted=1 where idorder=" + id;
+
+            if (this.idioma == "ESPAÑOL")
+            {
+                if(MessageBox.Show("¿Quieres eliminar a este pedido?", "Eliminar Pedido", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    GestorOrders.deleteOrder(sql);
+                    initTable(condicion + whereCondition + 0);
+                }
+            }
+            else
+            {
+                if(MessageBox.Show("Do you want Delete this Order?", "Delete Order", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    GestorOrders.deleteOrder(sql);
+                    initTable(condicion + whereCondition + 0);
+                }
+            }
+        }
     }
 }
