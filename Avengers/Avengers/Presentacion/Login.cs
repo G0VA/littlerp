@@ -41,8 +41,16 @@ namespace Avengers
             {
                 sql = "SELECT IDUSER FROM USUARIO WHERE UPPER(NAME) = '" + u1.getNombre() + "' AND PASSWORD = '" + u1.getContra() + "'";
             }
+
+            int id;
+            try
+            {
+                 id = int.Parse(u1.gestor().getUnString(sql));
+            }catch(Exception ex)
+            {
+                 id = -1;
+            }
             
-            int id = int.Parse(u1.gestor().getUnString(sql));
             u1.setId(id);
             //Console.WriteLine("Traza--" + u1.getContra());
             //Console.WriteLine("Traza--" + u1.getNombre());
@@ -85,7 +93,14 @@ namespace Avengers
                     Presentacion.Menu m1 = new Presentacion.Menu(u1,this.idioma);
                     this.Hide();
                     m1.Show();
-                }              
+                }
+            }else
+            {
+               
+                MessageBox.Show("Incorrect User");
+                nom.Text = null;
+                pass.Text = null;
+
             }
         }
 

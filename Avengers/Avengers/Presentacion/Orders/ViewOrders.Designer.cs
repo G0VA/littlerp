@@ -155,6 +155,7 @@
             this.dgvOrders.Location = new System.Drawing.Point(12, 143);
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.RowHeadersVisible = false;
+            this.dgvOrders.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrders.Size = new System.Drawing.Size(982, 332);
             this.dgvOrders.TabIndex = 11;
             // 
