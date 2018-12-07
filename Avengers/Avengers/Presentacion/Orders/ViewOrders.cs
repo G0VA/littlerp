@@ -236,5 +236,12 @@ namespace Avengers.Presentacion.Orders
                 }
             }
         }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            String idOrder = dgvOrders.Rows[dgvOrders.CurrentRow.Index].Cells[0].Value.ToString();
+            ModOrder mo = new ModOrder(u, idioma, idOrder);
+            mo.Show();
+        }
     }
 }

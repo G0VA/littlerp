@@ -18,6 +18,7 @@ namespace Avengers.Presentacion
     {
 
         private NewOrder observer = null;
+        private ModOrder observerMod = null;
         private String idioma;
 
         public ViewCustomer(String idioma)
@@ -56,6 +57,25 @@ namespace Avengers.Presentacion
                 this.Text = "Customers";
             }
         }
+        public ViewCustomer(ModOrder modOrder, String idioma)
+        {
+            this.idioma = idioma;
+            observerMod = modOrder;
+            InitializeComponent();
+            initTable(" Where Deleted =0");
+            initCombos();
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Clientes";
+            }
+            else
+            {
+                idioma_en();
+                this.Text = "Customers";
+            }
+        }
+
         public void idioma_es()
         {
             lblName.Text = Avengers.Recursos.Espanol.lblName;
@@ -441,6 +461,11 @@ namespace Avengers.Presentacion
             if (observer!= null)
             {
                 observer.updateCustomer(dtoC);
+                Dispose();
+            }
+            if (observerMod != null)
+            {
+                observerMod.updateCustomer(dtoC);
                 Dispose();
             }
 

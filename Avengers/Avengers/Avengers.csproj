@@ -95,6 +95,12 @@
     <Compile Include="Presentacion\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Orders\ModOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Orders\ModOrder.designer.cs">
+      <DependentUpon>ModOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\Orders\NewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Orders\ModOrder.resx">
+      <DependentUpon>ModOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Orders\NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>

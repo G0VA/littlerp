@@ -16,6 +16,7 @@ namespace Avengers.Presentacion.Products
     public partial class ViewProduct : Form
     {
         NewOrder observer = null;
+        ModOrder observerMod = null;
         private String idioma;
         public ViewProduct(String idioma)
         {
@@ -44,6 +45,25 @@ namespace Avengers.Presentacion.Products
             initTable("Where Deleted = 0");
             initComboEditorial("Where Deleted = 0");
             initComboGender("Where Deleted = 0");          
+            if (this.idioma == "ESPAÑOL")
+            {
+                idioma_es();
+                this.Text = "Productos";
+            }
+            else if (this.idioma == "INGLES")
+            {
+                idioma_en();
+                this.Text = "Products";
+            }
+        }
+        public ViewProduct(ModOrder modOrder, String idioma)
+        {
+            this.idioma = idioma;
+            this.observerMod = modOrder;
+            InitializeComponent();
+            initTable("Where Deleted = 0");
+            initComboEditorial("Where Deleted = 0");
+            initComboGender("Where Deleted = 0");
             if (this.idioma == "ESPAÑOL")
             {
                 idioma_es();
@@ -393,6 +413,14 @@ namespace Avengers.Presentacion.Products
                 observer.updateProduct(dtoProduct);
                 Dispose();
             }
+            if (observerMod != null)
+            {
+                observerMod.updateProduct(dtoProduct);
+                Dispose();
+            }
+
         }
+
+
     }
 }

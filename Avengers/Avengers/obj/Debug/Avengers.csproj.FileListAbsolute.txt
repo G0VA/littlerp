@@ -189,3 +189,4 @@ C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.R
 C:\Users\santi\Source\Repos\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Recursos.Ingles.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Recursos.Espanol.resources
 C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Recursos.Ingles.resources
+C:\Users\Fj Margotón\Documents\Visual Studio 2015\Projects\G0VA\littlerp\Avengers\Avengers\obj\Debug\Avengers.Presentacion.Orders.ModOrder.resources

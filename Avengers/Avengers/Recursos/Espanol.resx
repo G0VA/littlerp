@@ -291,4 +291,7 @@
   <data name="lblSurname" xml:space="preserve">
     <value>Apellido:</value>
   </data>
+  <data name="btnModify" xml:space="preserve">
+    <value>Modificar</value>
+  </data>
 </root>

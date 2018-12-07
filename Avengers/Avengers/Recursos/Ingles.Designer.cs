@@ -144,6 +144,15 @@ namespace Avengers.Recursos {
         /// <summary>
         ///   Busca una cadena traducida similar a Modify.
         /// </summary>
+        internal static string btnModify {
+            get {
+                return ResourceManager.GetString("btnModify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modify.
+        /// </summary>
         internal static string btnModUser {
             get {
                 return ResourceManager.GetString("btnModUser", resourceCulture);

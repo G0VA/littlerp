@@ -27,7 +27,7 @@ namespace Avengers.Dominio.Gestores
             DataSet data = new DataSet();
             ConnectOracle search = new ConnectOracle();
 
-            data = search.getData("Select * from ordersproducts order by name", "littlerp");
+            data = search.getData("Select * from ordersproducts order by idorderproduct", "littlerp");
             tabla = data.Tables["littlerp"];
         }
 
@@ -36,7 +36,20 @@ namespace Avengers.Dominio.Gestores
             DataSet data = new DataSet();
             ConnectOracle search = new ConnectOracle();
 
-            data = search.getData("Select * from ordersproducts " + cond + " order by name", "littlerp");
+            data = search.getData("Select * from ordersproducts " + cond + " order by idorderproduct", "littlerp");
+            tabla = data.Tables["littlerp"];
+        }
+        public String getUnString(String sql)
+        {
+            ConnectOracle select = new ConnectOracle();
+            return select.getData(sql);
+        }
+        public void readInDB(String column, String table, String cond)
+        {
+            DataSet data = new DataSet();
+            ConnectOracle search = new ConnectOracle();
+
+            data = search.getData("Select " + column + " from " + table + " " + cond, "littlerp");
             tabla = data.Tables["littlerp"];
         }
 

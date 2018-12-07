@@ -52,6 +52,7 @@
             this.nudAmount = new System.Windows.Forms.NumericUpDown();
             this.cmbPay = new System.Windows.Forms.ComboBox();
             this.lblPayMethod = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.SuspendLayout();
@@ -150,7 +151,7 @@
             // 
             this.txtDiscount.Location = new System.Drawing.Point(808, 71);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(68, 20);
+            this.txtDiscount.Size = new System.Drawing.Size(42, 20);
             this.txtDiscount.TabIndex = 11;
             // 
             // dataGridView1
@@ -274,11 +275,22 @@
             this.lblPayMethod.TabIndex = 23;
             this.lblPayMethod.Text = "PaymentMethod";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(856, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 16);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "%";
+            // 
             // NewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 494);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPayMethod);
             this.Controls.Add(this.cmbPay);
             this.Controls.Add(this.nudAmount);
@@ -337,5 +349,6 @@
         private System.Windows.Forms.NumericUpDown nudAmount;
         private System.Windows.Forms.ComboBox cmbPay;
         private System.Windows.Forms.Label lblPayMethod;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -84,14 +84,14 @@ namespace Avengers.Presentacion.Orders
 
         public void updateCustomer(DtoCustomer customer)
         {
-            Console.WriteLine(customer.Name+" "+ customer.Surname);
+            //Console.WriteLine(customer.Name+" "+ customer.Surname);
             this.dtoCustomer = customer;
             txtCustomer.Text = customer.Name + " " + customer.Surname;
 
         }
         public void updateProduct(DtoProduct product)
         {
-            Console.WriteLine(product.Name);
+           // Console.WriteLine(product.Name);
             this.dtoProduct = product;
             txtProduct.Text = product.Name;
             txtPrice.Text = product.Price;
@@ -126,7 +126,7 @@ namespace Avengers.Presentacion.Orders
                 if (!String.IsNullOrEmpty(txtDiscount.Text))
                 {
                     // -1 esta puesto por la fila en blanco
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    for (int i = 0; i < dataGridView1.RowCount ; i++)
                     {
                         this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));                        
                     }
@@ -138,7 +138,7 @@ namespace Avengers.Presentacion.Orders
                     if (dataGridView1.RowCount > 1)
                     {
                         
-                        for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                        for (int i = 0; i < dataGridView1.RowCount ; i++)
                         {
                             this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
                         }
