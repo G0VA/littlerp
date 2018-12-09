@@ -41,7 +41,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.dgvModOrder = new System.Windows.Forms.DataGridView();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.txtPrepaid = new System.Windows.Forms.TextBox();
             this.lblPrepaid = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -129,6 +129,7 @@
             this.btnOk.TabIndex = 39;
             this.btnOk.Text = "Ok";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancel
             // 
@@ -139,6 +140,7 @@
             this.btnCancel.TabIndex = 38;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnRemove
             // 
@@ -160,6 +162,7 @@
             this.btnModify.TabIndex = 36;
             this.btnModify.Text = "Modify";
             this.btnModify.UseVisualStyleBackColor = true;
+            this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
             // 
             // dgvModOrder
             // 
@@ -174,12 +177,12 @@
             this.dgvModOrder.Size = new System.Drawing.Size(714, 276);
             this.dgvModOrder.TabIndex = 35;
             // 
-            // txtDiscount
+            // txtPrepaid
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(807, 84);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(68, 20);
-            this.txtDiscount.TabIndex = 34;
+            this.txtPrepaid.Location = new System.Drawing.Point(807, 84);
+            this.txtPrepaid.Name = "txtPrepaid";
+            this.txtPrepaid.Size = new System.Drawing.Size(68, 20);
+            this.txtPrepaid.TabIndex = 34;
             // 
             // lblPrepaid
             // 
@@ -299,7 +302,7 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.dgvModOrder);
-            this.Controls.Add(this.txtDiscount);
+            this.Controls.Add(this.txtPrepaid);
             this.Controls.Add(this.lblPrepaid);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.txtPrice);
@@ -332,7 +335,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnModify;
-        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.TextBox txtPrepaid;
         private System.Windows.Forms.Label lblPrepaid;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtPrice;

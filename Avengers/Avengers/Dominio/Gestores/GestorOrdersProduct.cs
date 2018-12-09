@@ -58,5 +58,16 @@ namespace Avengers.Dominio.Gestores
             ConnectOracle insert = new ConnectOracle();
             insert.setData(sentencia);
         }
+        public static void deleteOrderProduct(String sentencia)
+        {
+            ConnectOracle insert = new ConnectOracle();
+            insert.setData(sentencia);
+        }
+        public static void UpdateOrderProduct(String sentencia)
+        {
+            ConnectOracle insert = new ConnectOracle();
+            insert.setData(sentencia);
+        }
+
     }
 }

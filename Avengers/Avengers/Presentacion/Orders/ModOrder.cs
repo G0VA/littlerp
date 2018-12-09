@@ -61,12 +61,12 @@ namespace Avengers.Presentacion.Orders
 
             }
            
-            //esta consulta me da -1 comprobar por que
+            
             //Console.WriteLine(o.getGestor().getUnString("SELECT NAME||' '|| SURNAME FROM CUSTOMERS WHERE IDCUSTOMER = '" + this.idcustomer + "'"));
             txtCustomer.Text = o.getGestor().getUnString("SELECT NAME||' '|| SURNAME FROM CUSTOMERS WHERE IDCUSTOMER = '" + this.idcustomer + "'").ToString();
             cmbPay.SelectedValue = refpaymentmethod;
             txtTotal.Text = this.total;
-            txtDiscount.Text = this.prepaid;
+            txtPrepaid.Text = this.prepaid;
             
         }
 
@@ -188,15 +188,98 @@ namespace Avengers.Presentacion.Orders
         private void btnRemove_Click(object sender, EventArgs e)
         {
             this.t = 0;
-            if (dgvModOrder.RowCount > 1)
+            int idx = dgvModOrder.CurrentRow.Index;
+   
+            if(MessageBox.Show("Do you want Delete this product?", "Delete orderProduct", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                dgvModOrder.Rows.RemoveAt(dgvModOrder.CurrentRow.Index);
-
-                //restar cantidad del precio
+                String sql = "Delete from ordersproducts where idorderproduct= " + dgvModOrder.Rows[idx].Cells[0].Value.ToString();
+                
                 float total = Convert.ToSingle(txtTotal.Text);
-               // t=dgvModOrder.Rows[dgvModOrder.CurrentRow.Index]
+                t = Convert.ToSingle(dgvModOrder.Rows[idx].Cells[4].Value) * Convert.ToSingle(dgvModOrder.Rows[idx].Cells[5].Value);
+                total = total - t;
+                txtTotal.Text = total.ToString();
+                String sqlUpdate = "Update orders set Total=" + txtTotal.Text + "where idorder=" + this.idOrder;
+                GestorOrdersProduct.UpdateOrderProduct(sqlUpdate);
+                GestorOrdersProduct.deleteOrderProduct(sql);
+                
+                dgvModOrder.Rows.RemoveAt(idx);
             }
-        
+           //restar cantidad del precio
+          
+
+
+
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            this.t = 0;
+
+            if (!String.IsNullOrEmpty(txtProduct.Text))
+            {
+                Console.WriteLine(txtProduct.Text);
+                dgvModOrder.Rows.Add(null, null, null, txtProduct.Text, nudAmount.Value.ToString(), txtPrice.Text);
+                Console.WriteLine(txtPrice.Text);
+              
+                for (int i = 0; i < dgvModOrder.RowCount; i++)
+                {
+                    this.t = this.t + (float.Parse(dgvModOrder.Rows[i].Cells[4].Value.ToString()) * float.Parse(dgvModOrder.Rows[i].Cells[5].Value.ToString()));
+                }
+                txtTotal.Text = Convert.ToString(t);
+             
+            }
+            else
+            {
+                if (this.idioma == "ESPAÑOL")
+                {
+                    MessageBox.Show("Debes seleccionar un producto");
+                }
+                else
+                {
+                    MessageBox.Show("You must select one Product");
+                }
+
+            }
+
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+
+            Order o = new Order();
+
+
+
+            //Sql para insertar order al hacer click en OK -- modificar el valor numero 3 que hace ref a user
+            String sql = "Update orders set REFPAYMENTMETHOD ='" + cmbPay.SelectedValue + "', DATETIME = SYSDATE, TOTAL = '" + txtTotal.Text + "', PREPAID = '" + txtPrepaid.Text + "' Where idorder = " + this.idOrder;
+            o.getGestor().setData(sql);
+
+            sql = "SELECT MAX(IDORDER) FROM ORDERS";
+            String ido = o.getGestor().getUnString(sql);
+
+            //Console.WriteLine("Traza-- ID ORDER  " + ido);
+            for (int i = 0; i < dgvModOrder.RowCount; i++)
+            {
+                //String idp = o.getGestor().getDataV2("IDPRODUCT", "PRODUCTS", "WHERE UPPER(NAME) =" + dataGridView1.Rows[i].Cells[0].Value.ToString().ToUpper() + "'");
+                sql = "SELECT IDPRODUCT FROM PRODUCTS WHERE UPPER(NAME) = '" + dgvModOrder.Rows[i].Cells[3].Value.ToString().ToUpper() + "'";
+
+                String idp = o.getGestor().getUnString(sql);
+
+                //Console.WriteLine("Traza-- ID PRODURC " + idp);
+
+                sql = "Update ordersproducts set REFPRODUCT = '" + idp + "', AMOUNT = " + float.Parse(dgvModOrder.Rows[i].Cells[4].Value.ToString()) + ", PRICESALE = '" + float.Parse(dgvModOrder.Rows[i].Cells[5].Value.ToString()) + "' Where REFORDER = " + this.idOrder;
+
+                o.getGestor().setData(sql);
+            }
+
+
+            this.Dispose();
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
