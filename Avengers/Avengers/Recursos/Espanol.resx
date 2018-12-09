@@ -258,8 +258,8 @@
   <data name="lblDate" xml:space="preserve">
     <value>Fecha:</value>
   </data>
-  <data name="lblDiscount" xml:space="preserve">
-    <value>Descuento:</value>
+  <data name="lblPrepaid" xml:space="preserve">
+    <value>Pagado:</value>
   </data>
   <data name="lblDni" xml:space="preserve">
     <value>DNI:</value>

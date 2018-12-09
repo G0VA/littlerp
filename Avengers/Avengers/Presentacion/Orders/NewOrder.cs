@@ -52,7 +52,7 @@ namespace Avengers.Presentacion.Orders
             lblPricesale.Text = Avengers.Recursos.Espanol.lblPricesale;
             lblPayMethod.Text = Avengers.Recursos.Espanol.lblPay;
             lblAmount.Text = Avengers.Recursos.Espanol.lblAmount;
-            lblDiscount.Text = Avengers.Recursos.Espanol.lblDiscount;
+            lblPrepaid.Text = Avengers.Recursos.Espanol.lblPrepaid;
             btnAdd.Text = Avengers.Recursos.Espanol.btnAdd;
             btnRemove.Text = Avengers.Recursos.Espanol.btnRemove;
             btnCancel.Text = Avengers.Recursos.Espanol.btnCancel;
@@ -66,7 +66,7 @@ namespace Avengers.Presentacion.Orders
             lblPricesale.Text = Avengers.Recursos.Ingles.lblPricesale;
             lblPayMethod.Text = Avengers.Recursos.Ingles.lblPay;
             lblAmount.Text = Avengers.Recursos.Ingles.lblAmount;
-            lblDiscount.Text = Avengers.Recursos.Ingles.lblDiscount;
+            lblPrepaid.Text = Avengers.Recursos.Ingles.lblPrepaid;
             btnAdd.Text = Avengers.Recursos.Ingles.btnAdd;
             btnRemove.Text = Avengers.Recursos.Ingles.btnRemove;
             btnCancel.Text = Avengers.Recursos.Ingles.btnCancel;
@@ -199,7 +199,7 @@ namespace Avengers.Presentacion.Orders
             {
                 String id = dtoCustomer.Idcustomer;
                 //Sql para insertar order al hacer click en OK -- modificar el valor numero 3 que hace ref a user
-                String sql = "Insert into orders values (null,'" + id + "', "+u.getId()+", SYSDATE, '" + cmbPay.SelectedValue + "', '" + tbxTotal.Text + "', DEFAULT,0)";
+                String sql = "Insert into orders values (null,'" + id + "', "+u.getId()+", SYSDATE, '" + cmbPay.SelectedValue + "', '" + tbxTotal.Text + "','"+txtPrepaid.Text+"',0)";
                 o.getGestor().setData(sql);
                 //Console.WriteLine(sql);
                 sql = "SELECT IDORDER FROM ORDERS WHERE TOTAL = '" + (tbxTotal.Text) + "'";

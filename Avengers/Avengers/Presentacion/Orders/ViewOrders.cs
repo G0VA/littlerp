@@ -71,7 +71,11 @@ namespace Avengers.Presentacion.Orders
         private void btnNew_Click(object sender, EventArgs e)
         {
             NewOrder o = new NewOrder(u,this.idioma);
-            o.Show();
+            o.ShowDialog();
+            if (o.IsDisposed)
+            {
+                initTable(condicion + whereCondition + 0);
+            }
         }
 
         private void initTable(String cond)
@@ -212,6 +216,7 @@ namespace Avengers.Presentacion.Orders
             ckAct.Checked = false;
             comboPay.SelectedIndex = -1;
             chkDeleted.Checked = false;
+            initTable(condicion + whereCondition + 0);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -38,8 +38,8 @@
             this.txtCustomer = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.lblPrepaid = new System.Windows.Forms.Label();
+            this.txtPrepaid = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
@@ -52,7 +52,6 @@
             this.nudAmount = new System.Windows.Forms.NumericUpDown();
             this.cmbPay = new System.Windows.Forms.ComboBox();
             this.lblPayMethod = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmount)).BeginInit();
             this.SuspendLayout();
@@ -137,22 +136,22 @@
             this.lblAmount.TabIndex = 8;
             this.lblAmount.Text = "Amount:";
             // 
-            // lblDiscount
+            // lblPrepaid
             // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(721, 74);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(72, 16);
-            this.lblDiscount.TabIndex = 10;
-            this.lblDiscount.Text = "Discount:";
+            this.lblPrepaid.AutoSize = true;
+            this.lblPrepaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrepaid.Location = new System.Drawing.Point(702, 72);
+            this.lblPrepaid.Name = "lblPrepaid";
+            this.lblPrepaid.Size = new System.Drawing.Size(67, 16);
+            this.lblPrepaid.TabIndex = 10;
+            this.lblPrepaid.Text = "Prepaid:";
             // 
-            // txtDiscount
+            // txtPrepaid
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(808, 71);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(42, 20);
-            this.txtDiscount.TabIndex = 11;
+            this.txtPrepaid.Location = new System.Drawing.Point(775, 72);
+            this.txtPrepaid.Name = "txtPrepaid";
+            this.txtPrepaid.Size = new System.Drawing.Size(87, 20);
+            this.txtPrepaid.TabIndex = 11;
             // 
             // dataGridView1
             // 
@@ -251,7 +250,7 @@
             // 
             // nudAmount
             // 
-            this.nudAmount.Location = new System.Drawing.Point(637, 71);
+            this.nudAmount.Location = new System.Drawing.Point(637, 70);
             this.nudAmount.Name = "nudAmount";
             this.nudAmount.Size = new System.Drawing.Size(47, 20);
             this.nudAmount.TabIndex = 21;
@@ -275,22 +274,11 @@
             this.lblPayMethod.TabIndex = 23;
             this.lblPayMethod.Text = "PaymentMethod";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(856, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 16);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "%";
-            // 
             // NewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 494);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPayMethod);
             this.Controls.Add(this.cmbPay);
             this.Controls.Add(this.nudAmount);
@@ -303,8 +291,8 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtDiscount);
-            this.Controls.Add(this.lblDiscount);
+            this.Controls.Add(this.txtPrepaid);
+            this.Controls.Add(this.lblPrepaid);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtCustomer);
@@ -335,8 +323,8 @@
         private System.Windows.Forms.TextBox txtCustomer;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Label lblDiscount;
-        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.Label lblPrepaid;
+        private System.Windows.Forms.TextBox txtPrepaid;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnRemove;
@@ -349,6 +337,5 @@
         private System.Windows.Forms.NumericUpDown nudAmount;
         private System.Windows.Forms.ComboBox cmbPay;
         private System.Windows.Forms.Label lblPayMethod;
-        private System.Windows.Forms.Label label1;
     }
 }

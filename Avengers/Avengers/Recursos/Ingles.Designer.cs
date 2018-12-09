@@ -340,15 +340,6 @@ namespace Avengers.Recursos {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Discount:.
-        /// </summary>
-        internal static string lblDiscount {
-            get {
-                return ResourceManager.GetString("lblDiscount", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a DNI:.
         /// </summary>
         internal static string lblDni {
@@ -444,6 +435,15 @@ namespace Avengers.Recursos {
         internal static string lblPrepago {
             get {
                 return ResourceManager.GetString("lblPrepago", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Prepaid:.
+        /// </summary>
+        internal static string lblPrepaid {
+            get {
+                return ResourceManager.GetString("lblPrepaid", resourceCulture);
             }
         }
         

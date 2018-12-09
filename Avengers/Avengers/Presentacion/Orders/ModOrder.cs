@@ -66,6 +66,7 @@ namespace Avengers.Presentacion.Orders
            // txtCustomer.Text = GestorCustomers.getData(" NAME||' '||SURNAME ", " CUSTOMERS ", " IDCUSTOMER='" + this.idcustomer + "'").ToString();
             cmbPay.SelectedValue = refpaymentmethod;
             txtTotal.Text = this.total;
+            txtDiscount.Text = this.prepaid;
             
         }
 
