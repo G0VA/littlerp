@@ -123,28 +123,28 @@ namespace Avengers.Presentacion.Orders
             if (!String.IsNullOrEmpty(txtProduct.Text) )
             {
                 dataGridView1.Rows.Add(txtProduct.Text, nudAmount.Value.ToString(), txtPrice.Text);
-                if (!String.IsNullOrEmpty(txtDiscount.Text))
-                {
-                    // -1 esta puesto por la fila en blanco
-                    for (int i = 0; i < dataGridView1.RowCount ; i++)
-                    {
-                        this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));                        
-                    }
-                    this.t = this.t - (this.t * ((float.Parse(txtDiscount.Text)) / 100));
-                    tbxTotal.Text = Convert.ToString(t);
+                //if (!String.IsNullOrEmpty(txtDiscount.Text))
+                //{
+                //    // -1 esta puesto por la fila en blanco
+                //    for (int i = 0; i < dataGridView1.RowCount ; i++)
+                //    {
+                //        this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));                        
+                //    }
+                //    this.t = this.t - (this.t * ((float.Parse(txtDiscount.Text)) / 100));
+                //    tbxTotal.Text = Convert.ToString(t);
 
-                }
-                else {
-                    if (dataGridView1.RowCount > 1)
-                    {
+                //}
+                //else {
+                    //if (dataGridView1.RowCount > 1)
+                    //{
                         
                         for (int i = 0; i < dataGridView1.RowCount ; i++)
                         {
                             this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
                         }
                         tbxTotal.Text = Convert.ToString(t);
-                    }                      
-                }
+                    //}                      
+                //}
             }
             else
             {
@@ -239,29 +239,29 @@ namespace Avengers.Presentacion.Orders
             if(dataGridView1.RowCount > 1)
             {
                 dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
-                if (!String.IsNullOrEmpty(txtDiscount.Text))
-                {
-                    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-                    {
-                        this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
-                    }
-                    this.t = this.t - (this.t * ((float.Parse(txtDiscount.Text)) / 100));
-                    tbxTotal.Text = Convert.ToString(t);
+                //if (!String.IsNullOrEmpty(txtDiscount.Text))
+                //{
+                //    for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                //    {
+                //        this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
+                //    }
+                //    this.t = this.t - (this.t * ((float.Parse(txtDiscount.Text)) / 100));
+                //    tbxTotal.Text = Convert.ToString(t);
 
-                }
-                else
-                {
-                    if (dataGridView1.RowCount > 1)
-                    {
+                //}
+                //else
+                //{
+                //if (dataGridView1.RowCount > 1)
+                //{
 
-                        for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                    for (int i = 0; i < dataGridView1.RowCount ; i++)
                         {
                             this.t = this.t + (float.Parse(dataGridView1.Rows[i].Cells[1].Value.ToString()) * float.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
                         }
                         tbxTotal.Text = Convert.ToString(t);
-                    }
                 }
-            }
+                //}
+            //}
                 
         }
     }

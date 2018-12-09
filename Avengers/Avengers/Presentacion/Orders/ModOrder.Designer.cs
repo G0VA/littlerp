@@ -34,7 +34,7 @@
             this.nudAmount = new System.Windows.Forms.NumericUpDown();
             this.btnFindCust = new System.Windows.Forms.Button();
             this.btnFindProd = new System.Windows.Forms.Button();
-            this.tbxTotal = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -103,12 +103,12 @@
             this.btnFindProd.UseVisualStyleBackColor = true;
             this.btnFindProd.Click += new System.EventHandler(this.btnFindProd_Click);
             // 
-            // tbxTotal
+            // txtTotal
             // 
-            this.tbxTotal.Location = new System.Drawing.Point(761, 421);
-            this.tbxTotal.Name = "tbxTotal";
-            this.tbxTotal.Size = new System.Drawing.Size(81, 20);
-            this.tbxTotal.TabIndex = 41;
+            this.txtTotal.Location = new System.Drawing.Point(761, 421);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(81, 20);
+            this.txtTotal.TabIndex = 41;
             // 
             // lblTotal
             // 
@@ -149,6 +149,7 @@
             this.btnRemove.TabIndex = 37;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnModify
             // 
@@ -288,7 +289,7 @@
             this.Controls.Add(this.nudAmount);
             this.Controls.Add(this.btnFindCust);
             this.Controls.Add(this.btnFindProd);
-            this.Controls.Add(this.tbxTotal);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnCancel);
@@ -322,7 +323,7 @@
         private System.Windows.Forms.NumericUpDown nudAmount;
         private System.Windows.Forms.Button btnFindCust;
         private System.Windows.Forms.Button btnFindProd;
-        private System.Windows.Forms.TextBox tbxTotal;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
