@@ -60,10 +60,10 @@ namespace Avengers.Presentacion.Orders
                 this.prepaid = row["PREPAID"].ToString();
 
             }
-
+           
             //esta consulta me da -1 comprobar por que
-            Console.WriteLine(GestorCustomers.getData(" NAME ", " CUSTOMERS ", " IDCUSTOMER = '" + this.idcustomer + "'"));
-           // txtCustomer.Text = GestorCustomers.getData(" NAME||' '||SURNAME ", " CUSTOMERS ", " IDCUSTOMER='" + this.idcustomer + "'").ToString();
+            //Console.WriteLine(o.getGestor().getUnString("SELECT NAME||' '|| SURNAME FROM CUSTOMERS WHERE IDCUSTOMER = '" + this.idcustomer + "'"));
+            txtCustomer.Text = o.getGestor().getUnString("SELECT NAME||' '|| SURNAME FROM CUSTOMERS WHERE IDCUSTOMER = '" + this.idcustomer + "'").ToString();
             cmbPay.SelectedValue = refpaymentmethod;
             txtTotal.Text = this.total;
             txtDiscount.Text = this.prepaid;
@@ -193,11 +193,8 @@ namespace Avengers.Presentacion.Orders
                 dgvModOrder.Rows.RemoveAt(dgvModOrder.CurrentRow.Index);
 
                 //restar cantidad del precio
-                for (int i = 0; i < dgvModOrder.RowCount; i++)
-                {
-                    this.t = this.t + (float.Parse(dgvModOrder.Rows[i].Cells[1].Value.ToString()) * float.Parse(dgvModOrder.Rows[i].Cells[2].Value.ToString()));
-                }
-                txtTotal.Text = Convert.ToString(t);
+                float total = Convert.ToSingle(txtTotal.Text);
+               // t=dgvModOrder.Rows[dgvModOrder.CurrentRow.Index]
             }
         
         }

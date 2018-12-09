@@ -42,7 +42,7 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.dgvModOrder = new System.Windows.Forms.DataGridView();
             this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.lblDiscount = new System.Windows.Forms.Label();
+            this.lblPrepaid = new System.Windows.Forms.Label();
             this.lblAmount = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtCustomer = new System.Windows.Forms.TextBox();
@@ -163,11 +163,14 @@
             // 
             // dgvModOrder
             // 
+            this.dgvModOrder.AllowUserToAddRows = false;
+            this.dgvModOrder.AllowUserToDeleteRows = false;
             this.dgvModOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvModOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvModOrder.Location = new System.Drawing.Point(12, 121);
             this.dgvModOrder.Name = "dgvModOrder";
             this.dgvModOrder.RowHeadersVisible = false;
+            this.dgvModOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModOrder.Size = new System.Drawing.Size(714, 276);
             this.dgvModOrder.TabIndex = 35;
             // 
@@ -178,15 +181,15 @@
             this.txtDiscount.Size = new System.Drawing.Size(68, 20);
             this.txtDiscount.TabIndex = 34;
             // 
-            // lblDiscount
+            // lblPrepaid
             // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(720, 87);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(72, 16);
-            this.lblDiscount.TabIndex = 33;
-            this.lblDiscount.Text = "Discount:";
+            this.lblPrepaid.AutoSize = true;
+            this.lblPrepaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrepaid.Location = new System.Drawing.Point(720, 87);
+            this.lblPrepaid.Name = "lblPrepaid";
+            this.lblPrepaid.Size = new System.Drawing.Size(67, 16);
+            this.lblPrepaid.TabIndex = 33;
+            this.lblPrepaid.Text = "Prepaid:";
             // 
             // lblAmount
             // 
@@ -297,7 +300,7 @@
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.dgvModOrder);
             this.Controls.Add(this.txtDiscount);
-            this.Controls.Add(this.lblDiscount);
+            this.Controls.Add(this.lblPrepaid);
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.txtCustomer);
@@ -330,7 +333,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.TextBox txtDiscount;
-        private System.Windows.Forms.Label lblDiscount;
+        private System.Windows.Forms.Label lblPrepaid;
         private System.Windows.Forms.Label lblAmount;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblPricesale;

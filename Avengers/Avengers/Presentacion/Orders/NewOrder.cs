@@ -202,10 +202,10 @@ namespace Avengers.Presentacion.Orders
                 String sql = "Insert into orders values (null,'" + id + "', "+u.getId()+", SYSDATE, '" + cmbPay.SelectedValue + "', '" + tbxTotal.Text + "','"+txtPrepaid.Text+"',0)";
                 o.getGestor().setData(sql);
                 //Console.WriteLine(sql);
-                sql = "SELECT IDORDER FROM ORDERS WHERE TOTAL = '" + (tbxTotal.Text) + "'";
+                sql = "SELECT MAX(IDORDER) FROM ORDERS" ;
                 String ido = o.getGestor().getUnString(sql);
                 //Console.WriteLine("Traza-- ID ORDER  " + ido);
-                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                for (int i = 0; i < dataGridView1.RowCount ; i++)
                 {
                     //String idp = o.getGestor().getDataV2("IDPRODUCT", "PRODUCTS", "WHERE UPPER(NAME) =" + dataGridView1.Rows[i].Cells[0].Value.ToString().ToUpper() + "'");
                     sql = "SELECT IDPRODUCT FROM PRODUCTS WHERE UPPER(NAME) = '" + dataGridView1.Rows[i].Cells[0].Value.ToString().ToUpper() + "'";
